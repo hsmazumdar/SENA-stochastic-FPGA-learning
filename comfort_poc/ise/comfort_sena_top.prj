@@ -1,0 +1,4 @@
+verilog work "../rtl/uart_tx.v"
+verilog work "../rtl/uart_rx.v"
+verilog work "../rtl/comfort_core.v"
+verilog work "../rtl/comfort_sena_top.v"

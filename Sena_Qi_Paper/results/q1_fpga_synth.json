@@ -1,0 +1,103 @@
+{
+  "profile": "full",
+  "config": {
+    "hid_bank": 16,
+    "par": 8,
+    "par_out": 2,
+    "part": "xc7a100tcsg324-1"
+  },
+  "slice": {
+    "tool": "structural_artix7_model",
+    "ok": true,
+    "evidence": "mapping-estimate-not-PnR",
+    "n_hid_bank": 16,
+    "par": 8,
+    "par_out": 2,
+    "lut": 5392,
+    "ff": 2160,
+    "bram": 5.53,
+    "dsp": 0,
+    "weight_bits": 203680
+  },
+  "full_parallel_design": {
+    "full_hid": 160,
+    "tiles_per_member": 10,
+    "M": 3,
+    "lut": 161760,
+    "ff": 64800,
+    "bram": 165.9,
+    "dsp": 0,
+    "note": "Linear scale of slice; interconnect / BRAM packing not PnR'd"
+  },
+  "folded_artix7_design": {
+    "strategy": "time-multiplexed hidden bank + sequential ensemble members",
+    "physical_hid_bank": 16,
+    "folds_per_member": 10,
+    "lut": 5392,
+    "ff": 2160,
+    "bram": 55.21,
+    "dsp": 0,
+    "lut_pct": 8.504731861198739,
+    "ff_pct": 1.7034700315457414,
+    "bram_pct": 40.89827674897119,
+    "latency_penalty": 10,
+    "fits": true
+  },
+  "device_capacity": {
+    "part": "xc7a100tcsg324-1",
+    "lut": 63400,
+    "ff": 126800,
+    "bram": 135,
+    "dsp": 240
+  },
+  "utilization_pct_parallel": {
+    "lut_pct": 255.14195583596214,
+    "ff_pct": 51.10410094637224,
+    "bram_pct": 122.88888888888889
+  },
+  "energy_rows": [
+    {
+      "theta": 0.45,
+      "acc": 0.8368,
+      "mean_passes": 1.72,
+      "energy_uj": 0.037815232
+    },
+    {
+      "theta": 0.55,
+      "acc": 0.8732,
+      "mean_passes": 4.6164,
+      "energy_uj": 0.10149432383999998
+    },
+    {
+      "theta": 0.65,
+      "acc": 0.87,
+      "mean_passes": 7.452,
+      "energy_uj": 0.16383669119999997
+    },
+    {
+      "theta": 0.75,
+      "acc": 0.8832,
+      "mean_passes": 12.4036,
+      "energy_uj": 0.27270058816000003
+    },
+    {
+      "theta": 0.85,
+      "acc": 0.8892,
+      "mean_passes": 18.5168,
+      "energy_uj": 0.40710295807999997
+    },
+    {
+      "theta": 0.95,
+      "acc": 0.8892,
+      "mean_passes": 23.2432,
+      "energy_uj": 0.51101569792
+    },
+    {
+      "theta": 1.01,
+      "acc": 0.8964,
+      "mean_passes": 40.0,
+      "energy_uj": 0.8794239999999998
+    }
+  ],
+  "vivado_found": false
+}

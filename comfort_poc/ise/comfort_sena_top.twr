@@ -1,0 +1,693 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml comfort_sena_top.twx comfort_sena_top.ncd -o
+comfort_sena_top.twr comfort_sena_top.pcf -ucf papilio_pro.ucf
+
+Design file:              comfort_sena_top.ncd
+Physical constraint file: comfort_sena_top.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 720900 paths analyzed, 6553 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.240ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/ones_count_7 (SLICE_X21Y54.D3), 18286 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     21.010ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_7 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.212ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.BMUX    Topab                 0.532   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X9Y44.D3       net (fanout=34)       2.110   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<2>_mand
+    SLICE_X9Y44.D        Tilo                  0.259   u_core/lfsr_o<3>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.CX       net (fanout=1)        0.803   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.COUT     Tcxcy                 0.117   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.COUT     Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.D3      net (fanout=16)       2.026   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_7_dpot
+                                                       u_core/ones_count_7
+    -------------------------------------------------  ---------------------------
+    Total                                     10.212ns (2.894ns logic, 7.318ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.023ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_7 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.199ns (Levels of Logic = 9)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.CIN     net (fanout=1)        0.135   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CMUX    Tcinc                 0.279   u_core/GND_6_o_GND_6_o_sub_181_OUT<16>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_xor<16>
+    SLICE_X9Y47.D3       net (fanout=34)       2.529   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<15>_mand
+    SLICE_X9Y47.D        Tilo                  0.259   u_core/lfsr_o<15>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.BMUX     Tcinb                 0.310   u_core/GND_6_o_GND_6_o_sub_183_OUT<18>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_xor<18>
+    SLICE_X6Y48.A3       net (fanout=1)        0.662   u_core/GND_6_o_GND_6_o_sub_183_OUT<17>
+    SLICE_X6Y48.BMUX     Topab                 0.570   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_lutdi8
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.D3      net (fanout=16)       2.026   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_7_dpot
+                                                       u_core/ones_count_7
+    -------------------------------------------------  ---------------------------
+    Total                                     10.199ns (3.036ns logic, 7.163ns route)
+                                                       (29.8% logic, 70.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.023ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_7 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.199ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CMUX    Tcinc                 0.279   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X9Y45.D3       net (fanout=34)       2.483   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<7>_mand
+    SLICE_X9Y45.D        Tilo                  0.259   u_core/lfsr_o<7>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.D3      net (fanout=16)       2.026   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_7_dpot
+                                                       u_core/ones_count_7
+    -------------------------------------------------  ---------------------------
+    Total                                     10.199ns (3.014ns logic, 7.185ns route)
+                                                       (29.6% logic, 70.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/ones_count_6 (SLICE_X21Y54.C4), 18286 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     21.081ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.141ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.BMUX    Topab                 0.532   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X9Y44.D3       net (fanout=34)       2.110   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<2>_mand
+    SLICE_X9Y44.D        Tilo                  0.259   u_core/lfsr_o<3>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.CX       net (fanout=1)        0.803   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.COUT     Tcxcy                 0.117   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.COUT     Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.C4      net (fanout=16)       1.955   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_6_dpot
+                                                       u_core/ones_count_6
+    -------------------------------------------------  ---------------------------
+    Total                                     10.141ns (2.894ns logic, 7.247ns route)
+                                                       (28.5% logic, 71.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.094ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.128ns (Levels of Logic = 9)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.CIN     net (fanout=1)        0.135   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CMUX    Tcinc                 0.279   u_core/GND_6_o_GND_6_o_sub_181_OUT<16>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_xor<16>
+    SLICE_X9Y47.D3       net (fanout=34)       2.529   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<15>_mand
+    SLICE_X9Y47.D        Tilo                  0.259   u_core/lfsr_o<15>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.BMUX     Tcinb                 0.310   u_core/GND_6_o_GND_6_o_sub_183_OUT<18>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_xor<18>
+    SLICE_X6Y48.A3       net (fanout=1)        0.662   u_core/GND_6_o_GND_6_o_sub_183_OUT<17>
+    SLICE_X6Y48.BMUX     Topab                 0.570   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_lutdi8
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.C4      net (fanout=16)       1.955   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_6_dpot
+                                                       u_core/ones_count_6
+    -------------------------------------------------  ---------------------------
+    Total                                     10.128ns (3.036ns logic, 7.092ns route)
+                                                       (30.0% logic, 70.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.094ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      10.128ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CMUX    Tcinc                 0.279   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X9Y45.D3       net (fanout=34)       2.483   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<7>_mand
+    SLICE_X9Y45.D        Tilo                  0.259   u_core/lfsr_o<7>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.C4      net (fanout=16)       1.955   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_6_dpot
+                                                       u_core/ones_count_6
+    -------------------------------------------------  ---------------------------
+    Total                                     10.128ns (3.014ns logic, 7.114ns route)
+                                                       (29.8% logic, 70.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/ones_count_4 (SLICE_X21Y54.A6), 18286 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     21.258ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_4 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      9.964ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.BMUX    Topab                 0.532   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X9Y44.D3       net (fanout=34)       2.110   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<2>_mand
+    SLICE_X9Y44.D        Tilo                  0.259   u_core/lfsr_o<3>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.CX       net (fanout=1)        0.803   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<2>_mand1
+    SLICE_X8Y44.COUT     Tcxcy                 0.117   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<3>
+    SLICE_X8Y45.COUT     Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.A6      net (fanout=16)       1.778   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_4_dpot
+                                                       u_core/ones_count_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.964ns (2.894ns logic, 7.070ns route)
+                                                       (29.0% logic, 71.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.271ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_4 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      9.951ns (Levels of Logic = 9)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.CIN     net (fanout=1)        0.135   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X12Y32.COUT    Tbyp                  0.093   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>
+    SLICE_X12Y33.CMUX    Tcinc                 0.279   u_core/GND_6_o_GND_6_o_sub_181_OUT<16>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_xor<16>
+    SLICE_X9Y47.D3       net (fanout=34)       2.529   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<15>_mand
+    SLICE_X9Y47.D        Tilo                  0.259   u_core/lfsr_o<15>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<15>_mand1
+    SLICE_X8Y47.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>
+    SLICE_X8Y48.BMUX     Tcinb                 0.310   u_core/GND_6_o_GND_6_o_sub_183_OUT<18>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_xor<18>
+    SLICE_X6Y48.A3       net (fanout=1)        0.662   u_core/GND_6_o_GND_6_o_sub_183_OUT<17>
+    SLICE_X6Y48.BMUX     Topab                 0.570   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_lutdi8
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.A6      net (fanout=16)       1.778   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_4_dpot
+                                                       u_core/ones_count_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.951ns (3.036ns logic, 6.915ns route)
+                                                       (30.5% logic, 69.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     21.271ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               n_log2_1_1 (FF)
+  Destination:          u_core/ones_count_4 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      9.951ns (Levels of Logic = 8)
+  Clock Path Skew:      0.007ns (0.659 - 0.652)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: n_log2_1_1 to u_core/ones_count_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y34.DQ      Tcko                  0.476   n_log2_1_1
+                                                       n_log2_1_1
+    SLICE_X12Y30.A2      net (fanout=12)       1.505   n_log2_1_1
+    SLICE_X12Y30.COUT    Topcya                0.474   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CIN     net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>
+    SLICE_X12Y31.CMUX    Tcinc                 0.279   u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>
+    SLICE_X9Y45.D3       net (fanout=34)       2.483   u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<7>_mand
+    SLICE_X9Y45.D        Tilo                  0.259   u_core/lfsr_o<7>
+                                                       u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.DX       net (fanout=1)        0.297   u_core/lfsr_o[16]_GND_6_o_and_181_OUT<7>_mand1
+    SLICE_X8Y45.COUT     Tdxcy                 0.109   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.CIN      net (fanout=1)        0.003   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<7>
+    SLICE_X8Y46.BMUX     Tcinb                 0.310   u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+                                                       u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<11>
+    SLICE_X6Y47.A3       net (fanout=1)        0.865   u_core/GND_6_o_GND_6_o_sub_183_OUT<9>
+    SLICE_X6Y47.COUT     Topcya                0.495   u_core/Mcompar__n0571_cy<7>
+                                                       u_core/Mcompar__n0571_lutdi4
+                                                       u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.CIN      net (fanout=1)        0.003   u_core/Mcompar__n0571_cy<7>
+    SLICE_X6Y48.BMUX     Tcinb                 0.239   u_core/out_do<6>
+                                                       u_core/Mcompar__n0571_cy<9>
+    SLICE_X21Y54.A6      net (fanout=16)       1.778   u_core/_n0571
+    SLICE_X21Y54.CLK     Tas                   0.373   u_core/ones_count<7>
+                                                       u_core/ones_count_4_dpot
+                                                       u_core/ones_count_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.951ns (3.014ns logic, 6.937ns route)
+                                                       (30.3% logic, 69.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point por<7>_inv_shift4 (SLICE_X13Y43.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.406ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               por<7>_inv_shift3 (FF)
+  Destination:          por<7>_inv_shift4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.406ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: por<7>_inv_shift3 to por<7>_inv_shift4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y43.CQ      Tcko                  0.198   por<7>_inv_shift4
+                                                       por<7>_inv_shift3
+    SLICE_X13Y43.DX      net (fanout=3)        0.149   por<7>_inv_shift3
+    SLICE_X13Y43.CLK     Tckdi       (-Th)    -0.059   por<7>_inv_shift4
+                                                       por<7>_inv_shift4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.406ns (0.257ns logic, 0.149ns route)
+                                                       (63.3% logic, 36.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/cyc_start_4 (SLICE_X15Y51.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.407ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_core/cyc_free_4 (FF)
+  Destination:          u_core/cyc_start_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.409ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.043 - 0.041)
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_core/cyc_free_4 to u_core/cyc_start_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y51.AQ      Tcko                  0.200   u_core/cyc_free<7>
+                                                       u_core/cyc_free_4
+    SLICE_X15Y51.AX      net (fanout=4)        0.150   u_core/cyc_free<4>
+    SLICE_X15Y51.CLK     Tckdi       (-Th)    -0.059   u_core/cyc_start<7>
+                                                       u_core/cyc_start_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.409ns (0.259ns logic, 0.150ns route)
+                                                       (63.3% logic, 36.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/cyc_start_6 (SLICE_X15Y51.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_core/cyc_free_6 (FF)
+  Destination:          u_core/cyc_start_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.417ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.043 - 0.041)
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_core/cyc_free_6 to u_core/cyc_start_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y51.CQ      Tcko                  0.200   u_core/cyc_free<7>
+                                                       u_core/cyc_free_6
+    SLICE_X15Y51.CX      net (fanout=4)        0.158   u_core/cyc_free<6>
+    SLICE_X15Y51.CLK     Tckdi       (-Th)    -0.059   u_core/cyc_start<7>
+                                                       u_core/cyc_start_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.417ns (0.259ns logic, 0.158ns route)
+                                                       (62.1% logic, 37.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 28.584ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y2.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 29.851ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: u_core/lfsr_o_161/CLK
+  Logical resource: u_core/Mshreg_lfsr_o_16/CLK
+  Location pin: SLICE_X4Y43.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 29.851ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: u_core/lfsr_o_161/CLK
+  Logical resource: u_core/Mshreg_lfsr_h_15_439/CLK
+  Location pin: SLICE_X4Y43.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   10.240|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 720900 paths, 0 nets, and 9659 connections
+
+Design statistics:
+   Minimum period:  10.240ns{1}   (Maximum frequency:  97.656MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Aug  1 06:39:49 2026 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 426 MB
+
+
+

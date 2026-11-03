@@ -1,0 +1,1931 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: papilio_logic_learn_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "papilio_logic_learn_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "papilio_logic_learn_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : papilio_logic_learn_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/work/rtl/uart_tx.v" into library work
+Parsing module <uart_tx>.
+Analyzing Verilog file "/work/rtl/uart_rx.v" into library work
+Parsing module <uart_rx>.
+Analyzing Verilog file "/work/rtl/logic663_train_core.v" into library work
+Parsing module <logic663_train_core>.
+Analyzing Verilog file "/work/rtl/papilio_logic_learn_top.v" into library work
+Parsing module <papilio_logic_learn_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <papilio_logic_learn_top>.
+
+Elaborating module <uart_rx(CLKS_PER_BIT=278)>.
+
+Elaborating module <uart_tx(CLKS_PER_BIT=278)>.
+
+Elaborating module <logic663_train_core>.
+WARNING:HDLCompiler:1127 - "/work/rtl/papilio_logic_learn_top.v" Line 55: Assignment to epoch_done ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/work/rtl/papilio_logic_learn_top.v" Line 56: Assignment to eval_done ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <papilio_logic_learn_top>.
+    Related source file is "/work/rtl/papilio_logic_learn_top.v".
+        CLKS_PER_BIT = 278
+INFO:Xst:3210 - "/work/rtl/papilio_logic_learn_top.v" line 50: Output port <epoch_done> of the instance <u_core> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/work/rtl/papilio_logic_learn_top.v" line 50: Output port <eval_done> of the instance <u_core> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <enable_train>.
+    Found 8-bit register for signal <tx_data>.
+    Found 2-bit register for signal <pstate>.
+    Found 64-bit register for signal <reply>.
+    Found 3-bit register for signal <reply_len>.
+    Found 3-bit register for signal <reply_idx>.
+    Found 16-bit register for signal <pause>.
+    Found 1-bit register for signal <eval_pulse>.
+    Found 1-bit register for signal <tx_send>.
+    Found 8-bit register for signal <por>.
+    Found finite state machine <FSM_0> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 7                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit subtractor for signal <pause[15]_GND_1_o_sub_26_OUT> created at line 131.
+    Found 8-bit adder for signal <por[7]_GND_1_o_add_1_OUT> created at line 27.
+    Found 3-bit adder for signal <reply_idx[2]_GND_1_o_add_28_OUT> created at line 136.
+    Found 120-bit shifter logical right for signal <n0097> created at line 134
+    Found 3-bit comparator greater for signal <reply_idx[2]_reply_len[2]_LessThan_27_o> created at line 133
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 105 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  13 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <papilio_logic_learn_top> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "/work/rtl/uart_rx.v".
+        CLKS_PER_BIT = 278
+    Found 1-bit register for signal <rx_q>.
+    Found 1-bit register for signal <rx_d>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit register for signal <bit_idx>.
+    Found 16-bit register for signal <cnt>.
+    Found 8-bit register for signal <data>.
+    Found 1-bit register for signal <valid>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <cnt[15]_GND_2_o_add_6_OUT> created at line 59.
+    Found 3-bit adder for signal <bit_idx[2]_GND_2_o_add_12_OUT> created at line 69.
+    Found 16-bit 3-to-1 multiplexer for signal <_n0096> created at line 44.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  30 D-type flip-flop(s).
+	inferred  15 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "/work/rtl/uart_tx.v".
+        CLKS_PER_BIT = 278
+    Found 1-bit register for signal <tx>.
+    Found 16-bit register for signal <cnt>.
+    Found 3-bit register for signal <bit_idx>.
+    Found 8-bit register for signal <sh>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <busy>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_idx[2]_GND_4_o_add_10_OUT> created at line 61.
+    Found 16-bit adder for signal <cnt[15]_GND_4_o_add_18_OUT> created at line 72.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_idx[2]_sh[7]_Mux_7_o> created at line 55.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <logic663_train_core>.
+    Related source file is "/work/rtl/logic663_train_core.v".
+        W_BITS = 8
+        ACC_W = 16
+        T_MAX = 12
+        EE_MIN = 3
+        N_FWD = 12
+        EPOCH_DWELL = 8000000
+    Register <eval_done> equivalent to <epoch_done> has been removed
+WARNING:Xst:3012 - Available block RAM resources offer a maximum of two write ports. You are apparently describing a RAM with 7 separate write ports for signal <w_ij>. The RAM will be expanded on registers.
+INFO:Xst:3019 - HDL ADVISOR - 336 flip-flops were inferred for signal <w_ij>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+WARNING:Xst:3012 - Available block RAM resources offer a maximum of two write ports. You are apparently describing a RAM with 6 separate write ports for signal <w_ik>. The RAM will be expanded on registers.
+    Found 16-bit register for signal <epoch_id>.
+    Found 16-bit register for signal <update_count>.
+    Found 7-bit register for signal <correct_cnt>.
+    Found 8-bit register for signal <last_mean_passes>.
+    Found 6-bit register for signal <pat>.
+    Found 32-bit register for signal <dwell_cnt>.
+    Found 3-bit register for signal <upd_k>.
+    Found 3-bit register for signal <upd_j>.
+    Found 4-bit register for signal <st>.
+    Found 32-bit register for signal <lfsr>.
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <epoch_done>.
+    Found 1-bit register for signal <phase_eval>.
+    Found 1-bit register for signal <eval_only>.
+    Found 7-bit register for signal <corr_acc>.
+    Found 12-bit register for signal <pass_sum>.
+    Found 96-bit register for signal <n1687[95:0]>.
+    Found 224-bit register for signal <n1665[223:0]>.
+    Found 3-bit register for signal <gate_p>.
+    Found 4-bit register for signal <passes_used>.
+    Found 3-bit register for signal <pred>.
+    Found 6-bit register for signal <n1685[5:0]>.
+    Found 224-bit register for signal <n1678[223:0]>.
+    Found 96-bit register for signal <n1674[95:0][95:0]>.
+    Found 3-bit register for signal <idx>.
+    Found 48-bit register for signal <n1677[47:0]>.
+    Found 3-bit register for signal <obits>.
+    Found 1-bit register for signal <votes1<0><3>>.
+    Found 1-bit register for signal <votes1<0><2>>.
+    Found 1-bit register for signal <votes1<0><1>>.
+    Found 1-bit register for signal <votes1<0><0>>.
+    Found 1-bit register for signal <votes1<1><3>>.
+    Found 1-bit register for signal <votes1<1><2>>.
+    Found 1-bit register for signal <votes1<1><1>>.
+    Found 1-bit register for signal <votes1<1><0>>.
+    Found 1-bit register for signal <votes1<2><3>>.
+    Found 1-bit register for signal <votes1<2><2>>.
+    Found 1-bit register for signal <votes1<2><1>>.
+    Found 1-bit register for signal <votes1<2><0>>.
+    Found 4-bit register for signal <tpass>.
+    Found 48-bit register for signal <n1675[47:0][47:0]>.
+    Found 6-bit register for signal <hbits>.
+    Found 96-bit register for signal <n1676[95:0]>.
+    Found 8-bit register for signal <w_ij_ff_0>.
+    Found 8-bit register for signal <w_ij_ff_1>.
+    Found 8-bit register for signal <w_ij_ff_2>.
+    Found 8-bit register for signal <w_ij_ff_3>.
+    Found 8-bit register for signal <w_ij_ff_4>.
+    Found 8-bit register for signal <w_ij_ff_5>.
+    Found 8-bit register for signal <w_ij_ff_6>.
+    Found 8-bit register for signal <w_ij_ff_7>.
+    Found 8-bit register for signal <w_ij_ff_8>.
+    Found 8-bit register for signal <w_ij_ff_9>.
+    Found 8-bit register for signal <w_ij_ff_10>.
+    Found 8-bit register for signal <w_ij_ff_11>.
+    Found 8-bit register for signal <w_ij_ff_12>.
+    Found 8-bit register for signal <w_ij_ff_13>.
+    Found 8-bit register for signal <w_ij_ff_14>.
+    Found 8-bit register for signal <w_ij_ff_15>.
+    Found 8-bit register for signal <w_ij_ff_16>.
+    Found 8-bit register for signal <w_ij_ff_17>.
+    Found 8-bit register for signal <w_ij_ff_18>.
+    Found 8-bit register for signal <w_ij_ff_19>.
+    Found 8-bit register for signal <w_ij_ff_20>.
+    Found 8-bit register for signal <w_ij_ff_21>.
+    Found 8-bit register for signal <w_ij_ff_22>.
+    Found 8-bit register for signal <w_ij_ff_23>.
+    Found 8-bit register for signal <w_ij_ff_24>.
+    Found 8-bit register for signal <w_ij_ff_25>.
+    Found 8-bit register for signal <w_ij_ff_26>.
+    Found 8-bit register for signal <w_ij_ff_27>.
+    Found 8-bit register for signal <w_ij_ff_28>.
+    Found 8-bit register for signal <w_ij_ff_29>.
+    Found 8-bit register for signal <w_ij_ff_30>.
+    Found 8-bit register for signal <w_ij_ff_31>.
+    Found 8-bit register for signal <w_ij_ff_32>.
+    Found 8-bit register for signal <w_ij_ff_33>.
+    Found 8-bit register for signal <w_ij_ff_34>.
+    Found 8-bit register for signal <w_ij_ff_35>.
+    Found 8-bit register for signal <w_ij_ff_36>.
+    Found 8-bit register for signal <w_ij_ff_37>.
+    Found 8-bit register for signal <w_ij_ff_38>.
+    Found 8-bit register for signal <w_ij_ff_39>.
+    Found 8-bit register for signal <w_ij_ff_40>.
+    Found 8-bit register for signal <w_ij_ff_41>.
+    Found 8-bit register for signal <n1742>.
+    Found 8-bit register for signal <n1746>.
+    Found 8-bit register for signal <n1750>.
+    Found 8-bit register for signal <n1754>.
+    Found 8-bit register for signal <n1758>.
+    Found 8-bit register for signal <n1762>.
+    Found 8-bit register for signal <n1766>.
+    Found 8-bit register for signal <n1770>.
+    Found 8-bit register for signal <n1774>.
+    Found 8-bit register for signal <n1778>.
+    Found 8-bit register for signal <n1782>.
+    Found 8-bit register for signal <n1786>.
+    Found 8-bit register for signal <n1790>.
+    Found 8-bit register for signal <n1794>.
+    Found 8-bit register for signal <n1798>.
+    Found 8-bit register for signal <n1802>.
+    Found 8-bit register for signal <n1806>.
+    Found 8-bit register for signal <n1810>.
+    Found 8-bit register for signal <w_ik_ff_18>.
+    Found 8-bit register for signal <w_ik_ff_19>.
+    Found 8-bit register for signal <w_ik_ff_20>.
+    Found 8-bit register for signal <w_ik_ff_21>.
+    Found 8-bit register for signal <w_ik_ff_22>.
+    Found 8-bit register for signal <w_ik_ff_23>.
+    Found finite state machine <FSM_3> for signal <st>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 26                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 6                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_60_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_63_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_66_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_69_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_72_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_171_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_175_OUT> created at line 107.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_179_OUT> created at line 107.
+    Found 4-bit subtractor for signal <tpass[3]_votes1[0][3]_sub_183_OUT> created at line 124.
+    Found 4-bit subtractor for signal <tpass[3]_votes1[1][3]_sub_184_OUT> created at line 124.
+    Found 4-bit subtractor for signal <tpass[3]_votes1[2][3]_sub_185_OUT> created at line 124.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_306_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_392_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_479_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_566_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_653_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_740_OUT> created at line 292.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_793_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_820_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_848_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_876_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_904_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[2]_upd_k[1]_sub_932_OUT> created at line 302.
+    Found 16-bit subtractor for signal <upd_k[1]_unary_minus_943_OUT> created at line 306.
+    Found 16-bit subtractor for signal <wjk_snap[0][7]_unary_minus_963_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[7][7]_unary_minus_967_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[14][7]_unary_minus_972_OUT> created at line 334.
+    Found 16-bit subtractor for signal <wjk_snap[1][7]_unary_minus_977_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[8][7]_unary_minus_981_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[15][7]_unary_minus_986_OUT> created at line 334.
+    Found 16-bit subtractor for signal <wjk_snap[2][7]_unary_minus_991_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[9][7]_unary_minus_995_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[16][7]_unary_minus_1000_OUT> created at line 334.
+    Found 16-bit subtractor for signal <wjk_snap[3][7]_unary_minus_1005_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[10][7]_unary_minus_1009_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[17][7]_unary_minus_1014_OUT> created at line 334.
+    Found 16-bit subtractor for signal <wjk_snap[4][7]_unary_minus_1019_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[11][7]_unary_minus_1023_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[18][7]_unary_minus_1028_OUT> created at line 334.
+    Found 16-bit subtractor for signal <wjk_snap[5][7]_unary_minus_1033_OUT> created at line 324.
+    Found 16-bit subtractor for signal <wjk_snap[12][7]_unary_minus_1037_OUT> created at line 329.
+    Found 16-bit subtractor for signal <wjk_snap[19][7]_unary_minus_1042_OUT> created at line 334.
+    Found 16-bit subtractor for signal <upd_j[2]_unary_minus_1049_OUT> created at line 345.
+    Found 16-bit subtractor for signal <upd_j[2]_unary_minus_1057_OUT> created at line 348.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1094_OUT> created at line 363.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1121_OUT> created at line 363.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1149_OUT> created at line 363.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1177_OUT> created at line 363.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1205_OUT> created at line 363.
+    Found 16-bit subtractor for signal <upd_j[2]_GND_6_o_sub_1233_OUT> created at line 363.
+    Found 32-bit subtractor for signal <dwell_cnt[31]_GND_6_o_sub_1263_OUT> created at line 409.
+    Found 16-bit adder for signal <acc_h[0][15]_GND_6_o_add_14_OUT[15:0]> created at line 187.
+    Found 4-bit adder for signal <n3016[1:4]> created at line 188.
+    Found 16-bit adder for signal <acc_h[1][15]_GND_6_o_add_21_OUT[15:0]> created at line 187.
+    Found 5-bit adder for signal <n3021[1:5]> created at line 188.
+    Found 16-bit adder for signal <acc_h[2][15]_GND_6_o_add_28_OUT[15:0]> created at line 187.
+    Found 6-bit adder for signal <n2592> created at line 188.
+    Found 16-bit adder for signal <acc_h[3][15]_BUS_0008_add_35_OUT[15:0]> created at line 187.
+    Found 6-bit adder for signal <n2596> created at line 188.
+    Found 16-bit adder for signal <acc_h[4][15]_BUS_0011_add_42_OUT[15:0]> created at line 187.
+    Found 6-bit adder for signal <PWR_5_o_GND_6_o_add_45_OUT> created at line 188.
+    Found 16-bit adder for signal <acc_h[5][15]_PWR_5_o_add_49_OUT[15:0]> created at line 187.
+    Found 16-bit adder for signal <acc_o[0][15]_idx[2]_add_78_OUT[15:0]> created at line 212.
+    Found 16-bit adder for signal <acc_o[1][15]_BUS_0619_add_85_OUT[15:0]> created at line 212.
+    Found 16-bit adder for signal <acc_o[2][15]_BUS_0622_add_92_OUT[15:0]> created at line 212.
+    Found 3-bit adder for signal <idx[2]_GND_6_o_add_93_OUT> created at line 216.
+    Found 16-bit adder for signal <n3054> created at line 223.
+    Found 16-bit adder for signal <n3057> created at line 223.
+    Found 16-bit adder for signal <n3060> created at line 223.
+    Found 16-bit adder for signal <n3063> created at line 223.
+    Found 16-bit adder for signal <n3066> created at line 223.
+    Found 16-bit adder for signal <acc_o[0][15]_GND_6_o_add_120_OUT> created at line 223.
+    Found 16-bit adder for signal <n3072> created at line 223.
+    Found 16-bit adder for signal <n3075> created at line 223.
+    Found 16-bit adder for signal <n3078> created at line 223.
+    Found 16-bit adder for signal <n3081> created at line 223.
+    Found 16-bit adder for signal <n3084> created at line 223.
+    Found 16-bit adder for signal <acc_o[1][15]_GND_6_o_add_144_OUT> created at line 223.
+    Found 16-bit adder for signal <n3090> created at line 223.
+    Found 16-bit adder for signal <n3093> created at line 223.
+    Found 16-bit adder for signal <n3096> created at line 223.
+    Found 16-bit adder for signal <n3099> created at line 223.
+    Found 16-bit adder for signal <n3102> created at line 223.
+    Found 16-bit adder for signal <acc_o[2][15]_GND_6_o_add_168_OUT> created at line 223.
+    Found 4-bit adder for signal <votes1[0][3]_GND_6_o_add_172_OUT> created at line 239.
+    Found 4-bit adder for signal <votes1[1][3]_GND_6_o_add_176_OUT> created at line 239.
+    Found 4-bit adder for signal <votes1[2][3]_GND_6_o_add_180_OUT> created at line 239.
+    Found 4-bit adder for signal <tpass[3]_GND_6_o_add_181_OUT> created at line 243.
+    Found 7-bit adder for signal <n2676> created at line 283.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_224_OUT> created at line 283.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_265_OUT> created at line 288.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_348_OUT> created at line 288.
+    Found 7-bit adder for signal <n2703> created at line 292.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_435_OUT> created at line 288.
+    Found 7-bit adder for signal <n2718> created at line 292.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_522_OUT> created at line 288.
+    Found 7-bit adder for signal <n2733> created at line 292.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_609_OUT> created at line 288.
+    Found 7-bit adder for signal <n2748> created at line 292.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_696_OUT> created at line 288.
+    Found 7-bit adder for signal <n2763> created at line 292.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_781_OUT> created at line 298.
+    Found 6-bit adder for signal <n2286> created at line 298.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_805_OUT> created at line 298.
+    Found 6-bit adder for signal <n2297> created at line 298.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_833_OUT> created at line 298.
+    Found 6-bit adder for signal <n2308> created at line 298.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_861_OUT> created at line 298.
+    Found 6-bit adder for signal <n2319> created at line 298.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_889_OUT> created at line 298.
+    Found 6-bit adder for signal <n2330> created at line 298.
+    Found 16-bit adder for signal <upd_k[2]_upd_k[1]_add_917_OUT> created at line 298.
+    Found 16-bit adder for signal <update_count[15]_GND_6_o_add_939_OUT> created at line 305.
+    Found 3-bit adder for signal <upd_k[2]_GND_6_o_add_955_OUT> created at line 312.
+    Found 16-bit adder for signal <n3176> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_974_OUT> created at line 322.
+    Found 16-bit adder for signal <n3182> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_988_OUT> created at line 322.
+    Found 16-bit adder for signal <n3188> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_1002_OUT> created at line 322.
+    Found 16-bit adder for signal <n3194> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_1016_OUT> created at line 322.
+    Found 16-bit adder for signal <n3200> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_1030_OUT> created at line 322.
+    Found 16-bit adder for signal <n3206> created at line 322.
+    Found 16-bit adder for signal <GND_6_o_GND_6_o_add_1044_OUT> created at line 322.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1070_OUT> created at line 353.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1076_OUT> created at line 352.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1082_OUT> created at line 358.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1101_OUT> created at line 358.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1106_OUT> created at line 358.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1129_OUT> created at line 358.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1134_OUT> created at line 358.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1157_OUT> created at line 358.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1162_OUT> created at line 358.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1185_OUT> created at line 358.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1190_OUT> created at line 358.
+    Found 6-bit adder for signal <upd_j[2]_GND_6_o_add_1213_OUT> created at line 358.
+    Found 16-bit adder for signal <upd_j[2]_GND_6_o_add_1218_OUT> created at line 358.
+    Found 3-bit adder for signal <upd_j[2]_GND_6_o_add_1242_OUT> created at line 369.
+    Found 7-bit adder for signal <corr_acc[6]_GND_6_o_add_1246_OUT> created at line 376.
+    Found 12-bit adder for signal <pass_sum[11]_GND_6_o_add_1248_OUT> created at line 378.
+    Found 6-bit adder for signal <pat[5]_GND_6_o_add_1255_OUT> created at line 391.
+    Found 16-bit adder for signal <epoch_id[15]_GND_6_o_add_1260_OUT> created at line 400.
+    Found 4x2-bit multiplier for signal <n1830> created at line 129.
+    Found 3x3-bit multiplier for signal <upd_k[2]_PWR_5_o_MuLt_218_OUT> created at line 283.
+    Found 3x3-bit multiplier for signal <n2280[5:0]> created at line 297.
+    Found 3x7-bit multiplier for signal <upd_k[2]_PWR_5_o_MuLt_945_OUT> created at line 307.
+    Found 3x6-bit multiplier for signal <upd_j[2]_PWR_5_o_MuLt_1051_OUT> created at line 346.
+    Found 3x7-bit multiplier for signal <upd_j[2]_PWR_5_o_MuLt_1059_OUT> created at line 349.
+    Found 3x3-bit multiplier for signal <n3212> created at line 352.
+    Found 1-bit 6-to-1 multiplexer for signal <idx[2]_X_4_o_Mux_11_o> created at line 186.
+    Found 1-bit 6-to-1 multiplexer for signal <idx[2]_X_4_o_Mux_75_o> created at line 211.
+    Found 1-bit 8-to-1 multiplexer for signal <idx[2]_w_jk[7][7]_Mux_76_o> created at line 213.
+    Found 8-bit 8-to-1 multiplexer for signal <idx[2]_w_jk[7][7]_wide_mux_77_OUT> created at line 214.
+    Found 1-bit 16-to-1 multiplexer for signal <BUS_0619_w_jk[15][7]_Mux_82_o> created at line 213.
+    Found 8-bit 16-to-1 multiplexer for signal <BUS_0620_w_jk[15][7]_wide_mux_84_OUT> created at line 214.
+    Found 1-bit 28-to-1 multiplexer for signal <BUS_0622_X_4_o_Mux_89_o> created at line 213.
+    Found 8-bit 28-to-1 multiplexer for signal <BUS_0623_X_4_o_wide_mux_91_OUT> created at line 214.
+    Found 2-bit 3-to-1 multiplexer for signal <upd_k[1]_X_4_o_wide_mux_216_OUT> created at line 279.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_220_o> created at line 283.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_223_OUT> created at line 283.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_302_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_304_OUT> created at line 292.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_387_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_390_OUT> created at line 292.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_474_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_477_OUT> created at line 292.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_561_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_564_OUT> created at line 292.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_648_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_651_OUT> created at line 292.
+    Found 1-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_Mux_735_o> created at line 292.
+    Found 8-bit 28-to-1 multiplexer for signal <upd_k[2]_X_4_o_wide_mux_738_OUT> created at line 292.
+    Found 1-bit 3-to-1 multiplexer for signal <upd_k[1]_X_4_o_Mux_940_o> created at line 306.
+    Found 16-bit 3-to-1 multiplexer for signal <upd_k[1]_X_4_o_wide_mux_943_OUT> created at line 306.
+    Found 1-bit 6-to-1 multiplexer for signal <upd_j[2]_X_4_o_Mux_1046_o> created at line 345.
+    Found 16-bit 6-to-1 multiplexer for signal <upd_j[2]_X_4_o_wide_mux_1049_OUT> created at line 345.
+    Found 1-bit 6-to-1 multiplexer for signal <upd_j[2]_X_4_o_Mux_1054_o> created at line 348.
+    Found 16-bit 6-to-1 multiplexer for signal <upd_j[2]_X_4_o_wide_mux_1057_OUT> created at line 348.
+    Found 8-bit 42-to-1 multiplexer for signal <n1696> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n1700> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n1704> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n1708> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n1712> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n1716> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2434> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2441> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2452> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2463> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2474> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2485> created at line 0.
+    Found 8-bit 42-to-1 multiplexer for signal <n2496> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2275> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2287> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2298> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2309> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2320> created at line 0.
+    Found 8-bit 24-to-1 multiplexer for signal <n2331> created at line 0.
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_0> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_1> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_2> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_3> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_4> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_5> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_6> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_7> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_8> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_9> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_10> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_11> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_12> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_13> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_14> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_15> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_16> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_17> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_18> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_19> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_20> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_21> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_22> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_23> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_24> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_25> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_26> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_27> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_28> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_29> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_30> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_31> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_32> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_33> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_34> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_35> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_36> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_37> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_38> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_39> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_40> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ij_trst_41> created at line 152
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_0> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_1> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_2> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_3> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_4> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_5> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_6> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_7> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_8> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_9> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_10> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_11> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_12> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_13> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_14> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_15> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_16> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_17> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_18> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_19> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_20> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_21> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_22> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 8-bit tristate buffer for signal <w_ik_trst_23> created at line 157
+    Found 3-bit comparator greater for signal <n0018> created at line 184
+    Found 16-bit comparator greater for signal <acc_h[0][15]_GND_6_o_LessThan_58_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_h[1][15]_GND_6_o_LessThan_61_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_h[2][15]_GND_6_o_LessThan_64_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_h[3][15]_GND_6_o_LessThan_67_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_h[4][15]_GND_6_o_LessThan_70_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_h[5][15]_GND_6_o_LessThan_73_o> created at line 201
+    Found 16-bit comparator greater for signal <acc_o[0][15]_GND_6_o_LessThan_172_o> created at line 237
+    Found 16-bit comparator greater for signal <acc_o[1][15]_GND_6_o_LessThan_176_o> created at line 237
+    Found 16-bit comparator greater for signal <acc_o[2][15]_GND_6_o_LessThan_180_o> created at line 237
+    Found 4-bit comparator greater for signal <tpass[3]_votes1[0][3]_LessThan_186_o> created at line 125
+    Found 4-bit comparator greater for signal <tpass[3]_votes1[1][3]_LessThan_188_o> created at line 126
+    Found 4-bit comparator greater for signal <tpass[3]_votes1[2][3]_LessThan_190_o> created at line 127
+    Found 4-bit comparator lessequal for signal <n0348> created at line 128
+    Found 4-bit comparator lessequal for signal <n0351> created at line 129
+    Found 4-bit comparator lessequal for signal <n0354> created at line 130
+    Found 4-bit comparator lessequal for signal <n0357> created at line 131
+    Found 4-bit comparator lessequal for signal <n0360> created at line 262
+    Found 4-bit comparator lessequal for signal <n0363> created at line 264
+    Found 4-bit comparator lessequal for signal <n0365> created at line 265
+    Found 4-bit comparator lessequal for signal <n0367> created at line 266
+    Found 3-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_216_o> created at line 278
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_226_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_227_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0395> created at line 282
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_267_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_268_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_307_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_308_o> created at line 115
+    Found 6-bit comparator lessequal for signal <n0494> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_350_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_351_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_393_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_394_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0595> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_437_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_438_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_480_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_481_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0696> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_524_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_525_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_567_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_568_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0797> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_611_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_612_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_654_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_655_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0898> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_698_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_699_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_741_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_742_o> created at line 115
+    Found 7-bit comparator lessequal for signal <n0999> created at line 291
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_783_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_784_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_794_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_795_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_807_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_808_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_821_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_822_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_835_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_836_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_849_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_850_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_863_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_864_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_877_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_878_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_891_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_892_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_905_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_906_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_919_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_920_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_k[2]_GND_6_o_LessThan_933_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_k[2]_LessThan_934_o> created at line 115
+    Found 16-bit comparator lessequal for signal <n1174> created at line 309
+    Found 3-bit comparator lessequal for signal <n1179> created at line 311
+    Found 3-bit comparator greater for signal <upd_j[2]_PWR_5_o_LessThan_1046_o> created at line 344
+    Found 16-bit comparator lessequal for signal <n1303> created at line 347
+    Found 16-bit comparator greater for signal <GND_6_o_upd_j[2]_LessThan_1062_o> created at line 350
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1072_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1073_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1084_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1085_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1095_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1096_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1108_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1109_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1122_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1123_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1136_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1137_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1150_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1151_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1164_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1165_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1178_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1179_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1192_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1193_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1206_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1207_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1220_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1221_o> created at line 115
+    Found 32-bit comparator greater for signal <upd_j[2]_GND_6_o_LessThan_1234_o> created at line 114
+    Found 32-bit comparator greater for signal <PWR_5_o_upd_j[2]_LessThan_1235_o> created at line 115
+    Found 3-bit comparator equal for signal <pred[2]_tgt[2]_equal_1246_o> created at line 375
+    Summary:
+	inferred   7 Multiplier(s).
+	inferred 144 Adder/Subtractor(s).
+	inferred 1550 D-type flip-flop(s).
+	inferred 111 Comparator(s).
+	inferred 715 Multiplexer(s).
+	inferred 438 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <logic663_train_core> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 7
+ 3x3-bit multiplier                                    : 3
+ 4x2-bit multiplier                                    : 1
+ 6x3-bit multiplier                                    : 1
+ 7x3-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 151
+ 12-bit adder                                          : 1
+ 16-bit adder                                          : 63
+ 16-bit subtractor                                     : 40
+ 3-bit adder                                           : 6
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 5
+ 4-bit subtractor                                      : 3
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 15
+ 6-bit subtractor                                      : 8
+ 7-bit adder                                           : 7
+ 8-bit adder                                           : 1
+# Registers                                            : 119
+ 1-bit register                                        : 12
+ 12-bit register                                       : 1
+ 16-bit register                                       : 5
+ 224-bit register                                      : 2
+ 3-bit register                                        : 10
+ 32-bit register                                       : 2
+ 4-bit register                                        : 5
+ 48-bit register                                       : 2
+ 6-bit register                                        : 3
+ 64-bit register                                       : 1
+ 7-bit register                                        : 2
+ 8-bit register                                        : 71
+ 96-bit register                                       : 3
+# Comparators                                          : 112
+ 16-bit comparator greater                             : 10
+ 16-bit comparator lessequal                           : 2
+ 3-bit comparator equal                                : 1
+ 3-bit comparator greater                              : 4
+ 3-bit comparator lessequal                            : 1
+ 32-bit comparator greater                             : 76
+ 4-bit comparator greater                              : 3
+ 4-bit comparator lessequal                            : 8
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator lessequal                            : 6
+# Multiplexers                                         : 748
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 130
+ 1-bit 28-to-1 multiplexer                             : 8
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 6-to-1 multiplexer                              : 4
+ 1-bit 8-to-1 multiplexer                              : 2
+ 12-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 67
+ 16-bit 3-to-1 multiplexer                             : 2
+ 16-bit 6-to-1 multiplexer                             : 2
+ 2-bit 3-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 16
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 5
+ 48-bit 2-to-1 multiplexer                             : 2
+ 6-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 4
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 464
+ 8-bit 24-to-1 multiplexer                             : 6
+ 8-bit 28-to-1 multiplexer                             : 8
+ 8-bit 42-to-1 multiplexer                             : 13
+ 8-bit 8-to-1 multiplexer                              : 1
+ 96-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 1
+ 120-bit shifter logical right                         : 1
+# Tristates                                            : 438
+ 8-bit tristate buffer                                 : 438
+# FSMs                                                 : 4
+# Xors                                                 : 13
+ 1-bit xor2                                            : 1
+ 1-bit xor32                                           : 1
+ 32-bit xor2                                           : 11
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <last_mean_passes_6> in Unit <u_core> is equivalent to the following FF/Latch, which will be removed : <last_mean_passes_7> 
+WARNING:Xst:1710 - FF/Latch <last_mean_passes_6> (without init value) has a constant value of 0 in block <u_core>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_23> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_50> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_51> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_52> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_53> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_54> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_55> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_56> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_57> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_58> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_59> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_60> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_61> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_62> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_63> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <wjk_snap_27_0> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_1> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_2> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_3> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_4> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_5> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_6> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_7> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_8> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_9> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_10> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_11> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_12> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_13> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_14> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_15> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_16> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_17> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_18> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_19> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_20> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_21> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_22> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_23> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_24> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_25> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_26> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_27> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_28> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_29> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_30> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_31> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_32> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_33> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_34> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_35> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_36> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_37> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_38> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_39> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_40> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_41> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_42> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_43> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_44> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_45> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_46> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_47> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_48> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_49> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_50> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_51> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_52> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_53> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_54> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_55> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_56> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_57> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_58> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_59> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_60> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_61> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_62> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_63> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_112> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_113> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_114> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_115> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_116> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_117> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_118> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_119> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_168> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_169> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_170> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_171> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_172> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_173> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_174> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_175> of sequential type is unconnected in block <u_core>.
+WARNING:Xst:1710 - FF/Latch <reply_30> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_31> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <last_mean_passes<7:6>> (without init value) have a constant value of 0 in block <logic663_train_core>.
+
+Synthesizing (advanced) Unit <logic663_train_core>.
+The following registers are absorbed into counter <epoch_id>: 1 register on signal <epoch_id>.
+The following registers are absorbed into counter <dwell_cnt>: 1 register on signal <dwell_cnt>.
+The following registers are absorbed into counter <upd_k>: 1 register on signal <upd_k>.
+The following registers are absorbed into counter <upd_j>: 1 register on signal <upd_j>.
+The following registers are absorbed into counter <tpass>: 1 register on signal <tpass>.
+	The following adders/subtractors are grouped into adder tree <Madd_acc_o[0][15]_GND_6_o_add_120_OUT1> :
+ 	<Madd_n3054> in block <logic663_train_core>, 	<Madd_n3057> in block <logic663_train_core>, 	<Madd_n3060> in block <logic663_train_core>, 	<Madd_n3063> in block <logic663_train_core>, 	<Madd_n3066> in block <logic663_train_core>, 	<Madd_acc_o[0][15]_GND_6_o_add_120_OUT> in block <logic663_train_core>.
+	The following adders/subtractors are grouped into adder tree <Madd_acc_o[2][15]_GND_6_o_add_168_OUT1> :
+ 	<Madd_n3090> in block <logic663_train_core>, 	<Madd_n3093> in block <logic663_train_core>, 	<Madd_n3096> in block <logic663_train_core>, 	<Madd_n3099> in block <logic663_train_core>, 	<Madd_n3102> in block <logic663_train_core>, 	<Madd_acc_o[2][15]_GND_6_o_add_168_OUT> in block <logic663_train_core>.
+	The following adders/subtractors are grouped into adder tree <Madd_acc_o[1][15]_GND_6_o_add_144_OUT1> :
+ 	<Madd_n3072> in block <logic663_train_core>, 	<Madd_n3075> in block <logic663_train_core>, 	<Madd_n3078> in block <logic663_train_core>, 	<Madd_n3081> in block <logic663_train_core>, 	<Madd_n3084> in block <logic663_train_core>, 	<Madd_acc_o[1][15]_GND_6_o_add_144_OUT> in block <logic663_train_core>.
+Unit <logic663_train_core> synthesized (advanced).
+
+Synthesizing (advanced) Unit <papilio_logic_learn_top>.
+The following registers are absorbed into counter <por>: 1 register on signal <por>.
+Unit <papilio_logic_learn_top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <bit_idx>: 1 register on signal <bit_idx>.
+Unit <uart_tx> synthesized (advanced).
+WARNING:Xst:2677 - Node <wjk_snap_27_0> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_1> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_2> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_3> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_4> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_5> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_6> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_7> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_8> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_9> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_10> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_11> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_12> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_13> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_14> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_15> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_16> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_17> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_18> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_19> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_20> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_21> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_22> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_23> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_24> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_25> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_26> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_27> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_28> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_29> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_30> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_31> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_32> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_33> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_34> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_35> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_36> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_37> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_38> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_39> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_40> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_41> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_42> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_43> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_44> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_45> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_46> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_47> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_48> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_49> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_50> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_51> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_52> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_53> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_54> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_55> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_56> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_57> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_58> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_59> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_60> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_61> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_62> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_63> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_112> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_113> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_114> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_115> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_116> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_117> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_118> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_119> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_168> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_169> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_170> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_171> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_172> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_173> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_174> of sequential type is unconnected in block <logic663_train_core>.
+WARNING:Xst:2677 - Node <wjk_snap_27_175> of sequential type is unconnected in block <logic663_train_core>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 7
+ 3x3-bit multiplier                                    : 3
+ 4x2-bit multiplier                                    : 1
+ 6x3-bit multiplier                                    : 1
+ 7x3-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 126
+ 12-bit adder                                          : 1
+ 16-bit adder                                          : 44
+ 16-bit subtractor                                     : 40
+ 3-bit adder                                           : 3
+ 4-bit adder                                           : 4
+ 4-bit subtractor                                      : 3
+ 5-bit adder                                           : 6
+ 6-bit adder                                           : 10
+ 6-bit subtractor                                      : 8
+ 7-bit adder                                           : 7
+# Adder Trees                                          : 3
+ 16-bit / 7-inputs adder tree                          : 3
+# Counters                                             : 7
+ 16-bit up counter                                     : 1
+ 3-bit up counter                                      : 3
+ 32-bit down counter                                   : 1
+ 4-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 1563
+ Flip-Flops                                            : 1563
+# Comparators                                          : 112
+ 16-bit comparator greater                             : 10
+ 16-bit comparator lessequal                           : 2
+ 3-bit comparator equal                                : 1
+ 3-bit comparator greater                              : 4
+ 3-bit comparator lessequal                            : 1
+ 32-bit comparator greater                             : 76
+ 4-bit comparator greater                              : 3
+ 4-bit comparator lessequal                            : 8
+ 6-bit comparator lessequal                            : 1
+ 7-bit comparator lessequal                            : 6
+# Multiplexers                                         : 789
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 130
+ 1-bit 28-to-1 multiplexer                             : 8
+ 1-bit 3-to-1 multiplexer                              : 19
+ 1-bit 6-to-1 multiplexer                              : 36
+ 1-bit 8-to-1 multiplexer                              : 2
+ 12-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 67
+ 16-bit 3-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 13
+ 4-bit 2-to-1 multiplexer                              : 4
+ 48-bit 2-to-1 multiplexer                             : 2
+ 6-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 4
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 464
+ 8-bit 24-to-1 multiplexer                             : 6
+ 8-bit 28-to-1 multiplexer                             : 8
+ 8-bit 42-to-1 multiplexer                             : 13
+ 8-bit 8-to-1 multiplexer                              : 1
+ 96-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 1
+ 120-bit shifter logical right                         : 1
+# FSMs                                                 : 4
+# Xors                                                 : 13
+ 1-bit xor2                                            : 1
+ 1-bit xor32                                           : 1
+ 32-bit xor2                                           : 11
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <reply_23> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_50> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_51> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_52> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_53> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_54> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_55> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_56> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_57> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_58> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_59> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_60> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_61> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_62> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_63> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <pstate[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 01    | 1
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_rx/FSM_1> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+ 011   | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_tx/FSM_2> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_core/FSM_3> on signal <st[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1011  | 1011
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1100  | 1100
+ 1101  | 1101
+-------------------
+WARNING:Xst:2040 - Unit logic663_train_core: 528 multi-source signals are replaced by logic (pull-up yes): w_ij_trst_0<0>, w_ij_trst_0<1>, w_ij_trst_0<2>, w_ij_trst_0<3>, w_ij_trst_0<4>, w_ij_trst_0<5>, w_ij_trst_0<6>, w_ij_trst_0<7>, w_ij_trst_10<0>, w_ij_trst_10<1>, w_ij_trst_10<2>, w_ij_trst_10<3>, w_ij_trst_10<4>, w_ij_trst_10<5>, w_ij_trst_10<6>, w_ij_trst_10<7>, w_ij_trst_11<0>, w_ij_trst_11<1>, w_ij_trst_11<2>, w_ij_trst_11<3>, w_ij_trst_11<4>, w_ij_trst_11<5>, w_ij_trst_11<6>, w_ij_trst_11<7>, w_ij_trst_12<0>, w_ij_trst_12<1>, w_ij_trst_12<2>, w_ij_trst_12<3>, w_ij_trst_12<4>, w_ij_trst_12<5>, w_ij_trst_12<6>, w_ij_trst_12<7>, w_ij_trst_13<0>, w_ij_trst_13<1>, w_ij_trst_13<2>, w_ij_trst_13<3>, w_ij_trst_13<4>, w_ij_trst_13<5>, w_ij_trst_13<6>, w_ij_trst_13<7>, w_ij_trst_14<0>, w_ij_trst_14<1>, w_ij_trst_14<2>, w_ij_trst_14<3>, w_ij_trst_14<4>, w_ij_trst_14<5>, w_ij_trst_14<6>, w_ij_trst_14<7>, w_ij_trst_15<0>, w_ij_trst_15<1>, w_ij_trst_15<2>, w_ij_trst_15<3>, w_ij_trst_15<4>, w_ij_trst_15<5>, w_ij_trst_15<6>, w_ij_trst_15<7>, w_ij_trst_16<0>, w_ij_trst_16<1>, w_ij_trst_16<2>, w_ij_trst_16<3>, w_ij_trst_16<4>, w_ij_trst_16<5>, w_ij_trst_16<6>, w_ij_trst_16<7>, w_ij_trst_17<0>, w_ij_trst_17<1>, w_ij_trst_17<2>, w_ij_trst_17<3>, w_ij_trst_17<4>, w_ij_trst_17<5>, w_ij_trst_17<6>, w_ij_trst_17<7>, w_ij_trst_18<0>, w_ij_trst_18<1>, w_ij_trst_18<2>, w_ij_trst_18<3>, w_ij_trst_18<4>, w_ij_trst_18<5>, w_ij_trst_18<6>, w_ij_trst_18<7>, w_ij_trst_19<0>, w_ij_trst_19<1>, w_ij_trst_19<2>, w_ij_trst_19<3>, w_ij_trst_19<4>, w_ij_trst_19<5>, w_ij_trst_19<6>, w_ij_trst_19<7>, w_ij_trst_1<0>, w_ij_trst_1<1>, w_ij_trst_1<2>, w_ij_trst_1<3>, w_ij_trst_1<4>, w_ij_trst_1<5>, w_ij_trst_1<6>, w_ij_trst_1<7>, w_ij_trst_20<0>, w_ij_trst_20<1>, w_ij_trst_20<2>, w_ij_trst_20<3>, w_ij_trst_20<4>, w_ij_trst_20<5>, w_ij_trst_20<6>, w_ij_trst_20<7>, w_ij_trst_21<0>, w_ij_trst_21<1>, w_ij_trst_21<2>, w_ij_trst_21<3>, w_ij_trst_21<4>, w_ij_trst_21<5>, w_ij_trst_21<6>, w_ij_trst_21<7>, w_ij_trst_22<0>, w_ij_trst_22<1>, w_ij_trst_22<2>, w_ij_trst_22<3>, w_ij_trst_22<4>, w_ij_trst_22<5>, w_ij_trst_22<6>, w_ij_trst_22<7>, w_ij_trst_23<0>, w_ij_trst_23<1>, w_ij_trst_23<2>, w_ij_trst_23<3>, w_ij_trst_23<4>, w_ij_trst_23<5>, w_ij_trst_23<6>, w_ij_trst_23<7>, w_ij_trst_24<0>, w_ij_trst_24<1>, w_ij_trst_24<2>, w_ij_trst_24<3>, w_ij_trst_24<4>, w_ij_trst_24<5>, w_ij_trst_24<6>, w_ij_trst_24<7>, w_ij_trst_25<0>, w_ij_trst_25<1>, w_ij_trst_25<2>, w_ij_trst_25<3>, w_ij_trst_25<4>, w_ij_trst_25<5>, w_ij_trst_25<6>, w_ij_trst_25<7>, w_ij_trst_26<0>, w_ij_trst_26<1>, w_ij_trst_26<2>, w_ij_trst_26<3>, w_ij_trst_26<4>, w_ij_trst_26<5>, w_ij_trst_26<6>, w_ij_trst_26<7>, w_ij_trst_27<0>, w_ij_trst_27<1>, w_ij_trst_27<2>, w_ij_trst_27<3>, w_ij_trst_27<4>, w_ij_trst_27<5>, w_ij_trst_27<6>, w_ij_trst_27<7>, w_ij_trst_28<0>, w_ij_trst_28<1>, w_ij_trst_28<2>, w_ij_trst_28<3>, w_ij_trst_28<4>, w_ij_trst_28<5>, w_ij_trst_28<6>, w_ij_trst_28<7>, w_ij_trst_29<0>, w_ij_trst_29<1>, w_ij_trst_29<2>, w_ij_trst_29<3>, w_ij_trst_29<4>, w_ij_trst_29<5>, w_ij_trst_29<6>, w_ij_trst_29<7>, w_ij_trst_2<0>, w_ij_trst_2<1>, w_ij_trst_2<2>, w_ij_trst_2<3>, w_ij_trst_2<4>, w_ij_trst_2<5>, w_ij_trst_2<6>, w_ij_trst_2<7>, w_ij_trst_30<0>, w_ij_trst_30<1>, w_ij_trst_30<2>, w_ij_trst_30<3>, w_ij_trst_30<4>, w_ij_trst_30<5>, w_ij_trst_30<6>, w_ij_trst_30<7>, w_ij_trst_31<0>, w_ij_trst_31<1>, w_ij_trst_31<2>, w_ij_trst_31<3>, w_ij_trst_31<4>, w_ij_trst_31<5>, w_ij_trst_31<6>, w_ij_trst_31<7>, w_ij_trst_32<0>, w_ij_trst_32<1>, w_ij_trst_32<2>, w_ij_trst_32<3>, w_ij_trst_32<4>, w_ij_trst_32<5>, w_ij_trst_32<6>, w_ij_trst_32<7>, w_ij_trst_33<0>, w_ij_trst_33<1>, w_ij_trst_33<2>, w_ij_trst_33<3>, w_ij_trst_33<4>, w_ij_trst_33<5>, w_ij_trst_33<6>, w_ij_trst_33<7>, w_ij_trst_34<0>, w_ij_trst_34<1>, w_ij_trst_34<2>, w_ij_trst_34<3>, w_ij_trst_34<4>, w_ij_trst_34<5>, w_ij_trst_34<6>, w_ij_trst_34<7>, w_ij_trst_35<0>, w_ij_trst_35<1>, w_ij_trst_35<2>, w_ij_trst_35<3>, w_ij_trst_35<4>, w_ij_trst_35<5>, w_ij_trst_35<6>, w_ij_trst_35<7>, w_ij_trst_36<0>, w_ij_trst_36<1>, w_ij_trst_36<2>, w_ij_trst_36<3>, w_ij_trst_36<4>, w_ij_trst_36<5>, w_ij_trst_36<6>, w_ij_trst_36<7>, w_ij_trst_37<0>, w_ij_trst_37<1>, w_ij_trst_37<2>, w_ij_trst_37<3>, w_ij_trst_37<4>, w_ij_trst_37<5>, w_ij_trst_37<6>, w_ij_trst_37<7>, w_ij_trst_38<0>, w_ij_trst_38<1>, w_ij_trst_38<2>, w_ij_trst_38<3>, w_ij_trst_38<4>, w_ij_trst_38<5>, w_ij_trst_38<6>, w_ij_trst_38<7>, w_ij_trst_39<0>, w_ij_trst_39<1>, w_ij_trst_39<2>, w_ij_trst_39<3>, w_ij_trst_39<4>, w_ij_trst_39<5>, w_ij_trst_39<6>, w_ij_trst_39<7>, w_ij_trst_3<0>, w_ij_trst_3<1>, w_ij_trst_3<2>, w_ij_trst_3<3>, w_ij_trst_3<4>, w_ij_trst_3<5>, w_ij_trst_3<6>, w_ij_trst_3<7>, w_ij_trst_40<0>, w_ij_trst_40<1>, w_ij_trst_40<2>, w_ij_trst_40<3>, w_ij_trst_40<4>, w_ij_trst_40<5>, w_ij_trst_40<6>, w_ij_trst_40<7>, w_ij_trst_41<0>, w_ij_trst_41<1>, w_ij_trst_41<2>, w_ij_trst_41<3>, w_ij_trst_41<4>, w_ij_trst_41<5>, w_ij_trst_41<6>, w_ij_trst_41<7>, w_ij_trst_4<0>, w_ij_trst_4<1>, w_ij_trst_4<2>, w_ij_trst_4<3>, w_ij_trst_4<4>, w_ij_trst_4<5>, w_ij_trst_4<6>, w_ij_trst_4<7>, w_ij_trst_5<0>, w_ij_trst_5<1>, w_ij_trst_5<2>, w_ij_trst_5<3>, w_ij_trst_5<4>, w_ij_trst_5<5>, w_ij_trst_5<6>, w_ij_trst_5<7>, w_ij_trst_6<0>, w_ij_trst_6<1>, w_ij_trst_6<2>, w_ij_trst_6<3>, w_ij_trst_6<4>, w_ij_trst_6<5>, w_ij_trst_6<6>, w_ij_trst_6<7>, w_ij_trst_7<0>, w_ij_trst_7<1>, w_ij_trst_7<2>, w_ij_trst_7<3>, w_ij_trst_7<4>, w_ij_trst_7<5>, w_ij_trst_7<6>, w_ij_trst_7<7>, w_ij_trst_8<0>, w_ij_trst_8<1>, w_ij_trst_8<2>, w_ij_trst_8<3>, w_ij_trst_8<4>, w_ij_trst_8<5>, w_ij_trst_8<6>, w_ij_trst_8<7>, w_ij_trst_9<0>, w_ij_trst_9<1>, w_ij_trst_9<2>, w_ij_trst_9<3>, w_ij_trst_9<4>, w_ij_trst_9<5>, w_ij_trst_9<6>, w_ij_trst_9<7>, w_ik_trst_0<1>, w_ik_trst_0<2>, w_ik_trst_0<3>, w_ik_trst_0<4>, w_ik_trst_0<5>, w_ik_trst_0<6>, w_ik_trst_0<7>, w_ik_trst_0<8>, w_ik_trst_10<1>, w_ik_trst_10<2>, w_ik_trst_10<3>, w_ik_trst_10<4>, w_ik_trst_10<5>, w_ik_trst_10<6>, w_ik_trst_10<7>, w_ik_trst_10<8>, w_ik_trst_11<1>, w_ik_trst_11<2>, w_ik_trst_11<3>, w_ik_trst_11<4>, w_ik_trst_11<5>, w_ik_trst_11<6>, w_ik_trst_11<7>, w_ik_trst_11<8>, w_ik_trst_12<1>, w_ik_trst_12<2>, w_ik_trst_12<3>, w_ik_trst_12<4>, w_ik_trst_12<5>, w_ik_trst_12<6>, w_ik_trst_12<7>, w_ik_trst_12<8>, w_ik_trst_13<1>, w_ik_trst_13<2>, w_ik_trst_13<3>, w_ik_trst_13<4>, w_ik_trst_13<5>, w_ik_trst_13<6>, w_ik_trst_13<7>, w_ik_trst_13<8>, w_ik_trst_14<1>, w_ik_trst_14<2>, w_ik_trst_14<3>, w_ik_trst_14<4>, w_ik_trst_14<5>, w_ik_trst_14<6>, w_ik_trst_14<7>, w_ik_trst_14<8>, w_ik_trst_15<1>, w_ik_trst_15<2>, w_ik_trst_15<3>, w_ik_trst_15<4>, w_ik_trst_15<5>, w_ik_trst_15<6>, w_ik_trst_15<7>, w_ik_trst_15<8>, w_ik_trst_16<1>, w_ik_trst_16<2>, w_ik_trst_16<3>, w_ik_trst_16<4>, w_ik_trst_16<5>, w_ik_trst_16<6>, w_ik_trst_16<7>, w_ik_trst_16<8>, w_ik_trst_17<1>, w_ik_trst_17<2>, w_ik_trst_17<3>, w_ik_trst_17<4>, w_ik_trst_17<5>, w_ik_trst_17<6>, w_ik_trst_17<7>, w_ik_trst_17<8>, w_ik_trst_18<1>, w_ik_trst_18<2>, w_ik_trst_18<3>, w_ik_trst_18<4>, w_ik_trst_18<5>, w_ik_trst_18<6>, w_ik_trst_18<7>, w_ik_trst_18<8>, w_ik_trst_19<1>, w_ik_trst_19<2>, w_ik_trst_19<3>, w_ik_trst_19<4>, w_ik_trst_19<5>, w_ik_trst_19<6>, w_ik_trst_19<7>, w_ik_trst_19<8>, w_ik_trst_1<1>, w_ik_trst_1<2>, w_ik_trst_1<3>, w_ik_trst_1<4>, w_ik_trst_1<5>, w_ik_trst_1<6>, w_ik_trst_1<7>, w_ik_trst_1<8>, w_ik_trst_20<1>, w_ik_trst_20<2>, w_ik_trst_20<3>, w_ik_trst_20<4>, w_ik_trst_20<5>, w_ik_trst_20<6>, w_ik_trst_20<7>, w_ik_trst_20<8>, w_ik_trst_21<1>, w_ik_trst_21<2>, w_ik_trst_21<3>, w_ik_trst_21<4>, w_ik_trst_21<5>, w_ik_trst_21<6>, w_ik_trst_21<7>, w_ik_trst_21<8>, w_ik_trst_22<1>, w_ik_trst_22<2>, w_ik_trst_22<3>, w_ik_trst_22<4>, w_ik_trst_22<5>, w_ik_trst_22<6>, w_ik_trst_22<7>, w_ik_trst_22<8>, w_ik_trst_23<1>, w_ik_trst_23<2>, w_ik_trst_23<3>, w_ik_trst_23<4>, w_ik_trst_23<5>, w_ik_trst_23<6>, w_ik_trst_23<7>, w_ik_trst_23<8>, w_ik_trst_2<1>, w_ik_trst_2<2>, w_ik_trst_2<3>, w_ik_trst_2<4>, w_ik_trst_2<5>, w_ik_trst_2<6>, w_ik_trst_2<7>, w_ik_trst_2<8>, w_ik_trst_3<1>, w_ik_trst_3<2>, w_ik_trst_3<3>, w_ik_trst_3<4>, w_ik_trst_3<5>, w_ik_trst_3<6>, w_ik_trst_3<7>, w_ik_trst_3<8>, w_ik_trst_4<1>, w_ik_trst_4<2>, w_ik_trst_4<3>, w_ik_trst_4<4>, w_ik_trst_4<5>, w_ik_trst_4<6>, w_ik_trst_4<7>, w_ik_trst_4<8>, w_ik_trst_5<1>, w_ik_trst_5<2>, w_ik_trst_5<3>, w_ik_trst_5<4>, w_ik_trst_5<5>, w_ik_trst_5<6>, w_ik_trst_5<7>, w_ik_trst_5<8>, w_ik_trst_6<1>, w_ik_trst_6<2>, w_ik_trst_6<3>, w_ik_trst_6<4>, w_ik_trst_6<5>, w_ik_trst_6<6>, w_ik_trst_6<7>, w_ik_trst_6<8>, w_ik_trst_7<1>, w_ik_trst_7<2>, w_ik_trst_7<3>, w_ik_trst_7<4>, w_ik_trst_7<5>, w_ik_trst_7<6>, w_ik_trst_7<7>, w_ik_trst_7<8>, w_ik_trst_8<1>, w_ik_trst_8<2>, w_ik_trst_8<3>, w_ik_trst_8<4>, w_ik_trst_8<5>, w_ik_trst_8<6>, w_ik_trst_8<7>, w_ik_trst_8<8>, w_ik_trst_9<1>, w_ik_trst_9<2>, w_ik_trst_9<3>, w_ik_trst_9<4>, w_ik_trst_9<5>, w_ik_trst_9<6>, w_ik_trst_9<7>, w_ik_trst_9<8>.
+
+Optimizing unit <papilio_logic_learn_top> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <logic663_train_core> ...
+WARNING:Xst:1710 - FF/Latch <reply_30> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <reply_31> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <u_core/epoch_done> of sequential type is unconnected in block <papilio_logic_learn_top>.
+WARNING:Xst:1293 - FF/Latch <u_core/w_jk_27_30> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_31> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_32> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_33> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_34> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_35> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_36> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_37> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_38> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_39> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_40> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_41> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_42> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_43> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_44> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_45> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_46> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_47> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_48> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_49> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_50> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_51> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_52> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_53> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_54> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_55> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_8> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_7> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_6> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_0> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_2> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_3> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_5> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_6> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_7> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_8> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_9> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_10> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_11> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_12> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_13> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_14> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_15> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_16> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_17> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_18> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_19> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_20> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_21> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_22> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_23> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_24> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_25> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_26> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_27> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_28> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/w_jk_27_29> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_7> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_6> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_8> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_7> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_6> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14505_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/upd_k_2> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_23> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_24> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_25> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_26> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_27> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_28> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_29> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_30> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <u_core/dwell_cnt_31> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_15> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_14> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_13> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_12> (without init value) has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14455_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_8> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_7> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_6> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14485_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_8> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_7> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_6> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14465_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_8> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_7> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_6> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_5> has a constant value of 1 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_4> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_3> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_2> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14475_1> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <u_core/_o14495_8> has a constant value of 0 in block <papilio_logic_learn_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_78> in Unit <papilio_logic_learn_top> is equivalent to the following 4 FFs/Latches, which will be removed : <u_core/back_j_5_77> <u_core/back_j_5_76> <u_core/back_j_5_75> <u_core/back_j_5_74> 
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_93> in Unit <papilio_logic_learn_top> is equivalent to the following 3 FFs/Latches, which will be removed : <u_core/back_j_5_92> <u_core/back_j_5_91> <u_core/back_j_5_90> 
+INFO:Xst:2261 - The FF/Latch <reply_len_0> in Unit <papilio_logic_learn_top> is equivalent to the following FF/Latch, which will be removed : <reply_len_2> 
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_14> in Unit <papilio_logic_learn_top> is equivalent to the following 4 FFs/Latches, which will be removed : <u_core/back_j_5_13> <u_core/back_j_5_12> <u_core/back_j_5_11> <u_core/back_j_5_10> 
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_30> in Unit <papilio_logic_learn_top> is equivalent to the following 4 FFs/Latches, which will be removed : <u_core/back_j_5_29> <u_core/back_j_5_28> <u_core/back_j_5_27> <u_core/back_j_5_26> 
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_46> in Unit <papilio_logic_learn_top> is equivalent to the following 4 FFs/Latches, which will be removed : <u_core/back_j_5_45> <u_core/back_j_5_44> <u_core/back_j_5_43> <u_core/back_j_5_42> 
+INFO:Xst:2261 - The FF/Latch <u_core/back_j_5_62> in Unit <papilio_logic_learn_top> is equivalent to the following 4 FFs/Latches, which will be removed : <u_core/back_j_5_61> <u_core/back_j_5_60> <u_core/back_j_5_59> <u_core/back_j_5_58> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block papilio_logic_learn_top, actual ratio is 151.
+Optimizing block <papilio_logic_learn_top> to meet ratio 100 (+ 5) of 1430 slices :
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1481
+ Flip-Flops                                            : 1481
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : papilio_logic_learn_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 6300
+#      GND                         : 1
+#      INV                         : 22
+#      LUT1                        : 77
+#      LUT2                        : 350
+#      LUT3                        : 531
+#      LUT4                        : 767
+#      LUT5                        : 801
+#      LUT6                        : 2283
+#      MUXCY                       : 617
+#      MUXF7                       : 249
+#      MUXF8                       : 25
+#      VCC                         : 1
+#      XORCY                       : 576
+# FlipFlops/Latches                : 1481
+#      FDC                         : 78
+#      FDCE                        : 162
+#      FDE                         : 1224
+#      FDP                         : 16
+#      FDPE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      IBUF                        : 1
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1481  out of  11440    12%  
+ Number of Slice LUTs:                 4831  out of   5720    84%  
+    Number used as Logic:              4831  out of   5720    84%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   5183
+   Number with an unused Flip Flop:    3702  out of   5183    71%  
+   Number with an unused LUT:           352  out of   5183     6%  
+   Number of fully used LUT-FF pairs:  1129  out of   5183    21%  
+   Number of unique control sets:        64
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of    102     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1481  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 17.456ns (Maximum Frequency: 57.286MHz)
+   Minimum input arrival time before clock: 2.083ns
+   Maximum output required time after clock: 5.138ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 17.456ns (frequency: 57.286MHz)
+  Total number of paths / destination ports: 18538645 / 3124
+-------------------------------------------------------------------------
+Delay:               17.456ns (Levels of Logic = 12)
+  Source:            u_core/upd_j_1 (FF)
+  Destination:       u_core/_o13627_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: u_core/upd_j_1 to u_core/_o13627_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           350   0.525   2.550  u_core/upd_j_1 (u_core/upd_j_1)
+     LUT2:I0->O          241   0.250   2.428  u_core/Madd_upd_j[2]_GND_6_o_add_1076_OUT_cy<1>1 (u_core/Madd_upd_j[2]_GND_6_o_add_1076_OUT_cy<1>)
+     LUT6:I5->O            2   0.254   1.002  u_core/Mmux_n2496_13 (u_core/Mmux_n2452_13)
+     LUT6:I2->O            1   0.254   0.790  u_core/Mmux_n2496_7 (u_core/Mmux_n2496_7)
+     LUT5:I3->O            6   0.250   1.104  u_core/upd_j[2]_GND_6_o_add_1213_OUT<5>8 (u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<0>)
+     LUT5:I2->O            3   0.235   0.766  u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<2>11 (u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<2>)
+     LUT5:I4->O            3   0.254   0.766  u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<4>11 (u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<4>)
+     LUT5:I4->O            3   0.254   0.766  u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<6>11 (u_core/Madd_upd_j[2]_GND_6_o_add_1218_OUT_cy<6>)
+     LUT3:I2->O            7   0.254   1.018  u_core/Mmux_upd_j[2]_GND_6_o_mux_1222_OUT111 (u_core/Mmux_upd_j[2]_GND_6_o_mux_1222_OUT11)
+     LUT6:I4->O            5   0.250   0.841  u_core/_n3534<7>_SW0 (N416)
+     LUT3:I2->O           14   0.254   1.127  u_core/_n3534<7> (u_core/_n3534<7>)
+     LUT6:I5->O            1   0.254   0.682  u_core/w_ij_trst_24<1>LogicTrst2_SW0_SW0 (N2151)
+     LUT6:I5->O            1   0.254   0.000  u_core/w_ij_trst_24<1>LogicTrst4 (u_core/w_ij_trst_24<1>)
+     FDE:D                     0.074          u_core/_o13627_1
+    ----------------------------------------
+    Total                     17.456ns (3.616ns logic, 13.840ns route)
+                                       (20.7% logic, 79.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       u_rx/rx_d (FF)
+  Destination Clock: clk rising
+
+  Data Path: rx to u_rx/rx_d
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rx_IBUF (rx_IBUF)
+     FDP:D                     0.074          u_rx/rx_d
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.138ns (Levels of Logic = 2)
+  Source:            u_core/epoch_id_0 (FF)
+  Destination:       led (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u_core/epoch_id_0 to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   0.765  u_core/epoch_id_0 (u_core/epoch_id_0)
+     INV:I->O              1   0.255   0.681  u_core/Mcount_epoch_id_lut<0>_INV_0 (led_OBUF)
+     OBUF:I->O                 2.912          led_OBUF (led)
+    ----------------------------------------
+    Total                      5.138ns (3.692ns logic, 1.446ns route)
+                                       (71.9% logic, 28.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   17.456|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 60.00 secs
+Total CPU time to Xst completion: 58.13 secs
+ 
+--> 
+
+
+Total memory usage is 480104 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  320 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
+

@@ -1,0 +1,44 @@
+==== 31-07-2026 21:40:22.16 RESTORE COM ==== 
+--- enable all 0403:6010 nodes --- 
+Unknown USB Composite Device USB\VID_0403&PID_6010\5&1A60D403&0&9
+Unknown USB Serial Converter A USB\VID_0403&PID_6010&MI_00\8&2D7D15C3&0&0000
+Unknown USB Serial Converter A USB\VID_0403&PID_6010&MI_00\6&194C89CA&0&0000
+Unknown USB Serial Converter B USB\VID_0403&PID_6010&MI_01\8&2D7D15C3&0&0001
+Unknown USB Composite Device USB\VID_0403&PID_6010\7&19CD6259&0&1
+--- pnputil scan --- 
+Microsoft PnP Utility
+
+Scanning for device hardware changes.
+Scan complete.
+
+--- enable again after scan --- 
+Unknown USB Composite Device
+Unknown USB Serial Converter A
+Unknown USB Serial Converter A
+Unknown USB Serial Converter B
+Unknown USB Composite Device
+--- restart USB hubs --- 
+Generic USB Hub
+Generic USB Hub
+USB Root Hub (USB 3.0)
+Microsoft PnP Utility
+
+Scanning for device hardware changes.
+Scan complete.
+
+
+Status  Class FriendlyName           
+------  ----- ------------           
+Unknown Ports USB Serial Port (COM11)
+Unknown USB   USB Composite Device   
+Unknown USB   USB Serial Converter A 
+Unknown USB   USB Serial Converter A 
+Unknown USB   USB Serial Converter B 
+Unknown Ports USB Serial Port (COM3) 
+Unknown USB   USB Composite Device   
+Unknown Ports USB Serial Port (COM4) 
+Unknown Ports USB Serial Port (COM10)
+
+
+
+DONE 

@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "n_in": 784,
+    "hidden": 160,
+    "M": 3,
+    "T_max": 40,
+    "n_train": 10000,
+    "n_test": 2500,
+    "epochs": 40,
+    "pixel_threshold": 0.3,
+    "train_acc": 0.861,
+    "e_forward_stoch": 63860.0,
+    "e_forward_bp": 3307460.0,
+    "stoch_adds": 63605,
+    "bp_muls": 127210
+  },
+  "sweep": [
+    {
+      "theta": 0.45,
+      "acc": 0.8368,
+      "mean_passes": 1.72,
+      "mean_energy": 329517.6,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.957,
+      "relative_energy": 0.043
+    },
+    {
+      "theta": 0.55,
+      "acc": 0.8732,
+      "mean_passes": 4.6164,
+      "mean_energy": 884409.912,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.88459,
+      "relative_energy": 0.11541
+    },
+    {
+      "theta": 0.65,
+      "acc": 0.87,
+      "mean_passes": 7.452,
+      "mean_energy": 1427654.16,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.8137,
+      "relative_energy": 0.1863
+    },
+    {
+      "theta": 0.75,
+      "acc": 0.8832,
+      "mean_passes": 12.4036,
+      "mean_energy": 2376281.688,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.68991,
+      "relative_energy": 0.31009000000000003
+    },
+    {
+      "theta": 0.85,
+      "acc": 0.8892,
+      "mean_passes": 18.5168,
+      "mean_energy": 3547448.544,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.53708,
+      "relative_energy": 0.46292000000000005
+    },
+    {
+      "theta": 0.95,
+      "acc": 0.8892,
+      "mean_passes": 23.2432,
+      "mean_energy": 4452932.256,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.41891999999999996,
+      "relative_energy": 0.58108
+    },
+    {
+      "theta": 1.01,
+      "acc": 0.8964,
+      "mean_passes": 40.0,
+      "mean_energy": 7663200.0,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.0,
+      "relative_energy": 1.0
+    }
+  ],
+  "bp_rel_energy": 0.4316029856978808,
+  "fixed_budget_acc": 0.8964
+}

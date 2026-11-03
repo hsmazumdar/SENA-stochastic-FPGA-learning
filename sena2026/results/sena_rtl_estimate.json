@@ -1,0 +1,82 @@
+{
+  "estimate": {
+    "n_in": 784,
+    "n_hid": 160,
+    "n_out": 10,
+    "M": 3,
+    "w_bits": 16,
+    "detail": {
+      "member": {
+        "logic": 287240,
+        "weight_bits": 2035360,
+        "e_forward": 190730.05,
+        "hid": {
+          "n_in": 784,
+          "n_out": 160,
+          "neuron": {
+            "n_in": 784,
+            "w_bits": 16,
+            "acc_bits": 26,
+            "g_add": 728,
+            "g_acc_reg": 208,
+            "g_cmp": 312,
+            "g_lfsr": 296,
+            "g_ctrl": 120,
+            "total": 1664,
+            "e_pass": 1177.0
+          },
+          "total_logic": 266240,
+          "weight_bits": 2009600,
+          "e_pass": 188320.0
+        },
+        "out": {
+          "n_in": 160,
+          "n_out": 10,
+          "neuron": {
+            "n_in": 160,
+            "w_bits": 16,
+            "acc_bits": 26,
+            "g_add": 728,
+            "g_acc_reg": 208,
+            "g_cmp": 312,
+            "g_lfsr": 296,
+            "g_ctrl": 104,
+            "total": 1648,
+            "e_pass": 241.0
+          },
+          "total_logic": 16480,
+          "weight_bits": 25760,
+          "e_pass": 2410.0
+        }
+      },
+      "ensemble_M": 3,
+      "logic_M": 861720,
+      "weight_bits_M": 6106080,
+      "e_forward_M": 572190.1499999999,
+      "e_forward_bp": 3307460.0
+    },
+    "area_mm2_proxy": 0.172344,
+    "note": "structural estimate; not P&R"
+  },
+  "neuron_example": {
+    "n_in": 784,
+    "w_bits": 16,
+    "acc_bits": 26,
+    "g_add": 728,
+    "g_acc_reg": 208,
+    "g_cmp": 312,
+    "g_lfsr": 296,
+    "g_ctrl": 120,
+    "total": 1664,
+    "e_pass": 1177.0
+  },
+  "rtl_files": [
+    "lfsr32.v",
+    "stochastic_neuron.v",
+    "sena_layer.v",
+    "sena_early_exit.v",
+    "sena_tile.v"
+  ],
+  "synth_status": "yosys/vivado not found on host \u2014 structural estimate only",
+  "mnist_sweep_points": 7
+}

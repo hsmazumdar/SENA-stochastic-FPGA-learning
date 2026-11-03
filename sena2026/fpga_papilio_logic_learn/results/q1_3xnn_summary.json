@@ -1,0 +1,65 @@
+{
+  "summary": [
+    {
+      "n": 5,
+      "and_mean": 100.0,
+      "and_std": 0.0,
+      "or_mean": 100.0,
+      "or_std": 0.0,
+      "xor_mean": 96.875,
+      "xor_std": 1.913663861549358,
+      "joint_mean": 96.875,
+      "joint_std": 1.913663861549358,
+      "mean_passes_mean": 3.0,
+      "mean_passes_std": 0.0,
+      "epochs_mean": 24.0,
+      "epochs_std": 7.416198487095663,
+      "config": "skip_ee",
+      "skip": 1,
+      "early_exit": 1
+    },
+    {
+      "n": 5,
+      "and_mean": 100.0,
+      "and_std": 0.0,
+      "or_mean": 100.0,
+      "or_std": 0.0,
+      "xor_mean": 99.0625,
+      "xor_std": 2.0963137289060527,
+      "joint_mean": 99.0625,
+      "joint_std": 2.0963137289060527,
+      "mean_passes_mean": 32.0,
+      "mean_passes_std": 0.0,
+      "epochs_mean": 22.0,
+      "epochs_std": 10.36822067666386,
+      "config": "skip_fixedT",
+      "skip": 1,
+      "early_exit": 0
+    },
+    {
+      "n": 5,
+      "and_mean": 99.0625,
+      "and_std": 2.0963137289060527,
+      "or_mean": 99.6875,
+      "or_std": 0.6987712429686843,
+      "xor_mean": 96.5625,
+      "xor_std": 4.47431908227386,
+      "joint_mean": 95.625,
+      "joint_std": 5.568290525376707,
+      "mean_passes_mean": 3.0,
+      "mean_passes_std": 0.0,
+      "epochs_mean": 79.0,
+      "epochs_std": 2.23606797749979,
+      "config": "noskip_ee",
+      "skip": 0,
+      "early_exit": 1
+    }
+  ],
+  "seeds": [
+    7,
+    21,
+    42,
+    2026,
+    31415
+  ]
+}

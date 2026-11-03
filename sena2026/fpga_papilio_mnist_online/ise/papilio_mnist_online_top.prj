@@ -1,0 +1,4 @@
+verilog work "../rtl/uart_tx.v"
+verilog work "../rtl/uart_rx.v"
+verilog work "../rtl/mnist_online_core.v"
+verilog work "../rtl/papilio_mnist_online_top.v"

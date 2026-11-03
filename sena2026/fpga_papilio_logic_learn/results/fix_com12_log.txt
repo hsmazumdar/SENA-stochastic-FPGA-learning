@@ -1,0 +1,125 @@
+==== 31-07-2026 21:43:02.01 FIX COM12 ==== 
+--- remove ghost Unknown FTDI nodes only --- 
+REMOVE USB Serial Port (COM11) FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&1&2\0000
+Microsoft PnP Utility
+
+Removing device:          FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&1&2\0000
+Device removed successfully.
+
+REMOVE USB Composite Device USB\VID_0403&PID_6010\5&1A60D403&0&9
+Microsoft PnP Utility
+
+Removing device:          USB\VID_0403&PID_6010\5&1A60D403&0&9
+Device removed successfully.
+
+REMOVE USB Serial Converter A USB\VID_0403&PID_6010&MI_00\8&2D7D15C3&0&0000
+Microsoft PnP Utility
+
+Removing device:          USB\VID_0403&PID_6010&MI_00\8&2D7D15C3&0&0000
+Device removed successfully.
+
+REMOVE USB Serial Converter A USB\VID_0403&PID_6010&MI_00\6&194C89CA&0&0000
+Microsoft PnP Utility
+
+Removing device:          USB\VID_0403&PID_6010&MI_00\6&194C89CA&0&0000
+Device removed successfully.
+
+REMOVE USB Serial Converter B USB\VID_0403&PID_6010&MI_01\8&2D7D15C3&0&0001
+Microsoft PnP Utility
+
+Removing device:          USB\VID_0403&PID_6010&MI_01\8&2D7D15C3&0&0001
+Device removed successfully.
+
+REMOVE USB Serial Port (COM3) FTDIBUS\VID_0403+PID_6010+5&1A60D403&0&9&1\0000
+Microsoft PnP Utility
+
+Removing device:          FTDIBUS\VID_0403+PID_6010+5&1A60D403&0&9&1\0000
+Device removed successfully.
+
+REMOVE USB Composite Device USB\VID_0403&PID_6010\7&19CD6259&0&1
+Microsoft PnP Utility
+
+Removing device:          USB\VID_0403&PID_6010\7&19CD6259&0&1
+Device removed successfully.
+
+REMOVE USB Serial Port (COM4) FTDIBUS\VID_0403+PID_6010+5&1A60D403&0&9&2\0000
+Microsoft PnP Utility
+
+Removing device:          FTDIBUS\VID_0403+PID_6010+5&1A60D403&0&9&2\0000
+Device removed successfully.
+
+REMOVE USB Serial Port (COM10) FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&1&1\0000
+Microsoft PnP Utility
+
+Removing device:          FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&1&1\0000
+Device removed successfully.
+
+--- restart Error COM ports --- 
+RESTART FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&3&1\0000
+Microsoft PnP Utility
+
+Restarting device:         FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&3&1\0000
+Device restarted successfully.
+
+RESTART FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&3&2\0000
+Microsoft PnP Utility
+
+Restarting device:         FTDIBUS\VID_0403+PID_6010+7&19CD6259&0&3&2\0000
+Device restarted successfully.
+
+--- restart OK converters / composite --- 
+RESTART_OK USB Serial Converter B
+Microsoft PnP Utility
+
+Restarting device:         USB\VID_0403&PID_6010&MI_01\8&809B479&0&0001
+Device restarted successfully.
+
+RESTART_OK USB Serial Converter A
+Microsoft PnP Utility
+
+Restarting device:         USB\VID_0403&PID_6010&MI_00\8&809B479&0&0000
+Device restarted successfully.
+
+RESTART_OK USB Composite Device
+Microsoft PnP Utility
+
+Restarting device:         USB\VID_0403&PID_6010\7&19CD6259&0&3
+Device restarted successfully.
+
+Microsoft PnP Utility
+
+Scanning for device hardware changes.
+Scan complete.
+
+--- install libusb filter (JTAG) --- 
+
+libusb-win32 installer (v1.4.0.2)
+install-filter:[stop_libusb_devices] stopping devices..
+install-filter:[install_service] creating libusb0 service..
+install-filter:[start_libusb_devices] starting devices..
+install-filter:[insert_device_filter] inserting device upper filter VID_0403&PID_6010&REV_0500&MI_01..
+install-filter:[insert_device_filter] restarting device VID_0403&PID_6010&REV_0500&MI_01..
+install-filter:err [set_device_state] calling class installer failed
+install-filter:[insert_device_filter] inserting device upper filter VID_0403&PID_6010&REV_0500&MI_00..
+install-filter:[insert_device_filter] restarting device VID_0403&PID_6010&REV_0500&MI_00..
+install-filter:err [set_device_state] calling class installer failed
+install-filter:[insert_device_filter] inserting device upper filter VID_0403&PID_6010&REV_0500..
+install-filter:[insert_device_filter] restarting device VID_0403&PID_6010&REV_0500..
+install-filter:err [set_device_state] calling class installer failed
+filter=0 
+--- jtag --- 
+Could not access USB device 0403:6010.
+jtag=1 
+--- final devices --- 
+
+Status  FriendlyName           
+------  ------------           
+Unknown USB Serial Port (COM12)
+Unknown USB Serial Port (COM13)
+Unknown USB Serial Converter B 
+Unknown USB Serial Converter A 
+Unknown USB Composite Device   
+
+
+
+DONE 

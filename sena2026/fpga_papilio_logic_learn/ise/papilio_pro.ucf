@@ -1,0 +1,7 @@
+# =============================================================================
+# papilio_pro.ucf — Papilio Pro (Spartan-6 LX9, xc6slx9-2-tqg144)
+# =============================================================================
+NET "clk" LOC = "P94"  | IOSTANDARD = LVCMOS33 | PERIOD = 31.25ns;
+NET "rx"  LOC = "P101" | IOSTANDARD = LVCMOS33;
+NET "tx"  LOC = "P105" | IOSTANDARD = LVCMOS33;
+NET "led" LOC = "P134" | IOSTANDARD = LVCMOS33;

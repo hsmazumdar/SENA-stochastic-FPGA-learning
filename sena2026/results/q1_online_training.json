@@ -1,0 +1,1468 @@
+{
+  "profile": "full",
+  "config": {
+    "n_train": 10000,
+    "n_test": 2500,
+    "hidden": 160,
+    "max_samples": 10000,
+    "eval_every": 500,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "T_eval": 24,
+    "dataset_seed": 2026,
+    "threshold": 0.3
+  },
+  "elapsed_s": 1029.6708665000042,
+  "runs": [
+    {
+      "samples": 500,
+      "accuracy": 0.488,
+      "best_accuracy": 0.488,
+      "energy": 95702500.0,
+      "adds": 95407500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.3028,
+      "best_accuracy": 0.488,
+      "energy": 191405000.0,
+      "adds": 190815000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.4196,
+      "best_accuracy": 0.488,
+      "energy": 287107500.0,
+      "adds": 286222500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.4872,
+      "best_accuracy": 0.488,
+      "energy": 382810000.0,
+      "adds": 381630000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.5336,
+      "best_accuracy": 0.5336,
+      "energy": 478512500.0,
+      "adds": 477037500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.6476,
+      "best_accuracy": 0.6476,
+      "energy": 574215000.0,
+      "adds": 572445000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.3468,
+      "best_accuracy": 0.6476,
+      "energy": 669917500.0,
+      "adds": 667852500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.5684,
+      "best_accuracy": 0.6476,
+      "energy": 765620000.0,
+      "adds": 763260000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.4712,
+      "best_accuracy": 0.6476,
+      "energy": 861322500.0,
+      "adds": 858667500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.5224,
+      "best_accuracy": 0.6476,
+      "energy": 957025000.0,
+      "adds": 954075000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.5748,
+      "best_accuracy": 0.6476,
+      "energy": 1052727500.0,
+      "adds": 1049482500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.3992,
+      "best_accuracy": 0.6476,
+      "energy": 1148430000.0,
+      "adds": 1144890000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.614,
+      "best_accuracy": 0.6476,
+      "energy": 1244132500.0,
+      "adds": 1240297500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.6252,
+      "best_accuracy": 0.6476,
+      "energy": 1339835000.0,
+      "adds": 1335705000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.4844,
+      "best_accuracy": 0.6476,
+      "energy": 1435537500.0,
+      "adds": 1431112500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.38,
+      "best_accuracy": 0.6476,
+      "energy": 1531240000.0,
+      "adds": 1526520000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.638,
+      "best_accuracy": 0.6476,
+      "energy": 1626942500.0,
+      "adds": 1621927500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.7076,
+      "best_accuracy": 0.7076,
+      "energy": 1722645000.0,
+      "adds": 1717335000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.4772,
+      "best_accuracy": 0.7076,
+      "energy": 1818347500.0,
+      "adds": 1812742500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.5404,
+      "best_accuracy": 0.7076,
+      "energy": 1914050000.0,
+      "adds": 1908150000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 0
+    },
+    {
+      "samples": 500,
+      "accuracy": 0.3192,
+      "best_accuracy": 0.3192,
+      "energy": 3307460000.0,
+      "adds": 127210000,
+      "muls": 127210000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.3616,
+      "best_accuracy": 0.3616,
+      "energy": 6614920000.0,
+      "adds": 254420000,
+      "muls": 254420000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.6248,
+      "best_accuracy": 0.6248,
+      "energy": 9922380000.0,
+      "adds": 381630000,
+      "muls": 381630000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.6684,
+      "best_accuracy": 0.6684,
+      "energy": 13229840000.0,
+      "adds": 508840000,
+      "muls": 508840000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.782,
+      "best_accuracy": 0.782,
+      "energy": 16537300000.0,
+      "adds": 636050000,
+      "muls": 636050000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.7496,
+      "best_accuracy": 0.782,
+      "energy": 19844760000.0,
+      "adds": 763260000,
+      "muls": 763260000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.8084,
+      "best_accuracy": 0.8084,
+      "energy": 23152220000.0,
+      "adds": 890470000,
+      "muls": 890470000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.8172,
+      "best_accuracy": 0.8172,
+      "energy": 26459680000.0,
+      "adds": 1017680000,
+      "muls": 1017680000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.7992,
+      "best_accuracy": 0.8172,
+      "energy": 29767140000.0,
+      "adds": 1144890000,
+      "muls": 1144890000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.8136,
+      "best_accuracy": 0.8172,
+      "energy": 33074600000.0,
+      "adds": 1272100000,
+      "muls": 1272100000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.8584,
+      "best_accuracy": 0.8584,
+      "energy": 36382060000.0,
+      "adds": 1399310000,
+      "muls": 1399310000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.8604,
+      "best_accuracy": 0.8604,
+      "energy": 39689520000.0,
+      "adds": 1526520000,
+      "muls": 1526520000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.8708,
+      "best_accuracy": 0.8708,
+      "energy": 42996980000.0,
+      "adds": 1653730000,
+      "muls": 1653730000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.876,
+      "best_accuracy": 0.876,
+      "energy": 46304440000.0,
+      "adds": 1780940000,
+      "muls": 1780940000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.872,
+      "best_accuracy": 0.876,
+      "energy": 49611900000.0,
+      "adds": 1908150000,
+      "muls": 1908150000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.8676,
+      "best_accuracy": 0.876,
+      "energy": 52919360000.0,
+      "adds": 2035360000,
+      "muls": 2035360000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.8812,
+      "best_accuracy": 0.8812,
+      "energy": 56226820000.0,
+      "adds": 2162570000,
+      "muls": 2162570000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.8836,
+      "best_accuracy": 0.8836,
+      "energy": 59534280000.0,
+      "adds": 2289780000,
+      "muls": 2289780000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.8824,
+      "best_accuracy": 0.8836,
+      "energy": 62841740000.0,
+      "adds": 2416990000,
+      "muls": 2416990000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.8812,
+      "best_accuracy": 0.8836,
+      "energy": 66149200000.0,
+      "adds": 2544200000,
+      "muls": 2544200000,
+      "method": "real_bp_online",
+      "seed": 0
+    },
+    {
+      "samples": 500,
+      "accuracy": 0.3088,
+      "best_accuracy": 0.3088,
+      "energy": 95702500.0,
+      "adds": 95407500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.372,
+      "best_accuracy": 0.372,
+      "energy": 191405000.0,
+      "adds": 190815000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.2948,
+      "best_accuracy": 0.372,
+      "energy": 287107500.0,
+      "adds": 286222500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.5052,
+      "best_accuracy": 0.5052,
+      "energy": 382810000.0,
+      "adds": 381630000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.6352,
+      "best_accuracy": 0.6352,
+      "energy": 478512500.0,
+      "adds": 477037500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.5052,
+      "best_accuracy": 0.6352,
+      "energy": 574215000.0,
+      "adds": 572445000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.5732,
+      "best_accuracy": 0.6352,
+      "energy": 669917500.0,
+      "adds": 667852500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.62,
+      "best_accuracy": 0.6352,
+      "energy": 765620000.0,
+      "adds": 763260000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.4344,
+      "best_accuracy": 0.6352,
+      "energy": 861322500.0,
+      "adds": 858667500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.566,
+      "best_accuracy": 0.6352,
+      "energy": 957025000.0,
+      "adds": 954075000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.6676,
+      "best_accuracy": 0.6676,
+      "energy": 1052727500.0,
+      "adds": 1049482500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.6276,
+      "best_accuracy": 0.6676,
+      "energy": 1148430000.0,
+      "adds": 1144890000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.6768,
+      "best_accuracy": 0.6768,
+      "energy": 1244132500.0,
+      "adds": 1240297500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.6364,
+      "best_accuracy": 0.6768,
+      "energy": 1339835000.0,
+      "adds": 1335705000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.7152,
+      "best_accuracy": 0.7152,
+      "energy": 1435537500.0,
+      "adds": 1431112500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.742,
+      "best_accuracy": 0.742,
+      "energy": 1531240000.0,
+      "adds": 1526520000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.684,
+      "best_accuracy": 0.742,
+      "energy": 1626942500.0,
+      "adds": 1621927500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.598,
+      "best_accuracy": 0.742,
+      "energy": 1722645000.0,
+      "adds": 1717335000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.6844,
+      "best_accuracy": 0.742,
+      "energy": 1818347500.0,
+      "adds": 1812742500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.662,
+      "best_accuracy": 0.742,
+      "energy": 1914050000.0,
+      "adds": 1908150000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 1
+    },
+    {
+      "samples": 500,
+      "accuracy": 0.3768,
+      "best_accuracy": 0.3768,
+      "energy": 3307460000.0,
+      "adds": 127210000,
+      "muls": 127210000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.3932,
+      "best_accuracy": 0.3932,
+      "energy": 6614920000.0,
+      "adds": 254420000,
+      "muls": 254420000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.5408,
+      "best_accuracy": 0.5408,
+      "energy": 9922380000.0,
+      "adds": 381630000,
+      "muls": 381630000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.6932,
+      "best_accuracy": 0.6932,
+      "energy": 13229840000.0,
+      "adds": 508840000,
+      "muls": 508840000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.694,
+      "best_accuracy": 0.694,
+      "energy": 16537300000.0,
+      "adds": 636050000,
+      "muls": 636050000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.76,
+      "best_accuracy": 0.76,
+      "energy": 19844760000.0,
+      "adds": 763260000,
+      "muls": 763260000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.7904,
+      "best_accuracy": 0.7904,
+      "energy": 23152220000.0,
+      "adds": 890470000,
+      "muls": 890470000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.7892,
+      "best_accuracy": 0.7904,
+      "energy": 26459680000.0,
+      "adds": 1017680000,
+      "muls": 1017680000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.8176,
+      "best_accuracy": 0.8176,
+      "energy": 29767140000.0,
+      "adds": 1144890000,
+      "muls": 1144890000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.8216,
+      "best_accuracy": 0.8216,
+      "energy": 33074600000.0,
+      "adds": 1272100000,
+      "muls": 1272100000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.8656,
+      "best_accuracy": 0.8656,
+      "energy": 36382060000.0,
+      "adds": 1399310000,
+      "muls": 1399310000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.856,
+      "best_accuracy": 0.8656,
+      "energy": 39689520000.0,
+      "adds": 1526520000,
+      "muls": 1526520000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.8684,
+      "best_accuracy": 0.8684,
+      "energy": 42996980000.0,
+      "adds": 1653730000,
+      "muls": 1653730000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.8692,
+      "best_accuracy": 0.8692,
+      "energy": 46304440000.0,
+      "adds": 1780940000,
+      "muls": 1780940000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.8656,
+      "best_accuracy": 0.8692,
+      "energy": 49611900000.0,
+      "adds": 1908150000,
+      "muls": 1908150000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.868,
+      "best_accuracy": 0.8692,
+      "energy": 52919360000.0,
+      "adds": 2035360000,
+      "muls": 2035360000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.8656,
+      "best_accuracy": 0.8692,
+      "energy": 56226820000.0,
+      "adds": 2162570000,
+      "muls": 2162570000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.8784,
+      "best_accuracy": 0.8784,
+      "energy": 59534280000.0,
+      "adds": 2289780000,
+      "muls": 2289780000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.8768,
+      "best_accuracy": 0.8784,
+      "energy": 62841740000.0,
+      "adds": 2416990000,
+      "muls": 2416990000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.8884,
+      "best_accuracy": 0.8884,
+      "energy": 66149200000.0,
+      "adds": 2544200000,
+      "muls": 2544200000,
+      "method": "real_bp_online",
+      "seed": 1
+    },
+    {
+      "samples": 500,
+      "accuracy": 0.3992,
+      "best_accuracy": 0.3992,
+      "energy": 95702500.0,
+      "adds": 95407500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.4668,
+      "best_accuracy": 0.4668,
+      "energy": 191405000.0,
+      "adds": 190815000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.526,
+      "best_accuracy": 0.526,
+      "energy": 287107500.0,
+      "adds": 286222500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.5752,
+      "best_accuracy": 0.5752,
+      "energy": 382810000.0,
+      "adds": 381630000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.566,
+      "best_accuracy": 0.5752,
+      "energy": 478512500.0,
+      "adds": 477037500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.6588,
+      "best_accuracy": 0.6588,
+      "energy": 574215000.0,
+      "adds": 572445000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.5308,
+      "best_accuracy": 0.6588,
+      "energy": 669917500.0,
+      "adds": 667852500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.574,
+      "best_accuracy": 0.6588,
+      "energy": 765620000.0,
+      "adds": 763260000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.4932,
+      "best_accuracy": 0.6588,
+      "energy": 861322500.0,
+      "adds": 858667500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.5772,
+      "best_accuracy": 0.6588,
+      "energy": 957025000.0,
+      "adds": 954075000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.5916,
+      "best_accuracy": 0.6588,
+      "energy": 1052727500.0,
+      "adds": 1049482500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.6124,
+      "best_accuracy": 0.6588,
+      "energy": 1148430000.0,
+      "adds": 1144890000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.6456,
+      "best_accuracy": 0.6588,
+      "energy": 1244132500.0,
+      "adds": 1240297500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.4472,
+      "best_accuracy": 0.6588,
+      "energy": 1339835000.0,
+      "adds": 1335705000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.6364,
+      "best_accuracy": 0.6588,
+      "energy": 1435537500.0,
+      "adds": 1431112500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.5868,
+      "best_accuracy": 0.6588,
+      "energy": 1531240000.0,
+      "adds": 1526520000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.6292,
+      "best_accuracy": 0.6588,
+      "energy": 1626942500.0,
+      "adds": 1621927500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.5812,
+      "best_accuracy": 0.6588,
+      "energy": 1722645000.0,
+      "adds": 1717335000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.5648,
+      "best_accuracy": 0.6588,
+      "energy": 1818347500.0,
+      "adds": 1812742500.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.58,
+      "best_accuracy": 0.6588,
+      "energy": 1914050000.0,
+      "adds": 1908150000.0,
+      "muls": 0.0,
+      "method": "sena_online",
+      "seed": 2
+    },
+    {
+      "samples": 500,
+      "accuracy": 0.3388,
+      "best_accuracy": 0.3388,
+      "energy": 3307460000.0,
+      "adds": 127210000,
+      "muls": 127210000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 1000,
+      "accuracy": 0.3728,
+      "best_accuracy": 0.3728,
+      "energy": 6614920000.0,
+      "adds": 254420000,
+      "muls": 254420000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 1500,
+      "accuracy": 0.5896,
+      "best_accuracy": 0.5896,
+      "energy": 9922380000.0,
+      "adds": 381630000,
+      "muls": 381630000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 2000,
+      "accuracy": 0.6276,
+      "best_accuracy": 0.6276,
+      "energy": 13229840000.0,
+      "adds": 508840000,
+      "muls": 508840000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 2500,
+      "accuracy": 0.7528,
+      "best_accuracy": 0.7528,
+      "energy": 16537300000.0,
+      "adds": 636050000,
+      "muls": 636050000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 3000,
+      "accuracy": 0.7856,
+      "best_accuracy": 0.7856,
+      "energy": 19844760000.0,
+      "adds": 763260000,
+      "muls": 763260000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 3500,
+      "accuracy": 0.8044,
+      "best_accuracy": 0.8044,
+      "energy": 23152220000.0,
+      "adds": 890470000,
+      "muls": 890470000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 4000,
+      "accuracy": 0.8264,
+      "best_accuracy": 0.8264,
+      "energy": 26459680000.0,
+      "adds": 1017680000,
+      "muls": 1017680000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 4500,
+      "accuracy": 0.8316,
+      "best_accuracy": 0.8316,
+      "energy": 29767140000.0,
+      "adds": 1144890000,
+      "muls": 1144890000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 5000,
+      "accuracy": 0.8552,
+      "best_accuracy": 0.8552,
+      "energy": 33074600000.0,
+      "adds": 1272100000,
+      "muls": 1272100000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 5500,
+      "accuracy": 0.8448,
+      "best_accuracy": 0.8552,
+      "energy": 36382060000.0,
+      "adds": 1399310000,
+      "muls": 1399310000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 6000,
+      "accuracy": 0.8612,
+      "best_accuracy": 0.8612,
+      "energy": 39689520000.0,
+      "adds": 1526520000,
+      "muls": 1526520000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 6500,
+      "accuracy": 0.8552,
+      "best_accuracy": 0.8612,
+      "energy": 42996980000.0,
+      "adds": 1653730000,
+      "muls": 1653730000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 7000,
+      "accuracy": 0.8608,
+      "best_accuracy": 0.8612,
+      "energy": 46304440000.0,
+      "adds": 1780940000,
+      "muls": 1780940000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 7500,
+      "accuracy": 0.8704,
+      "best_accuracy": 0.8704,
+      "energy": 49611900000.0,
+      "adds": 1908150000,
+      "muls": 1908150000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 8000,
+      "accuracy": 0.8688,
+      "best_accuracy": 0.8704,
+      "energy": 52919360000.0,
+      "adds": 2035360000,
+      "muls": 2035360000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 8500,
+      "accuracy": 0.8792,
+      "best_accuracy": 0.8792,
+      "energy": 56226820000.0,
+      "adds": 2162570000,
+      "muls": 2162570000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 9000,
+      "accuracy": 0.856,
+      "best_accuracy": 0.8792,
+      "energy": 59534280000.0,
+      "adds": 2289780000,
+      "muls": 2289780000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 9500,
+      "accuracy": 0.8772,
+      "best_accuracy": 0.8792,
+      "energy": 62841740000.0,
+      "adds": 2416990000,
+      "muls": 2416990000,
+      "method": "real_bp_online",
+      "seed": 2
+    },
+    {
+      "samples": 10000,
+      "accuracy": 0.88,
+      "best_accuracy": 0.88,
+      "energy": 66149200000.0,
+      "adds": 2544200000,
+      "muls": 2544200000,
+      "method": "real_bp_online",
+      "seed": 2
+    }
+  ],
+  "sena_curve": [
+    {
+      "samples": 500,
+      "accuracy_mean": 0.39866666666666667,
+      "accuracy_std": 0.0896011904682819,
+      "energy_mean": 95702500.0
+    },
+    {
+      "samples": 1000,
+      "accuracy_mean": 0.38053333333333333,
+      "accuracy_std": 0.08233233467680443,
+      "energy_mean": 191405000.0
+    },
+    {
+      "samples": 1500,
+      "accuracy_mean": 0.41346666666666665,
+      "accuracy_std": 0.11572196564755255,
+      "energy_mean": 287107500.0
+    },
+    {
+      "samples": 2000,
+      "accuracy_mean": 0.5225333333333334,
+      "accuracy_std": 0.0464901423242964,
+      "energy_mean": 382810000.0
+    },
+    {
+      "samples": 2500,
+      "accuracy_mean": 0.5782666666666666,
+      "accuracy_std": 0.05189887603150318,
+      "energy_mean": 478512500.0
+    },
+    {
+      "samples": 3000,
+      "accuracy_mean": 0.6038666666666667,
+      "accuracy_std": 0.08563114698130193,
+      "energy_mean": 574215000.0
+    },
+    {
+      "samples": 3500,
+      "accuracy_mean": 0.48360000000000003,
+      "accuracy_std": 0.12035414409151024,
+      "energy_mean": 669917500.0
+    },
+    {
+      "samples": 4000,
+      "accuracy_mean": 0.5874666666666667,
+      "accuracy_std": 0.028313483242676685,
+      "energy_mean": 765620000.0
+    },
+    {
+      "samples": 4500,
+      "accuracy_mean": 0.46626666666666666,
+      "accuracy_std": 0.0297088090190996,
+      "energy_mean": 861322500.0
+    },
+    {
+      "samples": 5000,
+      "accuracy_mean": 0.5552,
+      "accuracy_std": 0.02895237468671614,
+      "energy_mean": 957025000.0
+    },
+    {
+      "samples": 5500,
+      "accuracy_mean": 0.6113333333333334,
+      "accuracy_std": 0.04944707608477302,
+      "energy_mean": 1052727500.0
+    },
+    {
+      "samples": 6000,
+      "accuracy_mean": 0.5464000000000001,
+      "accuracy_std": 0.12770528571676273,
+      "energy_mean": 1148430000.0
+    },
+    {
+      "samples": 6500,
+      "accuracy_mean": 0.6454666666666666,
+      "accuracy_std": 0.031400212313507245,
+      "energy_mean": 1244132500.0
+    },
+    {
+      "samples": 7000,
+      "accuracy_mean": 0.5696,
+      "accuracy_std": 0.10614932877790607,
+      "energy_mean": 1339835000.0
+    },
+    {
+      "samples": 7500,
+      "accuracy_mean": 0.612,
+      "accuracy_std": 0.11731871121010491,
+      "energy_mean": 1435537500.0
+    },
+    {
+      "samples": 8000,
+      "accuracy_mean": 0.5696,
+      "accuracy_std": 0.18161189388363308,
+      "energy_mean": 1531240000.0
+    },
+    {
+      "samples": 8500,
+      "accuracy_mean": 0.6504,
+      "accuracy_std": 0.02942923716306629,
+      "energy_mean": 1626942500.0
+    },
+    {
+      "samples": 9000,
+      "accuracy_mean": 0.6289333333333333,
+      "accuracy_std": 0.0686432322471293,
+      "energy_mean": 1722645000.0
+    },
+    {
+      "samples": 9500,
+      "accuracy_mean": 0.5754666666666667,
+      "accuracy_std": 0.10401102505664164,
+      "energy_mean": 1818347500.0
+    },
+    {
+      "samples": 10000,
+      "accuracy_mean": 0.5941333333333333,
+      "accuracy_std": 0.062019781790436324,
+      "energy_mean": 1914050000.0
+    }
+  ],
+  "bp_curve": [
+    {
+      "samples": 500,
+      "accuracy_mean": 0.3449333333333333,
+      "accuracy_std": 0.02928571893147468,
+      "energy_mean": 3307460000.0
+    },
+    {
+      "samples": 1000,
+      "accuracy_mean": 0.3758666666666666,
+      "accuracy_std": 0.016021652016360032,
+      "energy_mean": 6614920000.0
+    },
+    {
+      "samples": 1500,
+      "accuracy_mean": 0.5850666666666666,
+      "accuracy_std": 0.04218309297969196,
+      "energy_mean": 9922380000.0
+    },
+    {
+      "samples": 2000,
+      "accuracy_mean": 0.6630666666666668,
+      "accuracy_std": 0.033123606888944515,
+      "energy_mean": 13229840000.0
+    },
+    {
+      "samples": 2500,
+      "accuracy_mean": 0.7429333333333333,
+      "accuracy_std": 0.04482201839869929,
+      "energy_mean": 16537300000.0
+    },
+    {
+      "samples": 3000,
+      "accuracy_mean": 0.7650666666666667,
+      "accuracy_std": 0.018527097272193826,
+      "energy_mean": 19844760000.0
+    },
+    {
+      "samples": 3500,
+      "accuracy_mean": 0.8010666666666667,
+      "accuracy_std": 0.009451631252505225,
+      "energy_mean": 23152220000.0
+    },
+    {
+      "samples": 4000,
+      "accuracy_mean": 0.8109333333333334,
+      "accuracy_std": 0.01937558601264317,
+      "energy_mean": 26459680000.0
+    },
+    {
+      "samples": 4500,
+      "accuracy_mean": 0.8161333333333333,
+      "accuracy_std": 0.016249717946270115,
+      "energy_mean": 29767140000.0
+    },
+    {
+      "samples": 5000,
+      "accuracy_mean": 0.8301333333333334,
+      "accuracy_std": 0.022073815559013183,
+      "energy_mean": 33074600000.0
+    },
+    {
+      "samples": 5500,
+      "accuracy_mean": 0.8562666666666668,
+      "accuracy_std": 0.01056282790418048,
+      "energy_mean": 36382060000.0
+    },
+    {
+      "samples": 6000,
+      "accuracy_mean": 0.8592000000000001,
+      "accuracy_std": 0.0028000000000000086,
+      "energy_mean": 39689520000.0
+    },
+    {
+      "samples": 6500,
+      "accuracy_mean": 0.8647999999999999,
+      "accuracy_std": 0.008400000000000019,
+      "energy_mean": 42996980000.0
+    },
+    {
+      "samples": 7000,
+      "accuracy_mean": 0.8686666666666666,
+      "accuracy_std": 0.007614022152143587,
+      "energy_mean": 46304440000.0
+    },
+    {
+      "samples": 7500,
+      "accuracy_mean": 0.8693333333333334,
+      "accuracy_std": 0.0033306655991457833,
+      "energy_mean": 49611900000.0
+    },
+    {
+      "samples": 8000,
+      "accuracy_mean": 0.8681333333333333,
+      "accuracy_std": 0.000611010092660772,
+      "energy_mean": 52919360000.0
+    },
+    {
+      "samples": 8500,
+      "accuracy_mean": 0.8753333333333333,
+      "accuracy_std": 0.008488423489278371,
+      "energy_mean": 56226820000.0
+    },
+    {
+      "samples": 9000,
+      "accuracy_mean": 0.8726666666666666,
+      "accuracy_std": 0.014666060593538196,
+      "energy_mean": 59534280000.0
+    },
+    {
+      "samples": 9500,
+      "accuracy_mean": 0.8788,
+      "accuracy_std": 0.0031240998703626374,
+      "energy_mean": 62841740000.0
+    },
+    {
+      "samples": 10000,
+      "accuracy_mean": 0.8832,
+      "accuracy_std": 0.004543126676640202,
+      "energy_mean": 66149200000.0
+    }
+  ],
+  "final_sena_acc": 0.5941333333333333,
+  "final_bp_acc": 0.8832,
+  "energy_ratio_final": 34.55980773751992
+}

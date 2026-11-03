@@ -1,0 +1,349 @@
+{
+  "profile": "full",
+  "dataset": "fashion_mnist",
+  "config": {
+    "n_train": 10000,
+    "n_test": 2500,
+    "epochs_base": 30,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "hidden": 160,
+    "epochs_sena": 40,
+    "members": 3,
+    "samples_per_epoch": 3000,
+    "T_max": 40,
+    "thetas": [
+      0.45,
+      0.55,
+      0.65,
+      0.75,
+      0.85,
+      0.95,
+      1.01
+    ],
+    "dataset_seed": 2026,
+    "threshold": 0.3
+  },
+  "elapsed_s": 939.7279524000041,
+  "baselines": {
+    "runs": [
+      {
+        "method": "fp32_mlp",
+        "seed": 0,
+        "accuracy": 0.836,
+        "train_s": 9.66278539999621,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "seed": 0,
+        "accuracy": 0.8364,
+        "train_s": 9.66278539999621,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "binaryconnect",
+        "seed": 0,
+        "accuracy": 0.5588,
+        "train_s": 30.799926299994695,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "xnor_bnn",
+        "seed": 0,
+        "accuracy": 0.748,
+        "train_s": 12.552925399999367,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "fp32_mlp",
+        "seed": 1,
+        "accuracy": 0.8456,
+        "train_s": 10.510176399999182,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "seed": 1,
+        "accuracy": 0.8448,
+        "train_s": 10.510176399999182,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "binaryconnect",
+        "seed": 1,
+        "accuracy": 0.4796,
+        "train_s": 33.83857480000006,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "xnor_bnn",
+        "seed": 1,
+        "accuracy": 0.734,
+        "train_s": 13.559857699998247,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "fp32_mlp",
+        "seed": 2,
+        "accuracy": 0.8392,
+        "train_s": 11.345802799994999,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "seed": 2,
+        "accuracy": 0.8416,
+        "train_s": 11.345802799994999,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "binaryconnect",
+        "seed": 2,
+        "accuracy": 0.6752,
+        "train_s": 32.36724819999654,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "xnor_bnn",
+        "seed": 2,
+        "accuracy": 0.6848,
+        "train_s": 12.127772300002107,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "fp32_mlp",
+        "seed": 3,
+        "accuracy": 0.8436,
+        "train_s": 29.31710749999911,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "seed": 3,
+        "accuracy": 0.844,
+        "train_s": 29.31710749999911,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "binaryconnect",
+        "seed": 3,
+        "accuracy": 0.6944,
+        "train_s": 14.203794399996696,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "xnor_bnn",
+        "seed": 3,
+        "accuracy": 0.7132,
+        "train_s": 14.600824399996782,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "fp32_mlp",
+        "seed": 4,
+        "accuracy": 0.844,
+        "train_s": 22.93359999999666,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "seed": 4,
+        "accuracy": 0.844,
+        "train_s": 22.93359999999666,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "binaryconnect",
+        "seed": 4,
+        "accuracy": 0.566,
+        "train_s": 12.97103629999765,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "xnor_bnn",
+        "seed": 4,
+        "accuracy": 0.7112,
+        "train_s": 12.068542399996659,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      }
+    ],
+    "summary": [
+      {
+        "method": "binaryconnect",
+        "n_seeds": 5,
+        "accuracy_mean": 0.5948,
+        "accuracy_std": 0.08913585137305864,
+        "train_s_mean": 24.836115999997126,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      },
+      {
+        "method": "fp32_mlp",
+        "n_seeds": 5,
+        "accuracy_mean": 0.84168,
+        "accuracy_std": 0.003963836525388021,
+        "train_s_mean": 16.75389441999723,
+        "storage_bits": 4070720,
+        "fp32_mac": 127040,
+        "int8_mac": 0,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "int8_ptq",
+        "n_seeds": 5,
+        "accuracy_mean": 0.84216,
+        "accuracy_std": 0.0034362770551863023,
+        "train_s_mean": 16.75389441999723,
+        "storage_bits": 1021760,
+        "fp32_mac": 0,
+        "int8_mac": 127040,
+        "xnor_popcount": 0
+      },
+      {
+        "method": "xnor_bnn",
+        "n_seeds": 5,
+        "accuracy_mean": 0.71824,
+        "accuracy_std": 0.024120696507356508,
+        "train_s_mean": 12.981984439998632,
+        "storage_bits": 132480,
+        "fp32_mac": 0,
+        "int8_mac": 0,
+        "xnor_popcount": 127040
+      }
+    ]
+  },
+  "sena_sweep": [
+    {
+      "theta": 0.45,
+      "acc": 0.6948,
+      "mean_passes": 2.1964,
+      "mean_energy": 420786.312,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.94509,
+      "relative_energy": 0.054909999999999994
+    },
+    {
+      "theta": 0.55,
+      "acc": 0.718,
+      "mean_passes": 6.8028,
+      "mean_energy": 1303280.424,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.82993,
+      "relative_energy": 0.17007000000000003
+    },
+    {
+      "theta": 0.65,
+      "acc": 0.726,
+      "mean_passes": 10.928,
+      "mean_energy": 2093586.24,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.7268,
+      "relative_energy": 0.2732
+    },
+    {
+      "theta": 0.75,
+      "acc": 0.7516,
+      "mean_passes": 16.8872,
+      "mean_energy": 3235249.776,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.57782,
+      "relative_energy": 0.42218
+    },
+    {
+      "theta": 0.85,
+      "acc": 0.7428,
+      "mean_passes": 22.1008,
+      "mean_energy": 4234071.264,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.44748,
+      "relative_energy": 0.55252
+    },
+    {
+      "theta": 0.95,
+      "acc": 0.744,
+      "mean_passes": 25.9592,
+      "mean_energy": 4973263.536,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.35102,
+      "relative_energy": 0.64898
+    },
+    {
+      "theta": 1.01,
+      "acc": 0.7568,
+      "mean_passes": 40.0,
+      "mean_energy": 7663200.0,
+      "energy_full": 7663200.0,
+      "energy_saving": 0.0,
+      "relative_energy": 1.0
+    }
+  ],
+  "fixed_budget_acc": 0.7568
+}

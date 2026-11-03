@@ -1,0 +1,74 @@
+{
+  "n_hid": 16,
+  "n_in_bits": 16,
+  "M": 3,
+  "epochs": 30,
+  "t_eval": 80,
+  "test_mse": 0.060902031810606785,
+  "test_rmse": 0.24678337020676006,
+  "test_mae": 0.20663331347506836,
+  "resolution_pct": 1.25,
+  "curves": [
+    {
+      "member": 0,
+      "epoch": 1,
+      "mse": 0.09924557259123375
+    },
+    {
+      "member": 0,
+      "epoch": 10,
+      "mse": 0.11910862540422533
+    },
+    {
+      "member": 0,
+      "epoch": 20,
+      "mse": 0.08119790344395278
+    },
+    {
+      "member": 0,
+      "epoch": 30,
+      "mse": 0.08776699932539829
+    },
+    {
+      "member": 1,
+      "epoch": 1,
+      "mse": 0.09185128947769655
+    },
+    {
+      "member": 1,
+      "epoch": 10,
+      "mse": 0.07712289096876654
+    },
+    {
+      "member": 1,
+      "epoch": 20,
+      "mse": 0.07370750933801043
+    },
+    {
+      "member": 1,
+      "epoch": 30,
+      "mse": 0.0921021056495811
+    },
+    {
+      "member": 2,
+      "epoch": 1,
+      "mse": 0.14643216578658824
+    },
+    {
+      "member": 2,
+      "epoch": 10,
+      "mse": 0.10839462237037814
+    },
+    {
+      "member": 2,
+      "epoch": 20,
+      "mse": 0.09446577105727272
+    },
+    {
+      "member": 2,
+      "epoch": 30,
+      "mse": 0.07070396258392578
+    }
+  ],
+  "note": "Soft comfort probability vs NBC/TSI-style p*; not hard 0% error."
+}

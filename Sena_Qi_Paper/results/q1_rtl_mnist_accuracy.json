@@ -1,0 +1,13 @@
+{
+  "profile": "full",
+  "backend": "semantic",
+  "n_samples": 2500,
+  "software_accuracy": 0.8804,
+  "rtl_accuracy": 0.882,
+  "accuracy_delta": 0.0016000000000000458,
+  "rtl_wall_s": 480.83983889999945,
+  "rtl_mean_cycles_per_member": 3720.0,
+  "note": "Restored from the completed 2500-sample RTL-semantic run (2026-07-25 terminal 111365). A later pytile 250-sample overwrite of this filename was archived as q1_rtl_mnist_accuracy_pytile250.json. semantic = LFSR + power-of-two N matching RTL datapath; small-tile Verilator remains the bit-exact proof.",
+  "checkpoint": "q1_ablation_full_r0_adaptive.npz",
+  "restored": true
+}

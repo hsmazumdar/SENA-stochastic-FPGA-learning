@@ -1,0 +1,16 @@
+# =============================================================================
+# papilio_pro.ucf — Papilio Pro (Spartan-6 LX9, xc6slx9-2-tqg144)
+# Pin assignments from the official Gadget Factory Papilio Pro UCF.
+# Verify against your board revision:
+#   https://github.com/GadgetFactory/Papilio-Pro
+# =============================================================================
+
+NET "clk" LOC = "P94"  | IOSTANDARD = LVCMOS33 | PERIOD = 31.25ns;
+
+# FT2232 channel B is wired as the board UART.
+# rx = FPGA input  (FTDI TXD),  tx = FPGA output (FTDI RXD)
+NET "rx"  LOC = "P101" | IOSTANDARD = LVCMOS33;
+NET "tx"  LOC = "P105" | IOSTANDARD = LVCMOS33;
+
+# LED1
+NET "led" LOC = "P134" | IOSTANDARD = LVCMOS33;

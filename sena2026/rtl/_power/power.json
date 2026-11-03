@@ -1,0 +1,17 @@
+{
+  "tool": "quartus_powerplay_de2_115",
+  "part": "EP4CE115F29C7",
+  "clk_mhz": 25,
+  "mean_passes": 30.25,
+  "cycles_per_pass": 807.0,
+  "static_mw": 98.75,
+  "dynamic_mw": 12.73,
+  "total_mw": 165.84,
+  "io_mw": 54.35,
+  "throughput_inf_s": 1024.0970024680737,
+  "energy_uj_per_inference": 12.4304631,
+  "energy_uj_total_thermal": 161.9377848,
+  "energy_uj_fixed_n_full_net_model": 0.11164821551999997,
+  "confidence": "Low: user provided insufficient toggle rate data",
+  "table_vi_row": "DE2-115 784\u201316\u201310 slice, board EE (Quartus PowerPlay, Cyclone IV E)"
+}

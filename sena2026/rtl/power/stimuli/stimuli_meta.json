@@ -1,0 +1,17 @@
+{
+  "n_images": 1000,
+  "n_in": 784,
+  "n_hid": 160,
+  "n_out": 10,
+  "par": 8,
+  "par_out": 2,
+  "t_max": 40,
+  "passes_per_image": 3,
+  "n_log2_hid": 9,
+  "n_log2_out": 8,
+  "cycles_per_pass": 182,
+  "mean_passes_fixed_n": 2.3,
+  "mean_passes_adaptive": 5.11,
+  "M": 3,
+  "note": "EnergyIssueFix.docx suggested 807 cycles (Papilio 16-hid slice). Full 784-160-10 PAR8 uses verified 182 cycles/member/pass."
+}

@@ -1,0 +1,56 @@
+{
+  "evidence_levels": {
+    "cycles": "board-measured (Papilio Pro)",
+    "clock_Hz": "board oscillator 32e6; post-route f_max 32.601e6",
+    "energy": "model-based (Horowitz-class pJ/op); NOT rail-measured",
+    "relative_energy": "software op-count early-exit fraction (A2)"
+  },
+  "papilio_slice": {
+    "topology": "784-16-10",
+    "measured_cycles_per_pass": 807.0,
+    "f_clk_Hz": 32000000.0,
+    "time_per_pass_us": 25.21875,
+    "board_early_exit_mean_passes": 30.25,
+    "board_core_latency_us": 762.8671875,
+    "model_energy_per_pass_pJ": {
+      "add": 266.04288,
+      "weight_fetch": 1034.6112,
+      "rng": 2439.168,
+      "compare": 1.56,
+      "total_pJ": 3741.38208
+    },
+    "model_energy_per_pass_uJ": 0.00374138208,
+    "model_energy_inference_fixedT40_uJ": 0.1496552832,
+    "model_energy_inference_boardEE_uJ": 0.11317680792,
+    "model_time_inference_boardEE_us": 762.8671875
+  },
+  "full_mnist_model": {
+    "full_par1_M3": {
+      "cycles_per_ensemble_pass": 2844,
+      "energy_per_ensemble_pass_pJ": 112225.26239999998,
+      "energy_per_ensemble_pass_uJ": 0.11222526239999998,
+      "a2_mean_passes": 5.11008,
+      "energy_per_inference_ee_uJ": 0.5734800688849919,
+      "energy_per_inference_full40_uJ": 4.489010496,
+      "note": "model energy; cycles formula Verilator-validated; not Papilio rail power"
+    },
+    "full_par8_M3": {
+      "cycles_per_ensemble_pass": 546,
+      "energy_per_ensemble_pass_pJ": 48542.702399999995,
+      "energy_per_ensemble_pass_uJ": 0.04854270239999999,
+      "a2_mean_passes": 5.11008,
+      "energy_per_inference_ee_uJ": 0.24805709268019197,
+      "energy_per_inference_full40_uJ": 1.9417080959999997,
+      "note": "model energy; cycles formula Verilator-validated; not Papilio rail power"
+    }
+  },
+  "baseline_one_forward_uJ": {
+    "int16_mac": 0.18293760000000003,
+    "fp32_mac": 0.8079744000000001
+  },
+  "ratios_vs_int16_mac": {
+    "sena_full40_par8_M3": 10.614045969773295,
+    "sena_ee_par8_M3": 1.3559656007304781
+  },
+  "citation_sentence": "Absolute energy is reported from a cycle\u00d7operation energy model (Horowitz-class constants) whose cycle count was validated on a Papilio Pro (Spartan-6 LX9) to be exactly 807 cycles/pass; board rail power was not instrumented on the available setup."
+}

@@ -1,0 +1,60 @@
+{
+  "connections": {
+    "ij": 42,
+    "jk": 28,
+    "ik": 24
+  },
+  "topology": "i=6 j=6+bias k=3+pad",
+  "before": {
+    "joint": 0.09375,
+    "per": [
+      0.46875,
+      0.4375,
+      0.546875
+    ]
+  },
+  "after": {
+    "joint": 0.9375,
+    "per": [
+      1.0,
+      1.0,
+      0.9375
+    ],
+    "mean_passes": 3.0
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "joint": 0.296875,
+      "and_": 0.703125,
+      "or_": 0.90625,
+      "xor": 0.453125,
+      "mean_passes": 3.0
+    },
+    {
+      "epoch": 10,
+      "joint": 0.828125,
+      "and_": 1.0,
+      "or_": 1.0,
+      "xor": 0.828125,
+      "mean_passes": 3.0
+    },
+    {
+      "epoch": 20,
+      "joint": 0.890625,
+      "and_": 1.0,
+      "or_": 1.0,
+      "xor": 0.890625,
+      "mean_passes": 3.0
+    },
+    {
+      "epoch": 30,
+      "joint": 1.0,
+      "and_": 1.0,
+      "or_": 1.0,
+      "xor": 1.0,
+      "mean_passes": 3.0
+    }
+  ],
+  "pass_": true
+}

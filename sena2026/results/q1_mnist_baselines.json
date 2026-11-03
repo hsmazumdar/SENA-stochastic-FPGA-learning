@@ -1,0 +1,271 @@
+{
+  "profile": "full",
+  "config": {
+    "n_train": 10000,
+    "n_test": 2500,
+    "epochs": 30,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "dataset_seed": 2026,
+    "threshold": 0.3,
+    "architecture": [
+      784,
+      160,
+      10
+    ]
+  },
+  "elapsed_s": 193.05158910000318,
+  "runs": [
+    {
+      "method": "fp32_mlp",
+      "seed": 0,
+      "accuracy": 0.946,
+      "train_s": 7.048652400000719,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "seed": 0,
+      "accuracy": 0.9464,
+      "train_s": 7.048652400000719,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "binaryconnect",
+      "seed": 0,
+      "accuracy": 0.838,
+      "train_s": 11.084603900002548,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "xnor_bnn",
+      "seed": 0,
+      "accuracy": 0.8452,
+      "train_s": 10.980674300000828,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "fp32_mlp",
+      "seed": 1,
+      "accuracy": 0.9484,
+      "train_s": 25.58899200000451,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "seed": 1,
+      "accuracy": 0.9488,
+      "train_s": 25.58899200000451,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "binaryconnect",
+      "seed": 1,
+      "accuracy": 0.8036,
+      "train_s": 8.974972799995157,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "xnor_bnn",
+      "seed": 1,
+      "accuracy": 0.7904,
+      "train_s": 9.33601230000204,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "fp32_mlp",
+      "seed": 2,
+      "accuracy": 0.9492,
+      "train_s": 7.464663200000359,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "seed": 2,
+      "accuracy": 0.9492,
+      "train_s": 7.464663200000359,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "binaryconnect",
+      "seed": 2,
+      "accuracy": 0.7704,
+      "train_s": 27.717377100001613,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "xnor_bnn",
+      "seed": 2,
+      "accuracy": 0.7996,
+      "train_s": 9.006300799999735,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "fp32_mlp",
+      "seed": 3,
+      "accuracy": 0.9488,
+      "train_s": 8.340876400005072,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "seed": 3,
+      "accuracy": 0.9488,
+      "train_s": 8.340876400005072,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "binaryconnect",
+      "seed": 3,
+      "accuracy": 0.8148,
+      "train_s": 12.539894200002891,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "xnor_bnn",
+      "seed": 3,
+      "accuracy": 0.8288,
+      "train_s": 25.461426000001666,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "fp32_mlp",
+      "seed": 4,
+      "accuracy": 0.948,
+      "train_s": 7.529915699997218,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "seed": 4,
+      "accuracy": 0.9484,
+      "train_s": 7.529915699997218,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "binaryconnect",
+      "seed": 4,
+      "accuracy": 0.8236,
+      "train_s": 11.211426900001243,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "xnor_bnn",
+      "seed": 4,
+      "accuracy": 0.846,
+      "train_s": 10.031417500002135,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    }
+  ],
+  "summary": [
+    {
+      "method": "binaryconnect",
+      "n_seeds": 5,
+      "accuracy_mean": 0.8100799999999999,
+      "accuracy_std": 0.02550043136890041,
+      "train_s_mean": 14.305654980000691,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    },
+    {
+      "method": "fp32_mlp",
+      "n_seeds": 5,
+      "accuracy_mean": 0.94808,
+      "accuracy_std": 0.0012457929201918235,
+      "train_s_mean": 11.194619940001576,
+      "storage_bits": 4070720,
+      "fp32_mac": 127040,
+      "int8_mac": 0,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "int8_ptq",
+      "n_seeds": 5,
+      "accuracy_mean": 0.94832,
+      "accuracy_std": 0.0011099549540409244,
+      "train_s_mean": 11.194619940001576,
+      "storage_bits": 1021760,
+      "fp32_mac": 0,
+      "int8_mac": 127040,
+      "xnor_popcount": 0
+    },
+    {
+      "method": "xnor_bnn",
+      "n_seeds": 5,
+      "accuracy_mean": 0.8220000000000001,
+      "accuracy_std": 0.025791471458604286,
+      "train_s_mean": 12.96316618000128,
+      "storage_bits": 132480,
+      "fp32_mac": 0,
+      "int8_mac": 0,
+      "xnor_popcount": 127040
+    }
+  ]
+}

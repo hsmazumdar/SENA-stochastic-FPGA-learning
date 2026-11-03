@@ -1,0 +1,180 @@
+{
+  "points": [
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.45",
+      "acc": 83.67999999999999,
+      "energy": 4.3,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.55",
+      "acc": 87.32,
+      "energy": 11.541,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.65",
+      "acc": 87.0,
+      "energy": 18.63,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.75",
+      "acc": 88.32,
+      "energy": 31.009000000000004,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.85",
+      "acc": 88.92,
+      "energy": 46.29200000000001,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=0.95",
+      "acc": 88.92,
+      "energy": 58.108000000000004,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA MNIST",
+      "label": "\u03b8=1.01",
+      "acc": 89.64,
+      "energy": 100.0,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA ablation",
+      "label": "ensemble_early_exit",
+      "acc": 84.41600000000001,
+      "energy": 12.775200000000003,
+      "energy_kind": "% condition budget",
+      "acc_std": 1.3800289852028476
+    },
+    {
+      "family": "SENA ablation",
+      "label": "ensemble_fixed_N",
+      "acc": 90.28,
+      "energy": 5.759399999999999,
+      "energy_kind": "% condition budget",
+      "acc_std": 0.5238320341483537
+    },
+    {
+      "family": "SENA ablation",
+      "label": "ensemble_full",
+      "acc": 87.32799999999999,
+      "energy": 100.0,
+      "energy_kind": "% condition budget",
+      "acc_std": 0.9705256307795259
+    },
+    {
+      "family": "SENA ablation",
+      "label": "single_early_exit",
+      "acc": 78.4,
+      "energy": 6.566399999999999,
+      "energy_kind": "% condition budget",
+      "acc_std": 4.051172669734034
+    },
+    {
+      "family": "SENA ablation",
+      "label": "single_full",
+      "acc": 84.92,
+      "energy": 100.0,
+      "energy_kind": "% condition budget",
+      "acc_std": 1.7327434893832347
+    },
+    {
+      "family": "Matched baseline",
+      "label": "binaryconnect",
+      "acc": 81.008,
+      "energy": 100.0,
+      "energy_kind": "one forward (relative)",
+      "acc_std": 2.550043136890041
+    },
+    {
+      "family": "Matched baseline",
+      "label": "fp32_mlp",
+      "acc": 94.808,
+      "energy": 100.0,
+      "energy_kind": "one forward (relative)",
+      "acc_std": 0.12457929201918234
+    },
+    {
+      "family": "Matched baseline",
+      "label": "int8_ptq",
+      "acc": 94.83200000000001,
+      "energy": 100.0,
+      "energy_kind": "one forward (relative)",
+      "acc_std": 0.11099549540409244
+    },
+    {
+      "family": "Matched baseline",
+      "label": "xnor_bnn",
+      "acc": 82.2,
+      "energy": 100.0,
+      "energy_kind": "one forward (relative)",
+      "acc_std": 2.5791471458604285
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.45",
+      "acc": 69.48,
+      "energy": 5.491,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.55",
+      "acc": 71.8,
+      "energy": 17.007,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.65",
+      "acc": 72.6,
+      "energy": 27.32,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.75",
+      "acc": 75.16000000000001,
+      "energy": 42.218,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.85",
+      "acc": 74.28,
+      "energy": 55.252,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=0.95",
+      "acc": 74.4,
+      "energy": 64.898,
+      "energy_kind": "% full SENA budget"
+    },
+    {
+      "family": "SENA Fashion-MNIST",
+      "label": "\u03b8=1.01",
+      "acc": 75.68,
+      "energy": 100.0,
+      "energy_kind": "% full SENA budget"
+    }
+  ],
+  "sources": [
+    "mnist_sena_results.json",
+    "q1_mnist_baselines.json",
+    "q1_sena_ablations.json",
+    "q1_fashion_mnist.json"
+  ]
+}

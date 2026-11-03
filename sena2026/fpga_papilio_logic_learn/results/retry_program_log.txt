@@ -1,0 +1,13 @@
+==== 31-07-2026 21:34:16.84 RETRY ==== 
+ERROR: The search filter cannot be recognized.
+--- disable USB --- 
+USB\VID_0403&PID_6010\5&1A60D403&0&9
+USB\VID_0403&PID_6010\7&19CD6259&0&1
+--- enable USB --- 
+USB\VID_0403&PID_6010\5&1A60D403&0&9
+USB\VID_0403&PID_6010\7&19CD6259&0&1
+--- jtag --- 
+Could not access USB device 0403:6010.
+jtag=1 
+SKIP program 
+DONE 

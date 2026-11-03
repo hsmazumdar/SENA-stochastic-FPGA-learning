@@ -1,0 +1,15 @@
+==== 31-07-2026 20:14:48.39 ==== 
+Killing zombie python... 
+ERROR: The process with PID 10508 (child process of PID 4048) could not be terminated.
+Reason: There is no running instance of the task.
+ERROR: The process "4048" not found.
+ERROR: The process "python.exe" with PID 10508 could not be terminated.
+Reason: There is no running instance of the task.
+--- jtag --- 
+Could not access USB device 0403:6010.
+jtag=1 
+--- program --- 
+Could not access USB device 0403:6010.
+prog=1 
+--- usb cycle --- 
+DONE 

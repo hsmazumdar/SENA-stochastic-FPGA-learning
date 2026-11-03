@@ -1,0 +1,404 @@
+{
+  "config": {
+    "n_in": 784,
+    "n_hid": 160,
+    "n_out": 10,
+    "M": 3,
+    "w_bits": 16,
+    "acc_bits": 28,
+    "t_max": 40,
+    "density_in": 0.19,
+    "density_hid": 0.5
+  },
+  "cycle_model_validated": [
+    {
+      "par": 1,
+      "par_out": 1,
+      "rtl": 76,
+      "formula": 76,
+      "match": true
+    },
+    {
+      "par": 4,
+      "par_out": 1,
+      "rtl": 28,
+      "formula": 28,
+      "match": true
+    },
+    {
+      "par": 8,
+      "par_out": 2,
+      "rtl": 16,
+      "formula": 16,
+      "match": true
+    },
+    {
+      "par": 16,
+      "par_out": 4,
+      "rtl": 10,
+      "formula": 10,
+      "match": true
+    }
+  ],
+  "host_model": {
+    "t_cycle_ns_intercept": 262.20059939195687,
+    "t_cycle_ns_per_lane": 12.425089837580744,
+    "measured_lanes": [
+      12,
+      36,
+      72,
+      144
+    ],
+    "measured_t_cycle_ns": [
+      335.4399605631685,
+      776.9695693987092,
+      1194.6882781965544,
+      2021.9283065307086
+    ],
+    "projected_full_cycles_per_s": 10290.405393487727
+  },
+  "energy_constants_pj": {
+    "add_int28": 0.09,
+    "add_int16": 0.05,
+    "mul_int16": 0.8,
+    "add_fp32": 0.9,
+    "mul_fp32": 3.7,
+    "wread16": 0.35,
+    "wread32": 0.7,
+    "flop": 0.01,
+    "cmp28": 0.05
+  },
+  "timing_model_ns": {
+    "Artix-7 (28 nm, -1)": {
+      "t_cq": 0.4,
+      "t_lut": 0.35,
+      "t_add": 1.0,
+      "t_route": 0.45,
+      "t_setup": 0.1,
+      "kind": "fpga"
+    },
+    "Zynq US+ (16 nm, -2)": {
+      "t_cq": 0.16,
+      "t_lut": 0.14,
+      "t_add": 0.42,
+      "t_route": 0.2,
+      "t_setup": 0.05,
+      "kind": "fpga"
+    },
+    "ASIC 65 nm": {
+      "t_cq": 0.12,
+      "t_lut": 0.06,
+      "t_add": 0.55,
+      "t_route": 0.1,
+      "t_setup": 0.03,
+      "kind": "asic"
+    },
+    "ASIC 28 nm": {
+      "t_cq": 0.05,
+      "t_lut": 0.03,
+      "t_add": 0.24,
+      "t_route": 0.05,
+      "t_setup": 0.02,
+      "kind": "asic"
+    }
+  },
+  "design_space": [
+    {
+      "par": 1,
+      "par_out": 1,
+      "cycles_per_pass": 948,
+      "adders": 510,
+      "e_pass_nj": 37.408420799999995,
+      "host_cycles_per_s": 151538.19412461112,
+      "fmax::Artix-7 (28 nm, -1)": 266.6666666666667,
+      "tpass_us::Artix-7 (28 nm, -1)": 3.5549999999999997,
+      "fmax::Zynq US+ (16 nm, -2)": 628.9308176100628,
+      "tpass_us::Zynq US+ (16 nm, -2)": 1.50732,
+      "fmax::ASIC 65 nm": 662.2516556291391,
+      "tpass_us::ASIC 65 nm": 1.43148,
+      "fmax::ASIC 28 nm": 1470.5882352941178,
+      "tpass_us::ASIC 28 nm": 0.64464
+    },
+    {
+      "par": 2,
+      "par_out": 1,
+      "cycles_per_pass": 556,
+      "adders": 990,
+      "e_pass_nj": 25.3661808,
+      "host_cycles_per_s": 79598.57142276297,
+      "fmax::Artix-7 (28 nm, -1)": 192.30769230769232,
+      "tpass_us::Artix-7 (28 nm, -1)": 2.8912,
+      "fmax::Zynq US+ (16 nm, -2)": 452.4886877828054,
+      "tpass_us::Zynq US+ (16 nm, -2)": 1.2287599999999999,
+      "fmax::ASIC 65 nm": 462.96296296296293,
+      "tpass_us::ASIC 65 nm": 1.2009600000000002,
+      "fmax::ASIC 28 nm": 1030.9278350515465,
+      "tpass_us::ASIC 28 nm": 0.53932
+    },
+    {
+      "par": 4,
+      "par_out": 1,
+      "cycles_per_pass": 360,
+      "adders": 1950,
+      "e_pass_nj": 19.3450608,
+      "host_cycles_per_s": 40831.11608970721,
+      "fmax::Artix-7 (28 nm, -1)": 150.37593984962407,
+      "tpass_us::Artix-7 (28 nm, -1)": 2.3939999999999997,
+      "fmax::Zynq US+ (16 nm, -2)": 353.35689045936397,
+      "tpass_us::Zynq US+ (16 nm, -2)": 1.0188,
+      "fmax::ASIC 65 nm": 355.8718861209964,
+      "tpass_us::ASIC 65 nm": 1.0116,
+      "fmax::ASIC 28 nm": 793.6507936507936,
+      "tpass_us::ASIC 28 nm": 0.4536
+    },
+    {
+      "par": 8,
+      "par_out": 2,
+      "cycles_per_pass": 182,
+      "adders": 3900,
+      "e_pass_nj": 16.180900799999996,
+      "host_cycles_per_s": 20525.43008829671,
+      "fmax::Artix-7 (28 nm, -1)": 123.4567901234568,
+      "tpass_us::Artix-7 (28 nm, -1)": 1.4742,
+      "fmax::Zynq US+ (16 nm, -2)": 289.8550724637681,
+      "tpass_us::Zynq US+ (16 nm, -2)": 0.6278999999999999,
+      "fmax::ASIC 65 nm": 289.01734104046244,
+      "tpass_us::ASIC 65 nm": 0.6297200000000001,
+      "fmax::ASIC 28 nm": 645.1612903225806,
+      "tpass_us::ASIC 28 nm": 0.2821
+    },
+    {
+      "par": 16,
+      "par_out": 4,
+      "cycles_per_pass": 93,
+      "adders": 7800,
+      "e_pass_nj": 14.598820799999997,
+      "host_cycles_per_s": 10290.405393487727,
+      "fmax::Artix-7 (28 nm, -1)": 104.71204188481677,
+      "tpass_us::Artix-7 (28 nm, -1)": 0.8881499999999999,
+      "fmax::Zynq US+ (16 nm, -2)": 245.70024570024574,
+      "tpass_us::Zynq US+ (16 nm, -2)": 0.37850999999999996,
+      "fmax::ASIC 65 nm": 243.30900243309,
+      "tpass_us::ASIC 65 nm": 0.38223000000000007,
+      "fmax::ASIC 28 nm": 543.4782608695652,
+      "tpass_us::ASIC 28 nm": 0.17112
+    },
+    {
+      "par": 32,
+      "par_out": 8,
+      "cycles_per_pass": 49,
+      "adders": 15600,
+      "e_pass_nj": 13.823140799999997,
+      "host_cycles_per_s": 5152.153339200502,
+      "fmax::Artix-7 (28 nm, -1)": 90.9090909090909,
+      "tpass_us::Artix-7 (28 nm, -1)": 0.539,
+      "fmax::Zynq US+ (16 nm, -2)": 213.21961620469085,
+      "tpass_us::Zynq US+ (16 nm, -2)": 0.22981,
+      "fmax::ASIC 65 nm": 210.0840336134454,
+      "tpass_us::ASIC 65 nm": 0.23323999999999998,
+      "fmax::ASIC 28 nm": 469.4835680751174,
+      "tpass_us::ASIC 28 nm": 0.10437
+    },
+    {
+      "par": 64,
+      "par_out": 16,
+      "cycles_per_pass": 27,
+      "adders": 31200,
+      "e_pass_nj": 13.435300799999997,
+      "host_cycles_per_s": 2577.8178536969167,
+      "fmax::Artix-7 (28 nm, -1)": 80.32128514056225,
+      "tpass_us::Artix-7 (28 nm, -1)": 0.33615,
+      "fmax::Zynq US+ (16 nm, -2)": 188.32391713747649,
+      "tpass_us::Zynq US+ (16 nm, -2)": 0.14337,
+      "fmax::ASIC 65 nm": 184.84288354898337,
+      "tpass_us::ASIC 65 nm": 0.14607,
+      "fmax::ASIC 28 nm": 413.22314049586777,
+      "tpass_us::ASIC 28 nm": 0.06534
+    }
+  ],
+  "per_inference": [
+    {
+      "theta": 0.45,
+      "acc": 0.8368,
+      "mean_passes": 1.72,
+      "energy_uj": 0.025109971775999995,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 1.527618,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 0.8881499999999999,
+      "kips_3tile::Artix-7 (28 nm, -1)": 1125.9359342453415,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 0.6510372,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 0.37850999999999996,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 2641.938125809094,
+      "lat_us_1tile::ASIC 65 nm": 0.6574356000000001,
+      "lat_us_3tile::ASIC 65 nm": 0.38223000000000007,
+      "kips_3tile::ASIC 65 nm": 2616.225832613871,
+      "lat_us_1tile::ASIC 28 nm": 0.2943264,
+      "lat_us_3tile::ASIC 28 nm": 0.17112,
+      "kips_3tile::ASIC 28 nm": 5843.85226741468
+    },
+    {
+      "theta": 0.55,
+      "acc": 0.8732,
+      "mean_passes": 4.6164,
+      "energy_uj": 0.06739399634111999,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 4.100055659999999,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 1.7762999999999998,
+      "kips_3tile::Artix-7 (28 nm, -1)": 562.9679671226708,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 1.7473535639999995,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 0.7570199999999999,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 1320.969062904547,
+      "lat_us_1tile::ASIC 65 nm": 1.7645265719999998,
+      "lat_us_3tile::ASIC 65 nm": 0.7644600000000001,
+      "kips_3tile::ASIC 65 nm": 1308.1129163069354,
+      "lat_us_1tile::ASIC 28 nm": 0.7899583679999999,
+      "lat_us_3tile::ASIC 28 nm": 0.34224,
+      "kips_3tile::ASIC 28 nm": 2921.92613370734
+    },
+    {
+      "theta": 0.65,
+      "acc": 0.87,
+      "mean_passes": 7.452,
+      "energy_uj": 0.10879041260159998,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 6.618493799999999,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 2.6644499999999995,
+      "kips_3tile::Artix-7 (28 nm, -1)": 375.3119780817805,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 2.8206565199999996,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 1.1355299999999997,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 880.6460419363646,
+      "lat_us_1tile::ASIC 65 nm": 2.84837796,
+      "lat_us_3tile::ASIC 65 nm": 1.1466900000000002,
+      "kips_3tile::ASIC 65 nm": 872.0752775379569,
+      "lat_us_1tile::ASIC 28 nm": 1.2751862399999998,
+      "lat_us_3tile::ASIC 28 nm": 0.51336,
+      "kips_3tile::ASIC 28 nm": 1947.9507558048933
+    },
+    {
+      "theta": 0.75,
+      "acc": 0.8832,
+      "mean_passes": 12.4036,
+      "energy_uj": 0.18107793367487998,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 11.01625734,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 4.4407499999999995,
+      "kips_3tile::Artix-7 (28 nm, -1)": 225.18718684906833,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 4.694886636,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 1.8925499999999997,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 528.3876251618188,
+      "lat_us_1tile::ASIC 65 nm": 4.7410280280000014,
+      "lat_us_3tile::ASIC 65 nm": 1.9111500000000003,
+      "kips_3tile::ASIC 65 nm": 523.2451665227742,
+      "lat_us_1tile::ASIC 28 nm": 2.122504032,
+      "lat_us_3tile::ASIC 28 nm": 0.8555999999999999,
+      "kips_3tile::ASIC 28 nm": 1168.7704534829359
+    },
+    {
+      "theta": 0.85,
+      "acc": 0.8892,
+      "mean_passes": 18.5168,
+      "energy_uj": 0.27032344498944,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 16.44569592,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 6.2170499999999995,
+      "kips_3tile::Artix-7 (28 nm, -1)": 160.84799060647737,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 7.008793967999999,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 2.6495699999999998,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 377.41973225844197,
+      "lat_us_1tile::ASIC 65 nm": 7.077676464000001,
+      "lat_us_3tile::ASIC 65 nm": 2.6756100000000003,
+      "kips_3tile::ASIC 65 nm": 373.7465475162673,
+      "lat_us_1tile::ASIC 28 nm": 3.1685948159999997,
+      "lat_us_3tile::ASIC 28 nm": 1.1978399999999998,
+      "kips_3tile::ASIC 28 nm": 834.8360382020971
+    },
+    {
+      "theta": 0.95,
+      "acc": 0.8892,
+      "mean_passes": 23.2432,
+      "energy_uj": 0.33932331161856,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 20.64344808,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 7.105199999999999,
+      "kips_3tile::Artix-7 (28 nm, -1)": 140.7419917806677,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 8.797783632,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 3.0280799999999997,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 330.24226572613674,
+      "lat_us_1tile::ASIC 65 nm": 8.884248336,
+      "lat_us_3tile::ASIC 65 nm": 3.0578400000000006,
+      "kips_3tile::ASIC 65 nm": 327.02822907673385,
+      "lat_us_1tile::ASIC 28 nm": 3.9773763840000003,
+      "lat_us_3tile::ASIC 28 nm": 1.36896,
+      "kips_3tile::ASIC 28 nm": 730.481533426835
+    },
+    {
+      "theta": 1.01,
+      "acc": 0.8964,
+      "mean_passes": 40.0,
+      "energy_uj": 0.5839528319999999,
+      "lat_us_1tile::Artix-7 (28 nm, -1)": 35.525999999999996,
+      "lat_us_3tile::Artix-7 (28 nm, -1)": 12.434099999999999,
+      "kips_3tile::Artix-7 (28 nm, -1)": 80.42399530323868,
+      "lat_us_1tile::Zynq US+ (16 nm, -2)": 15.140399999999998,
+      "lat_us_3tile::Zynq US+ (16 nm, -2)": 5.2991399999999995,
+      "kips_3tile::Zynq US+ (16 nm, -2)": 188.70986612922098,
+      "lat_us_1tile::ASIC 65 nm": 15.289200000000003,
+      "lat_us_3tile::ASIC 65 nm": 5.3512200000000005,
+      "kips_3tile::ASIC 65 nm": 186.87327375813365,
+      "lat_us_1tile::ASIC 28 nm": 6.844799999999999,
+      "lat_us_3tile::ASIC 28 nm": 2.3956799999999996,
+      "kips_3tile::ASIC 28 nm": 417.41801910104857
+    }
+  ],
+  "energy_breakdown_pj": {
+    "sena_per_pass": {
+      "add": 2660.4287999999997,
+      "weight_fetch": 10346.111999999997,
+      "rng": 1582.0800000000002,
+      "compare": 10.2,
+      "total": 14598.820799999998
+    },
+    "bp_int16": {
+      "multiply": 121958.4,
+      "add": 7622.4,
+      "weight_fetch": 53356.799999999996,
+      "total": 182937.59999999998
+    },
+    "bp_fp32": {
+      "multiply": 564057.6,
+      "add": 137203.19999999998,
+      "weight_fetch": 106713.59999999999,
+      "total": 807974.3999999999
+    }
+  },
+  "bp_reference_uj": {
+    "int16": 0.18293759999999998,
+    "fp32": 0.8079743999999999
+  },
+  "operating_point": {
+    "par": 16,
+    "par_out": 4,
+    "cycles_per_pass": 93,
+    "e_pass_nj": 14.598820799999997
+  },
+  "sim_conversion": {
+    "Artix-7 (28 nm, -1)": {
+      "fmax_mhz": 104.71204188481677,
+      "slowdown": 10175.69647460961,
+      "host_s_per_inference": 0.018075089647849048,
+      "hw_s_per_inference": 1.7762999999999998e-06
+    },
+    "Zynq US+ (16 nm, -2)": {
+      "fmax_mhz": 245.70024570024574,
+      "slowdown": 23876.634234034835,
+      "host_s_per_inference": 0.018075089647849048,
+      "hw_s_per_inference": 7.570199999999999e-07
+    },
+    "ASIC 65 nm": {
+      "fmax_mhz": 243.30900243309,
+      "slowdown": 23644.258231757114,
+      "host_s_per_inference": 0.018075089647849048,
+      "hw_s_per_inference": 7.644600000000001e-07
+    },
+    "ASIC 28 nm": {
+      "fmax_mhz": 543.4782608695652,
+      "slowdown": 52814.07681115313,
+      "host_s_per_inference": 0.018075089647849048,
+      "hw_s_per_inference": 3.4223999999999997e-07
+    }
+  }
+}

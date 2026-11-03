@@ -1,0 +1,16 @@
+{
+  "checkpoint": "D:\\_July2026\\SENA_Project\\sena2026\\results\\q1_ablation_full_r0_adaptive.npz",
+  "sizes": [
+    784,
+    160,
+    10
+  ],
+  "slice_hidden": 16,
+  "n_fwd": [
+    673.467919915342,
+    187.65660153722578
+  ],
+  "n_log2_hid": 9,
+  "n_log2_out": 8,
+  "note": "16-hidden slice of member 0; accuracy of the slice is NOT the paper accuracy \u2014 this design exists to calibrate cycles/pass, f_clk and power on real silicon."
+}

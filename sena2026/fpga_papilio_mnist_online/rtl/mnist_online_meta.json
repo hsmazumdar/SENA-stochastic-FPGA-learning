@@ -1,0 +1,11 @@
+{
+  "checkpoint": "D:\\_July2026\\SENA_Project\\sena2026\\results\\q1_ablation_full_r0_adaptive.npz",
+  "slice_hidden": 8,
+  "n_fwd": [
+    673.467919915342,
+    187.65660153722578
+  ],
+  "n_log2_hid": 9,
+  "n_log2_out": 8,
+  "init": "ckpt_int8"
+}

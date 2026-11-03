@@ -1,0 +1,60 @@
+{
+  "t": "2026-08-01T07:20:47",
+  "port": "COM11",
+  "ident": "a503",
+  "data": "D:\\_July2026\\SENA_Project\\sena2026\\data\\mnist_bin_t0.3_tr800_te250_s2026.npz",
+  "n_train": 200,
+  "n_test": 100,
+  "epochs": 2,
+  "t_max": 16,
+  "elapsed_s": 24.73,
+  "samples_trained": 400,
+  "update_events": 4014,
+  "infer_correct": 10,
+  "infer_total": 100,
+  "accuracy_pct": 10.0,
+  "class_correct": [
+    10,
+    0,
+    6,
+    0,
+    0,
+    2,
+    0,
+    2,
+    0,
+    0
+  ],
+  "class_seen": [
+    0,
+    10,
+    17,
+    9,
+    12,
+    8,
+    5,
+    8,
+    14,
+    10
+  ],
+  "ee_hist": [
+    7,
+    54,
+    24,
+    8,
+    14,
+    0,
+    0,
+    0
+  ],
+  "ee_hist_bins": [
+    "1-4",
+    "5-8",
+    "9-12",
+    "13-16",
+    "17-24",
+    "25-32",
+    "33-40",
+    "41+"
+  ]
+}

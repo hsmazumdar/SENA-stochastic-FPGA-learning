@@ -1,0 +1,83 @@
+{
+  "collected_at": "2026-07-31",
+  "de2_115_quartus_powerplay": {
+    "total_mw": 165.84,
+    "core_dynamic_mw": 12.73,
+    "core_static_mw": 98.75,
+    "io_mw": 54.35,
+    "confidence": "Low: user provided insufficient toggle rate data",
+    "device": "EP4CE115F29C7",
+    "family": "Cyclone IV E",
+    "tool": "Quartus Prime 25.1 PowerPlay (vectorless)",
+    "source": "I:\\FPGA_Tools_115\\SENA_DE2_115\\quartus_calib\\output_files\\de2_115_calib.pow.summary"
+  },
+  "de2_115_prior_vectorless_12p5": {
+    "total_mw": 165.84,
+    "core_dynamic_mw": 12.73,
+    "core_static_mw": 98.75,
+    "io_mw": 54.35,
+    "default_toggle": "12.5% + vectorless",
+    "avg_toggle_Mtrans_s": 2.478
+  },
+  "clock_Hz": 25000000.0,
+  "cycles_per_pass": 807.0,
+  "resources": {
+    "logic_elements": 3749,
+    "logic_pct": 3.0,
+    "memory_bits": 203680,
+    "memory_pct": 5.0,
+    "dsp": 0
+  },
+  "slice_energy_uj": {
+    "board_ee_30p25": {
+      "mean_passes": 30.25,
+      "throughput_inf_s": 1024.0970024680737,
+      "uj_total_thermal": 161.9377848,
+      "uj_core_dynamic": 12.4304631,
+      "uj_core_total": 108.85687560000001
+    },
+    "fixed_n_ee_2p30": {
+      "mean_passes": 2.3,
+      "throughput_inf_s": 13469.101880286624,
+      "uj_total_thermal": 12.312624959999999,
+      "uj_core_dynamic": 0.94512612,
+      "uj_core_total": 8.27672112
+    },
+    "adaptive_ee_5p11": {
+      "mean_passes": 5.11,
+      "throughput_inf_s": 6062.413762164232,
+      "uj_total_thermal": 27.355440672000004,
+      "uj_core_dynamic": 2.0998236840000004,
+      "uj_core_total": 18.388715184000002
+    },
+    "full_t40": {
+      "mean_passes": 40.0,
+      "throughput_inf_s": 774.4733581164808,
+      "uj_total_thermal": 214.132608,
+      "uj_core_dynamic": 16.436976,
+      "uj_core_total": 143.94297600000002
+    }
+  },
+  "full_net_horowitz_par8_M3": {
+    "energy_per_inference_ee_uJ": 0.24805709268019197,
+    "energy_per_inference_full40_uJ": 1.9417080959999997,
+    "energy_per_ensemble_pass_uJ": 0.04854270239999999,
+    "cycles_per_ensemble_pass": 546,
+    "a2_mean_passes": 5.11008,
+    "fixed_n_ee_uj": 0.11164821551999997,
+    "int16_mac_forward_uJ": 0.18293760000000003
+  },
+  "full_net_quartus_scaled_estimate": {
+    "method": "scale DE2 core-dynamic \u00b5J by N_hid 160/16 (coarse)",
+    "fixed_n_ee_uj_core_dyn_scaled": 9.4512612,
+    "adaptive_ee_uj_core_dyn_scaled": 20.998236840000004,
+    "note": "Not a substitute for full-net Vivado/Quartus fit; use Horowitz PAR8\u00d7M3 for full-net Table VI primary absolute until full-net PnR."
+  },
+  "table_vi_recommendation": {
+    "primary_full_net_row": "0.1116",
+    "primary_basis": "Horowitz\u00d7board-validated cycles; fixed-N EE 2.30 passes",
+    "empirical_slice_row_core_dyn": "12.4305",
+    "empirical_slice_basis": "Quartus PowerPlay DE2-115 784\u201316\u201310 @ 25 MHz, board EE 30.25 passes; core-dynamic (vectorless, Low confidence)",
+    "vivado_artix7": "still TBD (no Vivado on host); Quartus path used instead"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "experiment": "papilio_logic_learn_AiOiXi",
+  "board": "Papilio Pro XC6SLX9-2-TQG144",
+  "f_clk_mhz": 32,
+  "uart": {
+    "port": "COM11",
+    "baud": 115200,
+    "ident": "a502"
+  },
+  "topology": {
+    "inputs": [
+      "Ai1",
+      "Ai2",
+      "Oi1",
+      "Oi2",
+      "Xi1",
+      "Xi2"
+    ],
+    "hidden": "6+bias",
+    "outputs": [
+      "Ao",
+      "Oo",
+      "Xo"
+    ],
+    "connections": {
+      "i_to_j": 42,
+      "j_to_k": 28,
+      "i_to_k_skip": 24
+    },
+    "targets": {
+      "Ao": "Ai1 AND Ai2",
+      "Oo": "Oi1 OR Oi2",
+      "Xo": "Xi1 XOR Xi2"
+    }
+  },
+  "learning": "Mazumdar multiplier-free +/-1 with reverse gates; epoch=64 on-the-fly patterns; EE conf>=3/4 after >=3 passes",
+  "bitstream": {
+    "file": "papilio_logic_learn_top.bit",
+    "built": "2026-07-31",
+    "programmed": "2026-08-01T06:45:00+05:30",
+    "program_ms": 593.5
+  },
+  "run": {
+    "started": "2026-08-01T06:45:29",
+    "stopped": "2026-08-01T06:50:02",
+    "n_polls": 10,
+    "poll_interval_s": 30,
+    "epoch_first": 78,
+    "epoch_last_running": 1041,
+    "epoch_at_stop": 1164,
+    "joint_pct_all_polls": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "joint_pct_min": 100.0,
+    "joint_pct_max": 100.0,
+    "correct_all_64": true,
+    "mean_passes": 3,
+    "train_stopped": true
+  },
+  "paper_claim": "On-chip Mazumdar PoC on Papilio Pro trained concurrent AND/OR/XOR (Ai/Oi/Xi) in a 6-6-4 tile; silicon log shows 100% joint accuracy (64/64) across all host polls with early-exit mean depth 3.",
+  "packaged_at": "2026-08-01T06:50:19"
+}

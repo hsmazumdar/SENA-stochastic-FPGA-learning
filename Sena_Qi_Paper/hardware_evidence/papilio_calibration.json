@@ -1,0 +1,99 @@
+{
+  "board": "Papilio Pro (xc6slx9-2)",
+  "f_clk_hz": 32000000,
+  "model_cycles_per_pass": 807,
+  "measured_cycles_per_pass": 807.0,
+  "model_error_cycles": 0.0,
+  "fixed_pass_runs": [
+    {
+      "t_max": 1,
+      "pred": 0,
+      "passes": 1,
+      "cycles": 807,
+      "wall_s": 0.016037499999583815,
+      "cycles_per_pass": 807.0
+    },
+    {
+      "t_max": 2,
+      "pred": 4,
+      "passes": 2,
+      "cycles": 1614,
+      "wall_s": 0.01603979999981675,
+      "cycles_per_pass": 807.0
+    },
+    {
+      "t_max": 4,
+      "pred": 7,
+      "passes": 4,
+      "cycles": 3228,
+      "wall_s": 0.015981399999873247,
+      "cycles_per_pass": 807.0
+    },
+    {
+      "t_max": 8,
+      "pred": 0,
+      "passes": 8,
+      "cycles": 6456,
+      "wall_s": 0.015934699999888835,
+      "cycles_per_pass": 807.0
+    },
+    {
+      "t_max": 16,
+      "pred": 1,
+      "passes": 16,
+      "cycles": 12912,
+      "wall_s": 0.01604719999977533,
+      "cycles_per_pass": 807.0
+    },
+    {
+      "t_max": 32,
+      "pred": 1,
+      "passes": 32,
+      "cycles": 25824,
+      "wall_s": 0.015807300000233226,
+      "cycles_per_pass": 807.0
+    }
+  ],
+  "early_exit_passes": [
+    40,
+    40,
+    40,
+    1,
+    40,
+    1,
+    40,
+    1,
+    40,
+    40,
+    40,
+    40,
+    40,
+    1,
+    1,
+    40,
+    40,
+    40,
+    40,
+    40
+  ],
+  "throughput_inf_per_s_incl_uart": 62.511501217494946,
+  "core_latency_us": 762.8671875,
+  "energy": null,
+  "slice_meta": {
+    "checkpoint": "D:\\_July2026\\SENA_Project\\sena2026\\results\\q1_ablation_full_r0_adaptive.npz",
+    "sizes": [
+      784,
+      160,
+      10
+    ],
+    "slice_hidden": 16,
+    "n_fwd": [
+      673.467919915342,
+      187.65660153722578
+    ],
+    "n_log2_hid": 9,
+    "n_log2_out": 8,
+    "note": "16-hidden slice of member 0; accuracy of the slice is NOT the paper accuracy \u2014 this design exists to calibrate cycles/pass, f_clk and power on real silicon."
+  },
+  "timestamp": "2026-07-26T09:56:02"
+}

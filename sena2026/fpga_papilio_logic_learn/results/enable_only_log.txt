@@ -1,0 +1,65 @@
+==== 31-07-2026 21:50:24.33 ENABLE ONLY ==== 
+Unknown | USB Serial Converter B
+Unknown | USB Serial Converter A
+Unknown | USB Serial Converter A
+Unknown | USB Composite Device
+Unknown | USB Composite Device
+Unknown | USB Serial Converter B
+Microsoft PnP Utility
+
+Scanning for device hardware changes.
+Scan complete.
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010&MI_01\8&809B479&0&0001
+The device is not connected.
+
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010&MI_00\8&809B479&0&0000
+The device is not connected.
+
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010&MI_00\8&2D7D15C3&1&0000
+The device is not connected.
+
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010\7&19CD6259&0&1
+The device is not connected.
+
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010\7&19CD6259&0&3
+The device is not connected.
+
+
+Microsoft PnP Utility
+
+Failed to restart device:  USB\VID_0403&PID_6010&MI_01\8&2D7D15C3&1&0001
+The device is not connected.
+
+
+
+Status  FriendlyName           
+------  ------------           
+Unknown USB Serial Port (COM4) 
+Unknown USB Serial Port (COM12)
+Unknown USB Serial Port (COM13)
+Unknown USB Serial Converter B 
+Unknown USB Serial Converter A 
+Unknown USB Serial Converter A 
+Unknown USB Composite Device   
+Unknown USB Composite Device   
+Unknown USB Serial Converter B 
+Unknown USB Serial Port (COM3) 
+
+
+
+DONE 

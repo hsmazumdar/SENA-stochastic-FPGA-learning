@@ -1,0 +1,1413 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml papilio_mnist_online_top.twx papilio_mnist_online_top.ncd -o
+papilio_mnist_online_top.twr papilio_mnist_online_top.pcf -ucf papilio_pro.ucf
+
+Design file:              papilio_mnist_online_top.ncd
+Physical constraint file: papilio_mnist_online_top.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1193953843018182912 paths analyzed, 16453 endpoints analyzed, 1 failing endpoint
+ 1 timing error detected. (1 setup error, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  31.256ns.
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/run_cycles_6 (SLICE_X21Y26.D5), 1573244759461181 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.006ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.150ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.071ns (0.688 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.D5      net (fanout=17)       0.875   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.CLK     Tas                   0.373   u_core/run_cycles<6>
+                                                       u_core/run_cycles_6_dpot
+                                                       u_core/run_cycles_6
+    -------------------------------------------------  ---------------------------
+    Total                                     31.150ns (11.274ns logic, 19.876ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.003ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.147ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.071ns (0.688 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C6       net (fanout=28)       0.849   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C        Tilo                  0.259   u_core/GND_6_o_votes[2][11]_mux_21_OUT<10>
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT41
+    SLICE_X6Y27.A3       net (fanout=1)        0.998   u_core/GND_6_o_votes[6][11]_mux_41_OUT<1>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.D5      net (fanout=17)       0.875   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.CLK     Tas                   0.373   u_core/run_cycles<6>
+                                                       u_core/run_cycles_6_dpot
+                                                       u_core/run_cycles_6
+    -------------------------------------------------  ---------------------------
+    Total                                     31.147ns (11.274ns logic, 19.873ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.002ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_6 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.142ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.071ns (0.688 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.474   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lut<0>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.D5      net (fanout=17)       0.875   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y26.CLK     Tas                   0.373   u_core/run_cycles<6>
+                                                       u_core/run_cycles_6_dpot
+                                                       u_core/run_cycles_6
+    -------------------------------------------------  ---------------------------
+    Total                                     31.142ns (11.266ns logic, 19.876ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/run_cycles_9 (SLICE_X21Y25.C6), 1573244759461181 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.016ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_9 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.125ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.C6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_9_dpot
+                                                       u_core/run_cycles_9
+    -------------------------------------------------  ---------------------------
+    Total                                     31.125ns (11.274ns logic, 19.851ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.019ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_9 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.122ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C6       net (fanout=28)       0.849   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C        Tilo                  0.259   u_core/GND_6_o_votes[2][11]_mux_21_OUT<10>
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT41
+    SLICE_X6Y27.A3       net (fanout=1)        0.998   u_core/GND_6_o_votes[6][11]_mux_41_OUT<1>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.C6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_9_dpot
+                                                       u_core/run_cycles_9
+    -------------------------------------------------  ---------------------------
+    Total                                     31.122ns (11.274ns logic, 19.848ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.024ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_9 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.117ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.474   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lut<0>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.C6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_9_dpot
+                                                       u_core/run_cycles_9
+    -------------------------------------------------  ---------------------------
+    Total                                     31.117ns (11.266ns logic, 19.851ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/run_cycles_10 (SLICE_X21Y25.D6), 1573244759461181 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.016ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_10 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.125ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.D6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_10_dpot
+                                                       u_core/run_cycles_10
+    -------------------------------------------------  ---------------------------
+    Total                                     31.125ns (11.274ns logic, 19.851ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.019ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_10 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.122ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C6       net (fanout=28)       0.849   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y27.C        Tilo                  0.259   u_core/GND_6_o_votes[2][11]_mux_21_OUT<10>
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT41
+    SLICE_X6Y27.A3       net (fanout=1)        0.998   u_core/GND_6_o_votes[6][11]_mux_41_OUT<1>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.D6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_10_dpot
+                                                       u_core/run_cycles_10
+    -------------------------------------------------  ---------------------------
+    Total                                     31.122ns (11.274ns logic, 19.848ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.024ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               u_core/o_bits_0 (FF)
+  Destination:          u_core/run_cycles_10 (FF)
+  Requirement:          31.250ns
+  Data Path Delay:      31.117ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.074ns (0.685 - 0.759)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: u_core/o_bits_0 to u_core/run_cycles_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y35.AQ       Tcko                  0.476   u_core/o_bits<3>
+                                                       u_core/o_bits_0
+    SLICE_X0Y30.A6       net (fanout=2)        0.663   u_core/o_bits<0>
+    SLICE_X0Y30.COUT     Topcya                0.474   u_core/Madd_votes_next<0>_cy<3>
+                                                       u_core/Madd_votes_next<0>_lut<0>
+                                                       u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.CIN      net (fanout=1)        0.003   u_core/Madd_votes_next<0>_cy<3>
+    SLICE_X0Y31.DMUX     Tcind                 0.320   u_core/Madd_votes_next<0>_cy<7>
+                                                       u_core/Madd_votes_next<0>_cy<7>
+    SLICE_X2Y33.D1       net (fanout=5)        1.108   u_core/votes_next<0><7>
+    SLICE_X2Y33.COUT     Topcyd                0.335   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_lutdi3
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<3>
+    SLICE_X2Y34.BMUX     Tcinb                 0.239   u_core/GND_6_o_votes[1][11]_mux_16_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D4       net (fanout=25)       1.140   u_core/Mcompar_GND_6_o_votes[1][11]_LessThan_16_o_cy<5>
+    SLICE_X0Y29.D        Tilo                  0.254   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[1][11]_mux_16_OUT41
+    SLICE_X0Y28.A3       net (fanout=2)        0.550   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+    SLICE_X0Y28.COUT     Topcya                0.474   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_lut<0>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<3>
+    SLICE_X0Y29.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.D5       net (fanout=27)       0.794   u_core/Mcompar_GND_6_o_votes[2][11]_LessThan_21_o_cy<5>
+    SLICE_X0Y29.DMUX     Tilo                  0.326   u_core/GND_6_o_votes[1][11]_mux_16_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[2][11]_mux_21_OUT41
+    SLICE_X2Y25.A4       net (fanout=1)        0.766   u_core/GND_6_o_votes[2][11]_mux_21_OUT<1>
+    SLICE_X2Y25.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<3>
+    SLICE_X2Y26.BMUX     Tcinb                 0.239   u_core/Mmux_tele_idx[3]_X_4_o_wide_mux_63_OUT_5_f76
+                                                       u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A6       net (fanout=15)       1.181   u_core/Mcompar_GND_6_o_votes[3][11]_LessThan_26_o_cy<5>
+    SLICE_X5Y31.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[3][11]_mux_26_OUT51
+    SLICE_X4Y33.B5       net (fanout=3)        0.669   u_core/GND_6_o_votes[3][11]_mux_26_OUT<2>
+    SLICE_X4Y33.COUT     Topcyb                0.483   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<3>
+    SLICE_X4Y34.BMUX     Tcinb                 0.286   u_core/acc_out_9<191>
+                                                       u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B6       net (fanout=28)       0.825   u_core/Mcompar_GND_6_o_votes[4][11]_LessThan_31_o_cy<5>
+    SLICE_X3Y34.B        Tilo                  0.259   u_core/GND_6_o_votes[4][11]_mux_31_OUT<11>
+                                                       u_core/Mmux_GND_6_o_votes[4][11]_mux_31_OUT61
+    SLICE_X6Y33.B5       net (fanout=1)        0.811   u_core/GND_6_o_votes[4][11]_mux_31_OUT<3>
+    SLICE_X6Y33.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<3>
+    SLICE_X6Y34.BMUX     Tcinb                 0.239   u_core/Mmux_k_idx[3]_X_4_o_wide_mux_360_OUT_5_f7
+                                                       u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B6       net (fanout=16)       1.214   u_core/Mcompar_GND_6_o_votes[5][11]_LessThan_36_o_cy<5>
+    SLICE_X3Y29.B        Tilo                  0.259   u_core/votes_9<90>
+                                                       u_core/Mmux_GND_6_o_votes[5][11]_mux_36_OUT13
+    SLICE_X4Y27.A5       net (fanout=3)        0.894   u_core/GND_6_o_votes[5][11]_mux_36_OUT<0>
+    SLICE_X4Y27.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<3>
+    SLICE_X4Y28.BMUX     Tcinb                 0.286   u_core/GND_6_o_votes[7][11]_mux_46_OUT<11>
+                                                       u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A6       net (fanout=28)       0.893   u_core/Mcompar_GND_6_o_votes[6][11]_LessThan_41_o_cy<5>
+    SLICE_X3Y31.A        Tilo                  0.259   N347
+                                                       u_core/Mmux_GND_6_o_votes[6][11]_mux_41_OUT13
+    SLICE_X6Y27.A5       net (fanout=1)        0.957   u_core/GND_6_o_votes[6][11]_mux_41_OUT<0>
+    SLICE_X6Y27.COUT     Topcya                0.495   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<3>
+    SLICE_X6Y28.BMUX     Tcinb                 0.239   u_core/Mmux_label[3]_X_4_o_wide_mux_258_OUT_5_f75
+                                                       u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B6       net (fanout=16)       0.937   u_core/Mcompar_GND_6_o_votes[7][11]_LessThan_46_o_cy<5>
+    SLICE_X4Y24.B        Tilo                  0.254   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+                                                       u_core/Mmux_GND_6_o_votes[7][11]_mux_46_OUT41
+    SLICE_X4Y25.A5       net (fanout=3)        0.446   u_core/GND_6_o_votes[7][11]_mux_46_OUT<1>
+    SLICE_X4Y25.COUT     Topcya                0.482   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_lutdi
+                                                       u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<3>
+    SLICE_X4Y26.BMUX     Tcinb                 0.286   N279
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT3_SW0_cy
+    SLICE_X5Y29.A6       net (fanout=28)       0.742   u_core/Mcompar_GND_6_o_votes[8][11]_LessThan_51_o_cy<5>
+    SLICE_X5Y29.A        Tilo                  0.259   u_core/GND_6_o_votes[5][11]_mux_36_OUT<3>
+                                                       u_core/Mmux_GND_6_o_votes[8][11]_mux_51_OUT61
+    SLICE_X6Y25.B5       net (fanout=1)        0.688   u_core/GND_6_o_votes[8][11]_mux_51_OUT<3>
+    SLICE_X6Y25.COUT     Topcyb                0.448   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_lut<1>
+                                                       u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<3>
+    SLICE_X6Y26.BMUX     Tcinb                 0.239   u_core/max_v<3>
+                                                       u_core/Mmux_state[3]_pred[3]_wide_mux_483_OUT12_cy
+    SLICE_X7Y28.A3       net (fanout=16)       0.660   u_core/Mcompar_GND_6_o_votes[9][11]_LessThan_56_o_cy<5>
+    SLICE_X7Y28.A        Tilo                  0.259   u_core/bit_d
+                                                       u_core/Mmux_max_v101
+    SLICE_X10Y19.A4      net (fanout=1)        1.469   u_core/max_v<7>
+    SLICE_X10Y19.COUT    Topcya                0.495   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_lutdi3
+                                                       u_core/Mcompar_sum_num[19]_GND_6_o_LessThan_63_o_cy<7>
+    SLICE_X19Y26.A6      net (fanout=79)       1.564   u_core/sum_num[19]_GND_6_o_LessThan_63_o
+    SLICE_X19Y26.A       Tilo                  0.259   u_core/run_cycles<2>
+                                                       u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.D6      net (fanout=17)       0.850   u_core/state[3]_GND_6_o_Mux_478_o_rstpot
+    SLICE_X21Y25.CLK     Tas                   0.373   u_core/run_cycles<10>
+                                                       u_core/run_cycles_10_dpot
+                                                       u_core/run_cycles_10
+    -------------------------------------------------  ---------------------------
+    Total                                     31.117ns (11.266ns logic, 19.851ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/Mram_ram_out2 (RAMB16_X0Y10.DIA0), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.298ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_core/out_di_36 (FF)
+  Destination:          u_core/Mram_ram_out2 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.296ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.002ns (0.113 - 0.115)
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_core/out_di_36 to u_core/Mram_ram_out2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y19.BQ       Tcko                  0.198   u_core/out_di<38>
+                                                       u_core/out_di_36
+    RAMB16_X0Y10.DIA0    net (fanout=1)        0.151   u_core/out_di<36>
+    RAMB16_X0Y10.CLKA    Trckd_DIA   (-Th)     0.053   u_core/Mram_ram_out2
+                                                       u_core/Mram_ram_out2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.296ns (0.145ns logic, 0.151ns route)
+                                                       (49.0% logic, 51.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core/Mram_ram_out2 (RAMB16_X0Y10.DIA19), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.299ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_core/out_di_55 (FF)
+  Destination:          u_core/Mram_ram_out2 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.304ns (Levels of Logic = 0)
+  Clock Path Skew:      0.005ns (0.113 - 0.108)
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_core/out_di_55 to u_core/Mram_ram_out2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y22.AQ       Tcko                  0.198   u_core/out_di<58>
+                                                       u_core/out_di_55
+    RAMB16_X0Y10.DIA19   net (fanout=1)        0.159   u_core/out_di<55>
+    RAMB16_X0Y10.CLKA    Trckd_DIA   (-Th)     0.053   u_core/Mram_ram_out2
+                                                       u_core/Mram_ram_out2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.304ns (0.145ns logic, 0.159ns route)
+                                                       (47.7% logic, 52.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point u_core_Mram_ram_hid2 (RAMB16_X0Y4.ADDRA8), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.342ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               u_core/hid_addr_4 (FF)
+  Destination:          u_core_Mram_ram_hid2 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.344ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.110 - 0.108)
+  Source Clock:         clk_BUFGP rising at 31.250ns
+  Destination Clock:    clk_BUFGP rising at 31.250ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: u_core/hid_addr_4 to u_core_Mram_ram_hid2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y9.CMUX      Tshcko                0.238   u_core/hid_addr<6>
+                                                       u_core/hid_addr_4
+    RAMB16_X0Y4.ADDRA8   net (fanout=4)        0.172   u_core/hid_addr<4>
+    RAMB16_X0Y4.CLKA     Trckc_ADDRA (-Th)     0.066   u_core_Mram_ram_hid2
+                                                       u_core_Mram_ram_hid2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.344ns (0.172ns logic, 0.172ns route)
+                                                       (50.0% logic, 50.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 27.680ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: u_core_Mram_ram_hid1/CLKA
+  Logical resource: u_core_Mram_ram_hid1/CLKA
+  Location pin: RAMB16_X0Y2.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 27.680ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: u_core_Mram_ram_hid2/CLKA
+  Logical resource: u_core_Mram_ram_hid2/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 27.680ns (period - min period limit)
+  Period: 31.250ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: u_core_Mram_ram_hid3/CLKA
+  Logical resource: u_core_Mram_ram_hid3/CLKA
+  Location pin: RAMB16_X0Y6.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   31.256|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 1  Score: 6  (Setup/Max: 6, Hold: 0)
+
+Constraints cover 1193953843018182912 paths, 0 nets, and 26540 connections
+
+Design statistics:
+   Minimum period:  31.256ns{1}   (Maximum frequency:  31.994MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Aug  1 01:49:58 2026 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 482 MB
+
+
+

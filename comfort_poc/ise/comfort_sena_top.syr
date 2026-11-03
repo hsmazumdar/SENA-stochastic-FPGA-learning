@@ -1,0 +1,941 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Reading design: comfort_sena_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "comfort_sena_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "comfort_sena_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : comfort_sena_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/work/rtl/uart_tx.v" into library work
+Parsing module <uart_tx>.
+Analyzing Verilog file "/work/rtl/uart_rx.v" into library work
+Parsing module <uart_rx>.
+Analyzing Verilog file "/work/rtl/comfort_core.v" into library work
+Parsing module <comfort_core>.
+Analyzing Verilog file "/work/rtl/comfort_sena_top.v" into library work
+Parsing module <comfort_sena_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <comfort_sena_top>.
+
+Elaborating module <uart_rx(CLKS_PER_BIT=278)>.
+
+Elaborating module <uart_tx(CLKS_PER_BIT=278)>.
+
+Elaborating module <comfort_core>.
+Reading initialization file \"w_hid_m0.mem\".
+Reading initialization file \"w_hid_m1.mem\".
+Reading initialization file \"w_hid_m2.mem\".
+Reading initialization file \"w_out_m0.mem\".
+Reading initialization file \"w_out_m1.mem\".
+Reading initialization file \"w_out_m2.mem\".
+WARNING:HDLCompiler:413 - "/work/rtl/comfort_core.v" Line 153: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/work/rtl/comfort_core.v" Line 180: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:1127 - "/work/rtl/comfort_core.v" Line 102: Assignment to y_bit ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/work/rtl/comfort_sena_top.v" Line 130: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/work/rtl/comfort_sena_top.v" Line 135: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <comfort_sena_top>.
+    Related source file is "/work/rtl/comfort_sena_top.v".
+        CLKS_PER_BIT = 278
+    Found 3-bit register for signal <pstate>.
+    Found 2-bit register for signal <arg>.
+    Found 2-bit register for signal <member>.
+    Found 8-bit register for signal <rh_u8>.
+    Found 8-bit register for signal <t_u8>.
+    Found 4-bit register for signal <n_log2>.
+    Found 16-bit register for signal <t_passes>.
+    Found 8-bit register for signal <tx_data>.
+    Found 64-bit register for signal <reply>.
+    Found 4-bit register for signal <reply_len>.
+    Found 4-bit register for signal <reply_idx>.
+    Found 16-bit register for signal <pause>.
+    Found 1-bit register for signal <start>.
+    Found 1-bit register for signal <tx_send>.
+    Found 8-bit register for signal <por>.
+    Found finite state machine <FSM_0> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 24                                             |
+    | Inputs             | 13                                             |
+    | Outputs            | 16                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <por[7]_GND_1_o_add_1_OUT> created at line 26.
+    Found 5-bit adder for signal <n0209> created at line 134.
+    Found 16-bit subtractor for signal <GND_1_o_GND_1_o_sub_65_OUT<15:0>> created at line 130.
+    Found 120-bit shifter logical right for signal <n0175> created at line 132
+    Found 5-bit comparator greater for signal <n0070> created at line 134
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 146 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <comfort_sena_top> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "/work/rtl/uart_rx.v".
+        CLKS_PER_BIT = 278
+    Found 1-bit register for signal <rx_q>.
+    Found 1-bit register for signal <rx_d>.
+    Found 3-bit register for signal <state>.
+    Found 3-bit register for signal <bit_idx>.
+    Found 16-bit register for signal <cnt>.
+    Found 8-bit register for signal <data>.
+    Found 1-bit register for signal <valid>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <cnt[15]_GND_2_o_add_6_OUT> created at line 59.
+    Found 3-bit adder for signal <bit_idx[2]_GND_2_o_add_12_OUT> created at line 69.
+    Found 16-bit 3-to-1 multiplexer for signal <_n0096> created at line 44.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  30 D-type flip-flop(s).
+	inferred  15 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "/work/rtl/uart_tx.v".
+        CLKS_PER_BIT = 278
+    Found 1-bit register for signal <tx>.
+    Found 16-bit register for signal <cnt>.
+    Found 3-bit register for signal <bit_idx>.
+    Found 8-bit register for signal <sh>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <busy>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_idx[2]_GND_4_o_add_10_OUT> created at line 61.
+    Found 16-bit adder for signal <cnt[15]_GND_4_o_add_18_OUT> created at line 72.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_idx[2]_sh[7]_Mux_7_o> created at line 55.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <comfort_core>.
+    Related source file is "/work/rtl/comfort_core.v".
+        N_IN = 16
+        N_HID = 16
+        W_BITS = 8
+        ACC_BITS = 20
+        W_HID0 = "w_hid_m0.mem"
+        W_OUT0 = "w_out_m0.mem"
+        W_HID1 = "w_hid_m1.mem"
+        W_OUT1 = "w_out_m1.mem"
+        W_HID2 = "w_hid_m2.mem"
+        W_OUT2 = "w_out_m2.mem"
+    Set property "ram_style = block" for signal <ram_hid0>.
+    Set property "ram_style = block" for signal <ram_hid1>.
+    Set property "ram_style = block" for signal <ram_hid2>.
+    Set property "ram_style = block" for signal <ram_out0>.
+    Set property "ram_style = block" for signal <ram_out1>.
+    Set property "ram_style = block" for signal <ram_out2>.
+WARNING:Xst:2999 - Signal 'ram_hid0', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'ram_hid1', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'ram_hid2', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'ram_out0', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'ram_out1', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'ram_out2', unconnected in block 'comfort_core', is tied to its initial value.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_hid0>, simulation mismatch.
+    Found 17x128-bit single-port Read Only RAM <Mram_ram_hid0> for signal <ram_hid0>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_hid1>, simulation mismatch.
+    Found 17x128-bit single-port Read Only RAM <Mram_ram_hid1> for signal <ram_hid1>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_hid2>, simulation mismatch.
+    Found 17x128-bit single-port Read Only RAM <Mram_ram_hid2> for signal <ram_hid2>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_out0>, simulation mismatch.
+    Found 17x8-bit single-port Read Only RAM <Mram_ram_out0> for signal <ram_out0>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_out1>, simulation mismatch.
+    Found 17x8-bit single-port Read Only RAM <Mram_ram_out1> for signal <ram_out1>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram_out2>, simulation mismatch.
+    Found 17x8-bit single-port Read Only RAM <Mram_ram_out2> for signal <ram_out2>.
+    Found 3-bit register for signal <state>.
+    Found 16-bit register for signal <ones_count>.
+    Found 16-bit register for signal <passes_done>.
+    Found 16-bit register for signal <h_bits>.
+    Found 16-bit register for signal <pass_i>.
+    Found 32-bit register for signal <run_cycles>.
+    Found 32-bit register for signal <cyc_free>.
+    Found 32-bit register for signal <cyc_start>.
+    Found 5-bit register for signal <hid_addr>.
+    Found 5-bit register for signal <out_addr>.
+    Found 6-bit register for signal <idx>.
+    Found 20-bit register for signal <acc_o>.
+    Found 512-bit register for signal <n0202[511:0]>.
+    Found 320-bit register for signal <n0209[319:0]>.
+    Found 32-bit register for signal <lfsr_o>.
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <bit_d>.
+    Found 8-bit register for signal <out_do>.
+    Found 128-bit register for signal <hid_do>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_90_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_95_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_100_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_105_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_110_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_115_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_120_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_125_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_130_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_135_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_140_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_145_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_150_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_155_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_160_OUT> created at line 84.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_165_OUT> created at line 84.
+    Found 17-bit subtractor for signal <GND_6_o_GND_6_o_sub_181_OUT> created at line 82.
+    Found 19-bit subtractor for signal <GND_6_o_GND_6_o_sub_183_OUT> created at line 84.
+    Found 32-bit subtractor for signal <cyc_free[31]_cyc_start[31]_sub_191_OUT> created at line 194.
+    Found 32-bit adder for signal <cyc_free[31]_GND_6_o_add_18_OUT> created at line 117.
+    Found 20-bit adder for signal <acc_h[0][19]_hid_do[7]_add_65_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[1][19]_hid_do[15]_add_66_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[2][19]_hid_do[23]_add_67_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[3][19]_hid_do[31]_add_68_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[4][19]_hid_do[39]_add_69_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[5][19]_hid_do[47]_add_70_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[6][19]_hid_do[55]_add_71_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[7][19]_hid_do[63]_add_72_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[8][19]_hid_do[71]_add_73_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[9][19]_hid_do[79]_add_74_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[10][19]_hid_do[87]_add_75_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[11][19]_hid_do[95]_add_76_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[12][19]_hid_do[103]_add_77_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[13][19]_hid_do[111]_add_78_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[14][19]_hid_do[119]_add_79_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_h[15][19]_hid_do[127]_add_80_OUT> created at line 148.
+    Found 20-bit adder for signal <acc_o[19]_out_do[7]_add_168_OUT> created at line 176.
+    Found 6-bit adder for signal <idx[5]_GND_6_o_add_171_OUT> created at line 180.
+    Found 16-bit adder for signal <ones_count[15]_GND_6_o_add_184_OUT> created at line 188.
+    Found 16-bit adder for signal <passes_done[15]_GND_6_o_add_186_OUT> created at line 189.
+    Found 16-bit adder for signal <pass_i[15]_GND_6_o_add_188_OUT> created at line 191.
+    Found 17-bit shifter logical left for signal <GND_6_o_n_log2[3]_shift_left_179_OUT> created at line 81
+    Found 1-bit 16-to-1 multiplexer for signal <idx[3]_x_bits[15]_Mux_64_o> created at line 140.
+    Found 1-bit 16-to-1 multiplexer for signal <idx[3]_h_bits[15]_Mux_167_o> created at line 169.
+    Found 20-bit comparator greater for signal <acc_h[0][19]_GND_6_o_LessThan_91_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[1][19]_GND_6_o_LessThan_96_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[2][19]_GND_6_o_LessThan_101_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[3][19]_GND_6_o_LessThan_106_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[4][19]_GND_6_o_LessThan_111_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[5][19]_GND_6_o_LessThan_116_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[6][19]_GND_6_o_LessThan_121_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[7][19]_GND_6_o_LessThan_126_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[8][19]_GND_6_o_LessThan_131_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[9][19]_GND_6_o_LessThan_136_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[10][19]_GND_6_o_LessThan_141_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[11][19]_GND_6_o_LessThan_146_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[12][19]_GND_6_o_LessThan_151_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[13][19]_GND_6_o_LessThan_156_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[14][19]_GND_6_o_LessThan_161_o> created at line 160
+    Found 20-bit comparator greater for signal <acc_h[15][19]_GND_6_o_LessThan_166_o> created at line 160
+    Found 6-bit comparator greater for signal <idx[5]_GND_6_o_LessThan_167_o> created at line 168
+    Found 20-bit comparator lessequal for signal <acc_o[19]_GND_6_o_LessThan_184_o> created at line 187
+    Found 16-bit comparator greater for signal <n0148> created at line 191
+    Summary:
+	inferred   6 RAM(s).
+	inferred  41 Adder/Subtractor(s).
+	inferred 1199 D-type flip-flop(s).
+	inferred  19 Comparator(s).
+	inferred  15 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <comfort_core> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 17x128-bit single-port Read Only RAM                  : 3
+ 17x8-bit single-port Read Only RAM                    : 3
+# Adders/Subtractors                                   : 48
+ 16-bit adder                                          : 5
+ 16-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 1
+ 19-bit subtractor                                     : 17
+ 20-bit adder                                          : 17
+ 3-bit adder                                           : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 8-bit adder                                           : 1
+# Registers                                            : 44
+ 1-bit register                                        : 10
+ 128-bit register                                      : 1
+ 16-bit register                                       : 8
+ 2-bit register                                        : 2
+ 20-bit register                                       : 1
+ 3-bit register                                        : 2
+ 32-bit register                                       : 4
+ 320-bit register                                      : 1
+ 4-bit register                                        : 3
+ 5-bit register                                        : 2
+ 512-bit register                                      : 1
+ 6-bit register                                        : 1
+ 64-bit register                                       : 1
+ 8-bit register                                        : 7
+# Comparators                                          : 20
+ 16-bit comparator greater                             : 1
+ 20-bit comparator greater                             : 16
+ 20-bit comparator lessequal                           : 1
+ 5-bit comparator greater                              : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 45
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 18
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 11
+ 16-bit 3-to-1 multiplexer                             : 1
+ 20-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 4
+ 64-bit 2-to-1 multiplexer                             : 1
+# Logic shifters                                       : 2
+ 120-bit shifter logical right                         : 1
+ 17-bit shifter logical left                           : 1
+# FSMs                                                 : 4
+# Xors                                                 : 17
+ 32-bit xor2                                           : 17
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <reply_len_2> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <arg_1> of sequential type is unconnected in block <comfort_sena_top>.
+WARNING:Xst:2404 -  FFs/Latches <arg<1:1>> (without init value) have a constant value of 0 in block <comfort_sena_top>.
+
+Synthesizing (advanced) Unit <comfort_core>.
+The following registers are absorbed into accumulator <acc_o>: 1 register on signal <acc_o>.
+The following registers are absorbed into counter <cyc_free>: 1 register on signal <cyc_free>.
+The following registers are absorbed into counter <ones_count>: 1 register on signal <ones_count>.
+The following registers are absorbed into counter <passes_done>: 1 register on signal <passes_done>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_hid0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 128-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <hid_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_hid1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 128-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <hid_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_hid2> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 128-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <hid_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_out0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <out_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_out1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <out_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ram_out2> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 17-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <out_addr>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <comfort_core> synthesized (advanced).
+
+Synthesizing (advanced) Unit <comfort_sena_top>.
+The following registers are absorbed into counter <por>: 1 register on signal <por>.
+Unit <comfort_sena_top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <bit_idx>: 1 register on signal <bit_idx>.
+Unit <uart_tx> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 17x128-bit single-port distributed Read Only RAM      : 3
+ 17x8-bit single-port distributed Read Only RAM        : 3
+# Adders/Subtractors                                   : 42
+ 16-bit adder                                          : 3
+ 16-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 1
+ 19-bit subtractor                                     : 17
+ 20-bit adder                                          : 16
+ 3-bit adder                                           : 1
+ 32-bit subtractor                                     : 1
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 5
+ 16-bit up counter                                     : 2
+ 3-bit up counter                                      : 1
+ 32-bit up counter                                     : 1
+ 8-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 20-bit up loadable accumulator                        : 1
+# Registers                                            : 1308
+ Flip-Flops                                            : 1308
+# Comparators                                          : 20
+ 16-bit comparator greater                             : 1
+ 20-bit comparator greater                             : 16
+ 20-bit comparator lessequal                           : 1
+ 5-bit comparator greater                              : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 41
+ 1-bit 16-to-1 multiplexer                             : 2
+ 1-bit 2-to-1 multiplexer                              : 18
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 9
+ 16-bit 3-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 4
+ 64-bit 2-to-1 multiplexer                             : 1
+# Logic shifters                                       : 2
+ 120-bit shifter logical right                         : 1
+ 17-bit shifter logical left                           : 1
+# FSMs                                                 : 4
+# Xors                                                 : 17
+ 32-bit xor2                                           : 17
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <reply_len_2> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <pstate[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 110   | 110
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_rx/FSM_1> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 10
+ 011   | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_tx/FSM_2> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <u_core/FSM_3> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 110   | 110
+-------------------
+
+Optimizing unit <comfort_sena_top> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <comfort_core> ...
+INFO:Xst:2261 - The FF/Latch <hid_do_102> in Unit <comfort_core> is equivalent to the following FF/Latch, which will be removed : <hid_do_103> 
+INFO:Xst:2261 - The FF/Latch <out_do_6> in Unit <comfort_core> is equivalent to the following FF/Latch, which will be removed : <out_do_7> 
+WARNING:Xst:1710 - FF/Latch <pause_12> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_13> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_14> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pause_15> (without init value) has a constant value of 0 in block <comfort_sena_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_10> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_10> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_11> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_11> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_12> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_12> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_13> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_13> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_14> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_14> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_15> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_15> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_0> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_0> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_1> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_1> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_2> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_2> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_3> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_3> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_4> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_4> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_5> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_5> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_6> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_6> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_7> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_7> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_8> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_8> 
+INFO:Xst:2261 - The FF/Latch <u_core/passes_done_9> in Unit <comfort_sena_top> is equivalent to the following FF/Latch, which will be removed : <u_core/pass_i_9> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block comfort_sena_top, actual ratio is 56.
+FlipFlop n_log2_0 has been replicated 2 time(s)
+FlipFlop n_log2_1 has been replicated 3 time(s)
+FlipFlop n_log2_2 has been replicated 3 time(s)
+FlipFlop n_log2_3 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <comfort_sena_top> :
+	Found 6-bit shift register for signal <u_core/lfsr_o_24>.
+	Found 5-bit shift register for signal <u_core/lfsr_o_16>.
+	Found 4-bit shift register for signal <u_core/lfsr_h_15_439>.
+	Found 5-bit shift register for signal <u_core/lfsr_h_15_183>.
+	Found 4-bit shift register for signal <u_core/lfsr_h_15_176>.
+	Found 4-bit shift register for signal <u_core/lfsr_h_15_152>.
+	Found 4-bit shift register for signal <u_core/lfsr_h_15_144>.
+Unit <comfort_sena_top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1368
+ Flip-Flops                                            : 1368
+# Shift Registers                                      : 7
+ 4-bit shift register                                  : 4
+ 5-bit shift register                                  : 2
+ 6-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : comfort_sena_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 4393
+#      GND                         : 1
+#      INV                         : 18
+#      LUT1                        : 84
+#      LUT2                        : 812
+#      LUT3                        : 451
+#      LUT4                        : 433
+#      LUT5                        : 126
+#      LUT6                        : 566
+#      MUXCY                       : 994
+#      MUXF7                       : 62
+#      MUXF8                       : 2
+#      VCC                         : 1
+#      XORCY                       : 843
+# FlipFlops/Latches                : 1387
+#      FD                          : 134
+#      FDC                         : 82
+#      FDCE                        : 966
+#      FDE                         : 11
+#      FDP                         : 3
+#      FDPE                        : 191
+# Shift Registers                  : 7
+#      SRLC16E                     : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      IBUF                        : 1
+#      OBUF                        : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1387  out of  11440    12%  
+ Number of Slice LUTs:                 2497  out of   5720    43%  
+    Number used as Logic:              2490  out of   5720    43%  
+    Number used as Memory:                7  out of   1440     0%  
+       Number used as SRL:                7
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2806
+   Number with an unused Flip Flop:    1419  out of   2806    50%  
+   Number with an unused LUT:           309  out of   2806    11%  
+   Number of fully used LUT-FF pairs:  1078  out of   2806    38%  
+   Number of unique control sets:        28
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of    102     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1394  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 8.281ns (Maximum Frequency: 120.755MHz)
+   Minimum input arrival time before clock: 2.083ns
+   Maximum output required time after clock: 5.903ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 8.281ns (frequency: 120.755MHz)
+  Total number of paths / destination ports: 720903 / 3808
+-------------------------------------------------------------------------
+Delay:               8.281ns (Levels of Logic = 24)
+  Source:            n_log2_1_1 (FF)
+  Destination:       u_core/ones_count_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: n_log2_1_1 to u_core/ones_count_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q            12   0.525   1.345  n_log2_1_1 (n_log2_1_1)
+     LUT4:I0->O            1   0.254   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_lut<1>)
+     MUXCY:S->O            1   0.215   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<1> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<2> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<3> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<5> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<6> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<7> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<9> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<10> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<11> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<13> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<14> (u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_cy<14>)
+     XORCY:CI->O          34   0.206   1.553  u_core/Msub_GND_6_o_GND_6_o_sub_181_OUT_xor<15> (u_core/lfsr_h[0][16]_GND_6_o_and_88_OUT<15>_mand)
+     LUT6:I5->O            1   0.254   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_lut<15> (u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_lut<15>)
+     MUXCY:S->O            1   0.215   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15> (u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<16> (u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_cy<16>)
+     XORCY:CI->O           2   0.206   1.002  u_core/Msub_GND_6_o_GND_6_o_sub_183_OUT_xor<17> (u_core/GND_6_o_GND_6_o_sub_183_OUT<17>)
+     LUT4:I0->O            0   0.254   0.000  u_core/Mcompar__n0571_lutdi8 (u_core/Mcompar__n0571_lutdi8)
+     MUXCY:DI->O           1   0.181   0.000  u_core/Mcompar__n0571_cy<8> (u_core/Mcompar__n0571_cy<8>)
+     MUXCY:CI->O          16   0.235   1.182  u_core/Mcompar__n0571_cy<9> (u_core/_n0571)
+     LUT6:I5->O            1   0.254   0.000  u_core/ones_count_0_dpot (u_core/ones_count_0_dpot)
+     FDCE:D                    0.074          u_core/ones_count_0
+    ----------------------------------------
+    Total                      8.281ns (3.199ns logic, 5.082ns route)
+                                       (38.6% logic, 61.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            rx (PAD)
+  Destination:       u_rx/rx_d (FF)
+  Destination Clock: clk rising
+
+  Data Path: rx to u_rx/rx_d
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rx_IBUF (rx_IBUF)
+     FDP:D                     0.074          u_rx/rx_d
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              5.903ns (Levels of Logic = 1)
+  Source:            u_core/busy (FF)
+  Destination:       led (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u_core/busy to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q            540   0.525   2.466  u_core/busy (u_core/busy)
+     OBUF:I->O                 2.912          led_OBUF (led)
+    ----------------------------------------
+    Total                      5.903ns (3.437ns logic, 2.466ns route)
+                                       (58.2% logic, 41.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    8.281|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.05 secs
+ 
+--> 
+
+
+Total memory usage is 421480 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :   24 (   0 filtered)
+

@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-07-26T06:06:48+0530",
+  "profile": "full",
+  "dataset_seed": 2026,
+  "train_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "machine": "AMD64",
+  "packages": {
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.5",
+    "torch": "2.10.0+cpu",
+    "torchvision": "0.25.0+cpu",
+    "sklearn": "1.9.0"
+  },
+  "steps": [
+    {
+      "step": "b6",
+      "script": "exp_q1_pareto.py",
+      "ok": true,
+      "returncode": 0,
+      "elapsed_s": 1.1,
+      "tail": [
+        "23 points from ['mnist_sena_results.json', 'q1_mnist_baselines.json', 'q1_sena_ablations.json', 'q1_fashion_mnist.json']",
+        "wrote D:\\_July2026\\SENA_Project\\sena2026\\results\\q1_unified_pareto.json",
+        "FPGA folded fit: LUT 5392 (8.5% of xc7a100t), fits=True"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "step": "a1",
+      "artifact": "q1_mnist_baselines.json",
+      "exists": true,
+      "sha256": "978405172204108c7bb9f206c2a09b6c05e2bafde94e91f901e7b38fcff307bd",
+      "bytes": 6245,
+      "profile": "full"
+    },
+    {
+      "step": "a2",
+      "artifact": "q1_sena_ablations.json",
+      "exists": true,
+      "sha256": "d4ed4745735e41af8e5ebf3733fa3724c48256fd9b7b56f99e1813b2a7f6d8ff",
+      "bytes": 10105,
+      "profile": "full"
+    },
+    {
+      "step": "a3",
+      "artifact": "q1_rtl_mnist_accuracy.json",
+      "exists": true,
+      "sha256": "f3255c04dd6636f0a5677c0ba657a7951bd6bf7186e6280cc5293ce93af1e684",
+      "bytes": 1223,
+      "profile": "full"
+    },
+    {
+      "step": "a4",
+      "artifact": "q1_fpga_synth.json",
+      "exists": true,
+      "sha256": "d2483babf5a82884e517ce5217101d9242c09a215020ca8e84a8fa3af050712f",
+      "bytes": 2266,
+      "profile": "full"
+    },
+    {
+      "step": "a5",
+      "artifact": "q1_fashion_mnist.json",
+      "exists": true,
+      "sha256": "5c9623d6cf43f09a0dc3daa8575d871486aa1b605aa2f9fae3a04f166d66b02c",
+      "bytes": 8569,
+      "profile": "full"
+    },
+    {
+      "step": "a6",
+      "artifact": "q1_online_training.json",
+      "exists": true,
+      "sha256": "7998304aa19f77d03795a6e650ff28a18438f0d214ab32e873e9f5a74d193fc5",
+      "bytes": 34529,
+      "profile": "full"
+    },
+    {
+      "step": "b1",
+      "artifact": "q1_scaling.json",
+      "exists": true,
+      "sha256": "3c0d446a4830ba05c8f936a678635e6161677396bb995265a8234e0063074808",
+      "bytes": 30997,
+      "profile": "full"
+    },
+    {
+      "step": "b2",
+      "artifact": "q1_bitwidth.json",
+      "exists": true,
+      "sha256": "93d68d95ee3d3ef1674f49132f0226bdb790d3cd0e2e40deab71b8422bf1202a",
+      "bytes": 6660,
+      "profile": "full"
+    },
+    {
+      "step": "b3",
+      "artifact": "q1_analog_mc.json",
+      "exists": true,
+      "sha256": "f5f89a975bdba6039c3a83e6d50c121356fb3cd2a946957afaa4ac8e91a87d68",
+      "bytes": 8576,
+      "profile": "full"
+    },
+    {
+      "step": "b4",
+      "artifact": "q1_shapes.json",
+      "exists": true,
+      "sha256": "53b16c13a1c8ecc20d715f44583a28ae9d3b3bd0ce27ccbf0978c2ac1226582d",
+      "bytes": 99639,
+      "profile": "full"
+    },
+    {
+      "step": "b5",
+      "artifact": "q1_error_analysis.json",
+      "exists": true,
+      "sha256": "06053e438cb9bf2233144d2ab69435320084c0b58445c52878667eeb1c68bce0",
+      "bytes": 4184,
+      "profile": "full"
+    },
+    {
+      "step": "c3",
+      "artifact": "q1_sensor_adc.json",
+      "exists": true,
+      "sha256": "6e0dc7fe2c8c58fbcf022ba518efd920e002e524ea42c7317d341ba5043e9028",
+      "bytes": 1901,
+      "profile": "smoke"
+    },
+    {
+      "step": "b6",
+      "artifact": "q1_unified_pareto.json",
+      "exists": true,
+      "sha256": "34d8d7f4310b81307f757da9e7ccd59dcec841805149293d5f148f4429213fdd",
+      "bytes": 4565,
+      "profile": null
+    }
+  ]
+}

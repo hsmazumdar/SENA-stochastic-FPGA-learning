@@ -1,0 +1,355 @@
+Power Analyzer report for de2_115_calib
+Fri Jul 31 13:07:31 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Parallel Compilation
+  3. Power Analyzer Summary
+  4. Power Analyzer Settings
+  5. Indeterminate Toggle Rates
+  6. Operating Conditions Used
+  7. Thermal Power Dissipation by Block
+  8. Thermal Power Dissipation by Block Type
+  9. Thermal Power Dissipation by Hierarchy
+ 10. Core Dynamic Thermal Power Dissipation by Clock Domain
+ 11. Current Drawn from Voltage Supplies Summary
+ 12. VCCIO Supply Current Drawn by I/O Bank
+ 13. VCCIO Supply Current Drawn by Voltage
+ 14. Confidence Metric Details
+ 15. Signal Activities
+ 16. Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.03        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   1.1%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Power Analyzer Summary                                                                    ;
++----------------------------------------+--------------------------------------------------+
+; Power Analyzer Status                  ; Successful - Fri Jul 31 13:07:30 2026            ;
+; Quartus Prime Version                  ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition  ;
+; Revision Name                          ; de2_115_calib                                    ;
+; Top-level Entity Name                  ; de2_115_calib_top                                ;
+; Family                                 ; Cyclone IV E                                     ;
+; Device                                 ; EP4CE115F29C7                                    ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 187.58 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 27.79 mW                                         ;
+; Core Static Thermal Power Dissipation  ; 98.81 mW                                         ;
+; I/O Thermal Power Dissipation          ; 60.97 mW                                         ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Power Analyzer Settings                                                                    ;
++------------------------------------------------------------------+---------+---------------+
+; Option                                                           ; Setting ; Default Value ;
++------------------------------------------------------------------+---------+---------------+
+; Maximum processors allowed for parallel compilation              ; 4       ;               ;
+; Use smart compilation                                            ; Off     ; Off           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On      ; On            ;
+; Enable compact report table                                      ; Off     ; Off           ;
+; Default Power Toggle Rate                                        ; 25.0%   ; 12.5%         ;
+; Default Power Input I/O Toggle Rate                              ; 12.5%   ; 12.5%         ;
+; Use vectorless estimation                                        ; Off     ; On            ;
+; Use Input Files                                                  ; Off     ; Off           ;
+; Filter Glitches in VCD File Reader                               ; On      ; On            ;
+; Power Analyzer Report Signal Activity                            ; Off     ; Off           ;
+; Power Analyzer Report Power Dissipation                          ; Off     ; Off           ;
+; Device Power Characteristics                                     ; TYPICAL ; TYPICAL       ;
+; Automatically Compute Junction Temperature                       ; On      ; On            ;
+; Specified Junction Temperature                                   ; 25      ; 25            ;
+; Ambient Temperature                                              ; 25      ; 25            ;
+; Use Custom Cooling Solution                                      ; Off     ; Off           ;
+; Board Temperature                                                ; 25      ; 25            ;
++------------------------------------------------------------------+---------+---------------+
+
+
++----------------------------------------+
+; Indeterminate Toggle Rates             ;
++----------+-----------------------------+
+; Node     ; Reason                      ;
++----------+-----------------------------+
+; KEY[2]   ; No valid clock domain found ;
+; KEY[3]   ; No valid clock domain found ;
+; LEDR[6]  ; No valid clock domain found ;
+; LEDR[7]  ; No valid clock domain found ;
+; LEDR[8]  ; No valid clock domain found ;
+; LEDR[9]  ; No valid clock domain found ;
+; LEDR[10] ; No valid clock domain found ;
+; LEDR[11] ; No valid clock domain found ;
+; LEDR[12] ; No valid clock domain found ;
+; LEDR[13] ; No valid clock domain found ;
+; LEDR[14] ; No valid clock domain found ;
+; LEDR[15] ; No valid clock domain found ;
+; LEDR[16] ; No valid clock domain found ;
+; HEX3[0]  ; No valid clock domain found ;
+; HEX3[1]  ; No valid clock domain found ;
+; HEX3[2]  ; No valid clock domain found ;
+; HEX3[3]  ; No valid clock domain found ;
+; HEX3[4]  ; No valid clock domain found ;
+; HEX3[5]  ; No valid clock domain found ;
+; HEX3[6]  ; No valid clock domain found ;
++----------+-----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Operating Conditions Used                                               ;
++---------------------------------------------+---------------------------+
+; Setting                                     ; Value                     ;
++---------------------------------------------+---------------------------+
+; Device power characteristics                ; Typical                   ;
+;                                             ;                           ;
+; Voltages                                    ;                           ;
+;     VCCINT                                  ; 1.20 V                    ;
+;     VCCA                                    ; 2.50 V                    ;
+;     VCCD                                    ; 1.20 V                    ;
+;     3.3-V LVTTL I/O Standard                ; 3.3 V                     ;
+;     2.5 V I/O Standard                      ; 2.5 V                     ;
+;                                             ;                           ;
+; Auto computed junction temperature          ; 26.2 degrees Celsius      ;
+;     Ambient temperature                     ; 25.0 degrees Celsius      ;
+;     Junction-to-Case thermal resistance     ; 3.90 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt ;
+;     Heat Sink-to-Ambient thermal resistance ; 2.50 degrees Celsius/Watt ;
+;                                             ;                           ;
+; Board model used                            ; None                      ;
++---------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                            ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type          ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; M9K                 ; 4.65 mW                           ; 3.80 mW                     ; --                             ; 0.85 mW                       ;    6.250                                                  ;
+; Combinational cell  ; 5.82 mW                           ; 3.34 mW                     ; --                             ; 2.48 mW                       ;    6.250                                                  ;
+; Clock control block ; 8.71 mW                           ; 0.00 mW                     ; --                             ; 8.71 mW                       ;   50.000                                                  ;
+; Register cell       ; 8.58 mW                           ; 5.23 mW                     ; --                             ; 3.35 mW                       ;    6.271                                                  ;
+; I/O                 ; 28.60 mW                          ; 2.73 mW                     ; 25.84 mW                       ; 0.03 mW                       ;    5.177                                                  ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                            ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                  ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                                ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------+
+; |de2_115_calib_top                          ; 56.36 mW (38.57 mW)                  ; 15.10 mW (3.42 mW)              ; 25.84 mW (25.84 mW)               ; 15.42 mW (9.31 mW)                ; |de2_115_calib_top                                                                                                 ;
+;     |lpm_divide:Div0                        ; 0.11 mW (0.00 mW)                    ; 0.05 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div0                                                                                 ;
+;         |lpm_divide_vim:auto_generated      ; 0.11 mW (0.00 mW)                    ; 0.05 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div0|lpm_divide_vim:auto_generated                                                   ;
+;             |sign_div_unsign_nlh:divider    ; 0.11 mW (0.00 mW)                    ; 0.05 mW (0.00 mW)               ; --                                ; 0.06 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ;
+;                 |alt_u_div_27f:divider      ; 0.11 mW (0.11 mW)                    ; 0.05 mW (0.05 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |de2_115_calib_top|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ;
+;     |lpm_divide:Div1                        ; 0.14 mW (0.00 mW)                    ; 0.06 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div1                                                                                 ;
+;         |lpm_divide_sim:auto_generated      ; 0.14 mW (0.00 mW)                    ; 0.06 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div1|lpm_divide_sim:auto_generated                                                   ;
+;             |sign_div_unsign_klh:divider    ; 0.14 mW (0.00 mW)                    ; 0.06 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider                       ;
+;                 |alt_u_div_s6f:divider      ; 0.14 mW (0.14 mW)                    ; 0.06 mW (0.06 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |de2_115_calib_top|lpm_divide:Div1|lpm_divide_sim:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider ;
+;     |lpm_divide:Div2                        ; 0.04 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div2                                                                                 ;
+;         |lpm_divide_hhm:auto_generated      ; 0.04 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div2|lpm_divide_hhm:auto_generated                                                   ;
+;             |sign_div_unsign_9kh:divider    ; 0.04 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Div2|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider                       ;
+;                 |alt_u_div_64f:divider      ; 0.04 mW (0.04 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |de2_115_calib_top|lpm_divide:Div2|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ;
+;     |lpm_divide:Mod0                        ; 0.06 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod0                                                                                 ;
+;         |lpm_divide_vam:auto_generated      ; 0.06 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod0|lpm_divide_vam:auto_generated                                                   ;
+;             |sign_div_unsign_klh:divider    ; 0.06 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod0|lpm_divide_vam:auto_generated|sign_div_unsign_klh:divider                       ;
+;                 |alt_u_div_s6f:divider      ; 0.06 mW (0.06 mW)                    ; 0.03 mW (0.03 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |de2_115_calib_top|lpm_divide:Mod0|lpm_divide_vam:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider ;
+;     |lpm_divide:Mod1                        ; 0.13 mW (0.00 mW)                    ; 0.07 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod1                                                                                 ;
+;         |lpm_divide_vam:auto_generated      ; 0.13 mW (0.00 mW)                    ; 0.07 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod1|lpm_divide_vam:auto_generated                                                   ;
+;             |sign_div_unsign_klh:divider    ; 0.13 mW (0.00 mW)                    ; 0.07 mW (0.00 mW)               ; --                                ; 0.07 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod1|lpm_divide_vam:auto_generated|sign_div_unsign_klh:divider                       ;
+;                 |alt_u_div_s6f:divider      ; 0.13 mW (0.13 mW)                    ; 0.07 mW (0.07 mW)               ; --                                ; 0.07 mW (0.07 mW)                 ; |de2_115_calib_top|lpm_divide:Mod1|lpm_divide_vam:auto_generated|sign_div_unsign_klh:divider|alt_u_div_s6f:divider ;
+;     |lpm_divide:Mod2                        ; 0.05 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod2                                                                                 ;
+;         |lpm_divide_k9m:auto_generated      ; 0.05 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod2|lpm_divide_k9m:auto_generated                                                   ;
+;             |sign_div_unsign_9kh:divider    ; 0.05 mW (0.00 mW)                    ; 0.02 mW (0.00 mW)               ; --                                ; 0.02 mW (0.00 mW)                 ; |de2_115_calib_top|lpm_divide:Mod2|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ;
+;                 |alt_u_div_64f:divider      ; 0.05 mW (0.05 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.02 mW (0.02 mW)                 ; |de2_115_calib_top|lpm_divide:Mod2|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ;
+;     |hard_block:auto_generated_inst         ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |de2_115_calib_top|hard_block:auto_generated_inst                                                                  ;
+;     |seg7:s0                                ; 0.10 mW (0.10 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.09 mW (0.09 mW)                 ; |de2_115_calib_top|seg7:s0                                                                                         ;
+;     |seg7:s1                                ; 0.04 mW (0.04 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.03 mW (0.03 mW)                 ; |de2_115_calib_top|seg7:s1                                                                                         ;
+;     |seg7:s2                                ; 0.09 mW (0.09 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |de2_115_calib_top|seg7:s2                                                                                         ;
+;     |calib_core:u_core                      ; 16.57 mW (11.92 mW)                  ; 11.08 mW (7.27 mW)              ; --                                ; 5.50 mW (4.65 mW)                 ; |de2_115_calib_top|calib_core:u_core                                                                               ;
+;         |altsyncram:rom_hid_rtl_0           ; 3.68 mW (0.00 mW)                    ; 3.14 mW (0.00 mW)               ; --                                ; 0.54 mW (0.00 mW)                 ; |de2_115_calib_top|calib_core:u_core|altsyncram:rom_hid_rtl_0                                                      ;
+;             |altsyncram_ie81:auto_generated ; 3.68 mW (3.68 mW)                    ; 3.14 mW (3.14 mW)               ; --                                ; 0.54 mW (0.54 mW)                 ; |de2_115_calib_top|calib_core:u_core|altsyncram:rom_hid_rtl_0|altsyncram_ie81:auto_generated                       ;
+;         |altsyncram:rom_out_rtl_0           ; 0.97 mW (0.00 mW)                    ; 0.66 mW (0.00 mW)               ; --                                ; 0.31 mW (0.00 mW)                 ; |de2_115_calib_top|calib_core:u_core|altsyncram:rom_out_rtl_0                                                      ;
+;             |altsyncram_5b81:auto_generated ; 0.97 mW (0.97 mW)                    ; 0.66 mW (0.66 mW)               ; --                                ; 0.31 mW (0.31 mW)                 ; |de2_115_calib_top|calib_core:u_core|altsyncram:rom_out_rtl_0|altsyncram_5b81:auto_generated                       ;
+;     |uart_rx:u_rx                           ; 0.27 mW (0.27 mW)                    ; 0.19 mW (0.19 mW)               ; --                                ; 0.08 mW (0.08 mW)                 ; |de2_115_calib_top|uart_rx:u_rx                                                                                    ;
+;     |uart_tx:u_tx                           ; 0.19 mW (0.19 mW)                    ; 0.13 mW (0.13 mW)               ; --                                ; 0.06 mW (0.06 mW)                 ; |de2_115_calib_top|uart_tx:u_tx                                                                                    ;
++---------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+--------------------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++-----------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain          ;
++--------------+-----------------------+--------------------------+
+; Clock Domain ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++--------------+-----------------------+--------------------------+
+; clk_25       ; 25.00                 ; 27.79                    ;
+; CLOCK_50     ; 50.00                 ; 0.01                     ;
++--------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCINT         ; 50.88 mA                ; 23.51 mA                  ; 27.38 mA                 ; 50.88 mA                         ;
+; VCCIO          ; 13.25 mA                ; 0.89 mA                   ; 12.36 mA                 ; 13.25 mA                         ;
+; VCCA           ; 35.02 mA                ; 0.00 mA                   ; 35.02 mA                 ; 35.02 mA                         ;
+; VCCD           ; 2.74 mA                 ; 0.00 mA                   ; 2.74 mA                  ; 2.74 mA                          ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1        ; 2.5V          ; 1.52 mA             ; 0.00 mA               ; 1.52 mA              ;
+; 2        ; 3.3V          ; 1.59 mA             ; 0.08 mA               ; 1.52 mA              ;
+; 3        ; 2.5V          ; 1.50 mA             ; 0.00 mA               ; 1.50 mA              ;
+; 4        ; 2.5V          ; 1.52 mA             ; 0.00 mA               ; 1.52 mA              ;
+; 5        ; 2.5V          ; 1.84 mA             ; 0.26 mA               ; 1.58 mA              ;
+; 6        ; 2.5V          ; 1.68 mA             ; 0.10 mA               ; 1.58 mA              ;
+; 7        ; 2.5V          ; 2.04 mA             ; 0.42 mA               ; 1.62 mA              ;
+; 8        ; 3.3V          ; 1.56 mA             ; 0.03 mA               ; 1.53 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 2.5V          ; 10.09 mA                ; 0.79 mA                   ; 9.30 mA                  ; 10.09 mA                         ;
+; 3.3V          ; 3.16 mA                 ; 0.10 mA                   ; 3.05 mA                  ; 3.16 mA                          ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                           ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
+; Data Source                                                                            ; Total         ; Pin        ; Registered    ; Combinational ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
+; Simulation (from file)                                                                 ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Node, entity or clock assignment                                                       ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 2 (0.0%)      ; 1 (1.5%)   ; 1 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 2 (0.0%)      ; 1 (1.5%)   ; 1 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Vectorless estimation                                                                  ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 0 (0.0%)      ; 0 (0.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;               ;            ;               ;               ;
+; Default assignment                                                                     ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 7306 (99.4%)  ; 41 (61.2%) ; 2056 (100.0%) ; 5209 (99.6%)  ;
+;     -- Number of signals with Static Probability from Default assignment               ; 7351 (100.0%) ; 66 (98.5%) ; 2056 (100.0%) ; 5229 (100.0%) ;
+;                                                                                        ;               ;            ;               ;               ;
+; Assumed 0                                                                              ;               ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 45 (0.6%)     ; 25 (37.3%) ; 0 (0.0%)      ; 20 (0.4%)     ;
++----------------------------------------------------------------------------------------+---------------+------------+---------------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                           ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source ; Static Probability ; Static Probability Data Source ;
++--------+------+---------------------------------------------+-------------------------+--------------------+--------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-------------------------+
+; Power Analyzer Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Power Analyzer
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements 
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Fri Jul 31 13:07:23 2026
+Info: Command: quartus_pow de2_115_calib --default_toggle_rate=25% --estimate_power=on
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'de2_115_calib.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
+Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
+Warning (215044): No board thermal model was selected.  Analyzing without board thermal modeling.
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (215049): Average toggle rate for this design is 6.259 millions of transitions / sec
+Info (215031): Total thermal power estimate for the design is 187.58 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4942 megabytes
+    Info: Processing ended: Fri Jul 31 13:07:31 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:10
+
+

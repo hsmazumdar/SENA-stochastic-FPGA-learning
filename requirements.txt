@@ -1,0 +1,9 @@
+numpy
+matplotlib
+scikit-learn
+Pillow
+torch
+torchvision
+pyserial
+verilator  # optional, RTL co-simulation
+ziglang   # optional, used by the Verilator build

@@ -1,0 +1,23 @@
+{
+  "profile": "full",
+  "backend": "pytile",
+  "checkpoint": "d:\\_July2026\\SENA_Project\\sena2026\\results\\q1_ablation_full_r0_adaptive.npz",
+  "config": {
+    "n_train": 10000,
+    "n_test": 250,
+    "hidden": 160,
+    "members": 3,
+    "epochs": 40,
+    "samples_per_epoch": 3000,
+    "t_max": 40,
+    "par": 16,
+    "par_out": 4,
+    "dataset_seed": 2026,
+    "threshold": 0.3
+  },
+  "software_accuracy": 0.904,
+  "rtl_accuracy": 0.884,
+  "accuracy_delta": -0.020000000000000018,
+  "n_samples": 250,
+  "note": "Archived overwrite: short pytile run (n=250). Prefer q1_rtl_mnist_accuracy.json (semantic, n=2500)."
+}
