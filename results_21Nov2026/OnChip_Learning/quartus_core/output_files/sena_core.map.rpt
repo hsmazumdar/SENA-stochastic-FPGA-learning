@@ -1,0 +1,1224 @@
+Analysis & Synthesis report for sena_core
+Sat Nov 14 21:53:17 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |sena_core_synth_top|sena_learn_core:core|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0|altsyncram_ifj1:auto_generated
+ 16. Source assignments for sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0|altsyncram_b3j1:auto_generated
+ 17. Parameter Settings for User Entity Instance: sena_learn_core:core
+ 18. Parameter Settings for User Entity Instance: sena_learn_core:core|sdp_ram:u_w1
+ 19. Parameter Settings for User Entity Instance: sena_learn_core:core|sdp_ram:u_w2
+ 20. Parameter Settings for Inferred Entity Instance: sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "sena_learn_core:core|sdp_ram:u_w2"
+ 24. Port Connectivity Checks: "sena_learn_core:core|sdp_ram:u_w1"
+ 25. Port Connectivity Checks: "sena_learn_core:core"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Nov 14 21:53:16 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; sena_core                                       ;
+; Top-level Entity Name              ; sena_core_synth_top                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 52,333                                          ;
+;     Total combinational functions  ; 44,142                                          ;
+;     Dedicated logic registers      ; 19,162                                          ;
+; Total registers                    ; 19162                                           ;
+; Total pins                         ; 22                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 1,017,680                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                               ;
++------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                           ; Setting             ; Default Value      ;
++------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7       ;                    ;
+; Top-level entity name                                            ; sena_core_synth_top ; sena_core          ;
+; Family name                                                      ; Cyclone IV E        ; Cyclone V          ;
+; Use smart compilation                                            ; Off                 ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                      ; Off                 ; Off                ;
+; Restructure Multiplexers                                         ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                 ; Off                ;
+; Preserve fewer node names                                        ; On                  ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable              ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                ; Auto               ;
+; Safe State Machine                                               ; Off                 ; Off                ;
+; Extract Verilog State Machines                                   ; On                  ; On                 ;
+; Extract VHDL State Machines                                      ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                  ; On                 ;
+; Parallel Synthesis                                               ; On                  ; On                 ;
+; DSP Block Balancing                                              ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                               ; On                  ; On                 ;
+; Power-Up Don't Care                                              ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                 ; Off                ;
+; Remove Duplicate Registers                                       ; On                  ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                              ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                 ; Off                ;
+; Optimization Technique                                           ; Balanced            ; Balanced           ;
+; Carry Chain Length                                               ; 70                  ; 70                 ;
+; Auto Carry Chains                                                ; On                  ; On                 ;
+; Auto Open-Drain Pins                                             ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                 ; Off                ;
+; Auto ROM Replacement                                             ; On                  ; On                 ;
+; Auto RAM Replacement                                             ; On                  ; On                 ;
+; Auto DSP Block Replacement                                       ; On                  ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                  ; On                 ;
+; Strict RAM Replacement                                           ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                 ; Off                ;
+; Auto RAM Block Balancing                                         ; On                  ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                 ; Off                ;
+; Auto Resource Sharing                                            ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                          ; On                  ; On                 ;
+; Report Parameter Settings                                        ; On                  ; On                 ;
+; Report Source Assignments                                        ; On                  ; On                 ;
+; Report Connectivity Checks                                       ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                 ; Off                ;
+; Synchronization Register Chain Length                            ; 2                   ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                 ; 100                ;
+; Clock MUX Protection                                             ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                 ; Off                ;
+; Block Design Naming                                              ; Auto                ; Auto               ;
+; SDC constraint protection                                        ; Off                 ; Off                ;
+; Synthesis Effort                                                 ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                  ; On                 ;
++------------------------------------------------------------------+---------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 22          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
+;     Processor 7            ;   0.2%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processor 9            ;   0.1%      ;
+;     Processors 10-16       ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                               ;
++--------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                        ; Library ;
++--------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; sena_core_synth_top.v                      ; yes             ; User Verilog HDL File                                 ; <WORK>/V13/OnChip_quartus_core/sena_core_synth_top.v                      ;         ;
+; sena_learn_core.v                          ; yes             ; User Verilog HDL File                                 ; <WORK>/V13/OnChip_quartus_core/sena_learn_core.v                          ;         ;
+; sdp_ram.v                                  ; yes             ; User Verilog HDL File                                 ; <WORK>/V13/OnChip_quartus_core/sdp_ram.v                                  ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
+; aglobal251.inc                             ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/aglobal251.inc                     ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altrom.inc                         ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altram.inc                         ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
+; db/altsyncram_ifj1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; <WORK>/V13/OnChip_quartus_core/db/altsyncram_ifj1.tdf                     ;         ;
+; db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; <WORK>/V13/OnChip_quartus_core/db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif ;         ;
+; db/altsyncram_b3j1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; <WORK>/V13/OnChip_quartus_core/db/altsyncram_b3j1.tdf                     ;         ;
+; db/sena_core.ram0_sdp_ram_76954c64.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; <WORK>/V13/OnChip_quartus_core/db/sena_core.ram0_sdp_ram_76954c64.hdl.mif ;         ;
++--------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 52,333         ;
+;                                             ;                ;
+; Total combinational functions               ; 44142          ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 15443          ;
+;     -- 3 input functions                    ; 15081          ;
+;     -- <=2 input functions                  ; 13618          ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 24210          ;
+;     -- arithmetic mode                      ; 19932          ;
+;                                             ;                ;
+; Total registers                             ; 19162          ;
+;     -- Dedicated logic registers            ; 19162          ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 22             ;
+; Total memory bits                           ; 1017680        ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 20522          ;
+; Total fan-out                               ; 241463         ;
+; Average fan-out                             ; 3.73           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                       ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |sena_core_synth_top                         ; 44142 (468)         ; 19162 (2106)              ; 1017680     ; 0            ; 0       ; 0         ; 22   ; 0            ; |sena_core_synth_top                                                                                       ; sena_core_synth_top ; work         ;
+;    |sena_learn_core:core|                    ; 43674 (43674)       ; 17056 (17056)             ; 1017680     ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core                                                                  ; sena_learn_core     ; work         ;
+;       |sdp_ram:u_w1|                         ; 0 (0)               ; 0 (0)                     ; 1004800     ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w1                                                     ; sdp_ram             ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 1004800     ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0                                ; altsyncram          ; work         ;
+;             |altsyncram_ifj1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1004800     ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0|altsyncram_ifj1:auto_generated ; altsyncram_ifj1     ; work         ;
+;       |sdp_ram:u_w2|                         ; 0 (0)               ; 0 (0)                     ; 12880       ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w2                                                     ; sdp_ram             ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 12880       ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0                                ; altsyncram          ; work         ;
+;             |altsyncram_b3j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 12880       ; 0            ; 0       ; 0         ; 0    ; 0            ; |sena_core_synth_top|sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0|altsyncram_b3j1:auto_generated ; altsyncram_b3j1     ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+--------------------------------------------+
+; Name                                                                                             ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                        ;
++--------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+--------------------------------------------+
+; sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0|altsyncram_ifj1:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; 785          ; 1280         ; 785          ; 1280         ; 1004800 ; db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif ;
+; sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0|altsyncram_b3j1:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; 161          ; 80           ; 161          ; 80           ; 12880   ; db/sena_core.ram0_sdp_ram_76954c64.hdl.mif ;
++--------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+--------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |sena_core_synth_top|sena_learn_core:core|state                                                                                                                   ;
++----------------+--------------+----------------+-------------+--------------+------------+-------------+---------------+-------------+---------------+-------------+--------------+
+; Name           ; state.S_DONE ; state.S_ARGMAX ; state.S_W1U ; state.S_GATE ; state.S_NB ; state.S_W2U ; state.S_OFIRE ; state.S_OSW ; state.S_HFIRE ; state.S_HSW ; state.S_IDLE ;
++----------------+--------------+----------------+-------------+--------------+------------+-------------+---------------+-------------+---------------+-------------+--------------+
+; state.S_IDLE   ; 0            ; 0              ; 0           ; 0            ; 0          ; 0           ; 0             ; 0           ; 0             ; 0           ; 0            ;
+; state.S_HSW    ; 0            ; 0              ; 0           ; 0            ; 0          ; 0           ; 0             ; 0           ; 0             ; 1           ; 1            ;
+; state.S_HFIRE  ; 0            ; 0              ; 0           ; 0            ; 0          ; 0           ; 0             ; 0           ; 1             ; 0           ; 1            ;
+; state.S_OSW    ; 0            ; 0              ; 0           ; 0            ; 0          ; 0           ; 0             ; 1           ; 0             ; 0           ; 1            ;
+; state.S_OFIRE  ; 0            ; 0              ; 0           ; 0            ; 0          ; 0           ; 1             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_W2U    ; 0            ; 0              ; 0           ; 0            ; 0          ; 1           ; 0             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_NB     ; 0            ; 0              ; 0           ; 0            ; 1          ; 0           ; 0             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_GATE   ; 0            ; 0              ; 0           ; 1            ; 0          ; 0           ; 0             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_W1U    ; 0            ; 0              ; 1           ; 0            ; 0          ; 0           ; 0             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_ARGMAX ; 0            ; 1              ; 0           ; 0            ; 0          ; 0           ; 0             ; 0           ; 0             ; 0           ; 1            ;
+; state.S_DONE   ; 1            ; 0              ; 0           ; 0            ; 0          ; 0           ; 0             ; 0           ; 0             ; 0           ; 1            ;
++----------------+--------------+----------------+-------------+--------------+------------+-------------+---------------+-------------+---------------+-------------+--------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; sena_learn_core:core|state~10         ; Lost fanout        ;
+; sena_learn_core:core|state~11         ; Lost fanout        ;
+; sena_learn_core:core|state~12         ; Lost fanout        ;
+; sena_learn_core:core|state~13         ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 19162 ;
+; Number of registers using Synchronous Clear  ; 3683  ;
+; Number of registers using Synchronous Load   ; 90    ;
+; Number of registers using Asynchronous Clear ; 17056 ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 17671 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; sena_learn_core:core|nb_fx[8]             ; 7       ;
+; sena_learn_core:core|nb_fx[7]             ; 5       ;
+; sena_learn_core:core|lo[8][0]             ; 5       ;
+; sena_learn_core:core|ostep[5]             ; 2       ;
+; sena_learn_core:core|lo[7][0]             ; 5       ;
+; sena_learn_core:core|lo[6][0]             ; 5       ;
+; sena_learn_core:core|lo[5][0]             ; 5       ;
+; sena_learn_core:core|lo[4][0]             ; 5       ;
+; sena_learn_core:core|lo[3][0]             ; 5       ;
+; sena_learn_core:core|lo[2][0]             ; 5       ;
+; sena_learn_core:core|lo[1][0]             ; 5       ;
+; sena_learn_core:core|lo[0][0]             ; 5       ;
+; sena_learn_core:core|lo[9][0]             ; 5       ;
+; sena_learn_core:core|hstep[5]             ; 2       ;
+; sena_learn_core:core|lh[0][0]             ; 5       ;
+; sena_learn_core:core|lh[1][0]             ; 5       ;
+; sena_learn_core:core|lh[2][0]             ; 5       ;
+; sena_learn_core:core|lh[3][0]             ; 5       ;
+; sena_learn_core:core|lh[4][0]             ; 5       ;
+; sena_learn_core:core|lh[5][0]             ; 5       ;
+; sena_learn_core:core|lh[6][0]             ; 5       ;
+; sena_learn_core:core|lh[7][0]             ; 5       ;
+; sena_learn_core:core|lh[8][0]             ; 5       ;
+; sena_learn_core:core|lh[9][0]             ; 5       ;
+; sena_learn_core:core|lh[10][0]            ; 5       ;
+; sena_learn_core:core|lh[11][0]            ; 5       ;
+; sena_learn_core:core|lh[12][0]            ; 5       ;
+; sena_learn_core:core|lh[13][0]            ; 5       ;
+; sena_learn_core:core|lh[14][0]            ; 5       ;
+; sena_learn_core:core|lh[15][0]            ; 5       ;
+; sena_learn_core:core|lh[16][0]            ; 5       ;
+; sena_learn_core:core|lh[17][0]            ; 5       ;
+; sena_learn_core:core|lh[18][0]            ; 5       ;
+; sena_learn_core:core|lh[19][0]            ; 5       ;
+; sena_learn_core:core|lh[20][0]            ; 5       ;
+; sena_learn_core:core|lh[21][0]            ; 5       ;
+; sena_learn_core:core|lh[22][0]            ; 5       ;
+; sena_learn_core:core|lh[23][0]            ; 5       ;
+; sena_learn_core:core|lh[24][0]            ; 5       ;
+; sena_learn_core:core|lh[25][0]            ; 5       ;
+; sena_learn_core:core|lh[26][0]            ; 5       ;
+; sena_learn_core:core|lh[27][0]            ; 5       ;
+; sena_learn_core:core|lh[28][0]            ; 5       ;
+; sena_learn_core:core|lh[29][0]            ; 5       ;
+; sena_learn_core:core|lh[30][0]            ; 5       ;
+; sena_learn_core:core|lh[31][0]            ; 5       ;
+; sena_learn_core:core|lh[32][0]            ; 5       ;
+; sena_learn_core:core|lh[33][0]            ; 5       ;
+; sena_learn_core:core|lh[34][0]            ; 5       ;
+; sena_learn_core:core|lh[35][0]            ; 5       ;
+; sena_learn_core:core|lh[36][0]            ; 5       ;
+; sena_learn_core:core|lh[37][0]            ; 5       ;
+; sena_learn_core:core|lh[38][0]            ; 5       ;
+; sena_learn_core:core|lh[39][0]            ; 5       ;
+; sena_learn_core:core|lh[40][0]            ; 5       ;
+; sena_learn_core:core|lh[41][0]            ; 5       ;
+; sena_learn_core:core|lh[42][0]            ; 5       ;
+; sena_learn_core:core|lh[43][0]            ; 5       ;
+; sena_learn_core:core|lh[44][0]            ; 5       ;
+; sena_learn_core:core|lh[45][0]            ; 5       ;
+; sena_learn_core:core|lh[46][0]            ; 5       ;
+; sena_learn_core:core|lh[47][0]            ; 5       ;
+; sena_learn_core:core|lh[48][0]            ; 5       ;
+; sena_learn_core:core|lh[49][0]            ; 5       ;
+; sena_learn_core:core|lh[50][0]            ; 5       ;
+; sena_learn_core:core|lh[51][0]            ; 5       ;
+; sena_learn_core:core|lh[52][0]            ; 5       ;
+; sena_learn_core:core|lh[53][0]            ; 5       ;
+; sena_learn_core:core|lh[54][0]            ; 5       ;
+; sena_learn_core:core|lh[55][0]            ; 5       ;
+; sena_learn_core:core|lh[56][0]            ; 5       ;
+; sena_learn_core:core|lh[57][0]            ; 5       ;
+; sena_learn_core:core|lh[58][0]            ; 5       ;
+; sena_learn_core:core|lh[59][0]            ; 5       ;
+; sena_learn_core:core|lh[60][0]            ; 5       ;
+; sena_learn_core:core|lh[61][0]            ; 5       ;
+; sena_learn_core:core|lh[62][0]            ; 5       ;
+; sena_learn_core:core|lh[63][0]            ; 5       ;
+; sena_learn_core:core|lh[64][0]            ; 5       ;
+; sena_learn_core:core|lh[65][0]            ; 5       ;
+; sena_learn_core:core|lh[66][0]            ; 5       ;
+; sena_learn_core:core|lh[67][0]            ; 5       ;
+; sena_learn_core:core|lh[68][0]            ; 5       ;
+; sena_learn_core:core|lh[69][0]            ; 5       ;
+; sena_learn_core:core|lh[70][0]            ; 5       ;
+; sena_learn_core:core|lh[71][0]            ; 5       ;
+; sena_learn_core:core|lh[72][0]            ; 5       ;
+; sena_learn_core:core|lh[73][0]            ; 5       ;
+; sena_learn_core:core|lh[74][0]            ; 5       ;
+; sena_learn_core:core|lh[75][0]            ; 5       ;
+; sena_learn_core:core|lh[76][0]            ; 5       ;
+; sena_learn_core:core|lh[77][0]            ; 5       ;
+; sena_learn_core:core|lh[78][0]            ; 5       ;
+; sena_learn_core:core|lh[79][0]            ; 5       ;
+; sena_learn_core:core|lh[80][0]            ; 5       ;
+; sena_learn_core:core|lh[81][0]            ; 5       ;
+; sena_learn_core:core|lh[82][0]            ; 5       ;
+; sena_learn_core:core|lh[83][0]            ; 5       ;
+; sena_learn_core:core|lh[84][0]            ; 5       ;
+; sena_learn_core:core|lh[85][0]            ; 5       ;
+; Total number of inverted registers = 174* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++-------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                          ;
++--------------------------------------------------+---------------------------------------------+------+
+; Register Name                                    ; Megafunction                                ; Type ;
++--------------------------------------------------+---------------------------------------------+------+
+; sena_learn_core:core|sdp_ram:u_w1|rdata[0..1279] ; sena_learn_core:core|sdp_ram:u_w1|mem_rtl_0 ; RAM  ;
+; sena_learn_core:core|sdp_ram:u_w2|rdata[0..79]   ; sena_learn_core:core|sdp_ram:u_w2|mem_rtl_0 ; RAM  ;
++--------------------------------------------------+---------------------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[6]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[11]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[16]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[29]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[37]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[44]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[50]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[56]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[64]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[72]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[84]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[90]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[96]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[104]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[114]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[120]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[128]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[142]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[145]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[159]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[160]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[175]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[183]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[190]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[194]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[205]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[215]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[218]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[224]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[235]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[247]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[248]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[258]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[269]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[274]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[287]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[294]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[296]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[304]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[313]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[320]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[334]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[342]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[347]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[355]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[364]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[368]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[383]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[386]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[399]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[401]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[408]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[416]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[430]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[432]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[447]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[455]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[462]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[464]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[476]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[487]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[490]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[503]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[505]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[516]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[527]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[533]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[543]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[546]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[559]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[561]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[571]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[581]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[591]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[599]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[601]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[615]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[619]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[629]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[639]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[640]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[648]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[663]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[667]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[675]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[681]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[694]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[702]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[705]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[716]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[721]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[735]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[741]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[746]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[752]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[766]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[770]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[780]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[788]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[792]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[800]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[812]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[819]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[824]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[832]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[841]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[850]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[861]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[870]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[879]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[887]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[895]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[897]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[906]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[913]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[925]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[929]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[942]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[949]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[952]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[960]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[974]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[981]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[987]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[997]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1000] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1009] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1021] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1024] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1034] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1044] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1054] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1062] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1070] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1076] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1083] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1094] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1103] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1111] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1113] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1124] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1130] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1141] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1148] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1156] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1161] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1172] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1176] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1187] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1192] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1201] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1215] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1220] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1227] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1236] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1246] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1252] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1258] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1271] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata1[1272] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[5]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[12]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[16]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[29]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[38]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[40]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[48]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[62]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[66]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|upd_wdata2[76]   ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[0][21]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[1][13]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[2][13]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[3][6]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[4][15]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[5][31]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[6][9]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[7][23]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[8][8]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[9][11]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[10][19]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[11][20]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[12][11]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[13][9]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[14][1]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[15][20]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[16][18]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[17][10]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[18][11]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[19][15]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[20][16]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[21][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[22][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[23][29]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[24][24]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[25][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[26][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[27][19]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[28][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[29][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[30][16]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[31][29]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[32][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[33][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[34][9]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[35][27]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[36][19]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[37][9]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[38][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[39][11]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[40][9]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[41][6]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[42][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[43][5]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[44][1]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[45][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[46][4]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[47][6]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[48][4]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[49][18]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[50][1]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[51][29]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[52][14]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[53][20]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[54][9]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[55][23]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[56][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[57][13]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[58][22]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[59][19]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[60][12]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[61][28]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[62][23]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[63][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[64][10]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[65][21]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[66][21]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[67][15]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[68][14]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[69][12]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[70][14]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[71][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[72][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[73][25]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[74][21]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[75][15]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[76][23]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[77][25]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[78][27]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[79][11]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[80][12]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[81][29]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[82][1]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[83][25]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[84][16]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[85][25]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[86][17]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[87][28]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[88][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[89][1]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[90][26]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[91][21]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[92][19]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[93][17]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[94][8]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[95][2]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[96][30]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[97][7]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[98][26]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[99][29]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[100][19]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[101][11]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[102][18]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[103][18]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[104][1]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[105][24]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[106][4]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[107][18]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[108][1]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[109][16]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[110][3]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[111][15]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[112][15]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[113][15]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[114][15]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[115][24]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[116][20]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[117][5]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[118][31]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[119][30]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[120][5]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[121][31]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[122][22]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[123][27]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[124][7]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[125][7]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[126][21]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[127][5]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[128][8]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[129][11]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[130][15]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[131][24]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[132][9]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[133][8]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[134][28]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[135][20]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[136][19]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[137][17]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[138][13]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[139][3]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[140][7]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[141][26]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[142][23]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[143][30]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[144][17]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[145][11]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[146][17]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[147][26]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[148][20]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[149][28]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[150][14]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[151][5]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[152][1]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[153][7]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[154][23]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[155][20]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[156][3]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[157][7]       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[158][14]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lh[159][12]      ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[0][17]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[1][23]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[2][27]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[3][12]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[4][1]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[5][16]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[6][7]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[7][11]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[8][13]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|lo[9][17]        ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|nb_fx[4]         ;
+; 5:1                ; 86 bits   ; 258 LEs       ; 86 LEs               ; 172 LEs                ; Yes        ; |sena_core_synth_top|sena_learn_core:core|votes[5][4]      ;
+; 5:1                ; 3200 bits ; 9600 LEs      ; 3200 LEs             ; 6400 LEs               ; Yes        ; |sena_core_synth_top|sena_learn_core:core|acc_h[36][6]     ;
+; 5:1                ; 200 bits  ; 600 LEs       ; 200 LEs              ; 400 LEs                ; Yes        ; |sena_core_synth_top|sena_learn_core:core|acc_o[5][18]     ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|sum_abs[6]       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|hstep[2]         ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|ostep[3]         ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 0 LEs                ; 33 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|tag_d[2]         ;
+; 12:1               ; 11 bits   ; 88 LEs        ; 11 LEs               ; 77 LEs                 ; Yes        ; |sena_core_synth_top|sena_learn_core:core|cnt[3]           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |sena_core_synth_top|sena_learn_core:core|nb_fx[7]         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|raddr1[3]        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|raddr2[1]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|bsum             ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; No         ; |sena_core_synth_top|sena_learn_core:core|Selector3344     ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |sena_core_synth_top|sena_learn_core:core|Selector3347     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0|altsyncram_ifj1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0|altsyncram_b3j1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sena_learn_core:core ;
++----------------+-------------+------------------------------------+
+; Parameter Name ; Value       ; Type                               ;
++----------------+-------------+------------------------------------+
+; N_IN           ; 784         ; Signed Integer                     ;
+; N_HID          ; 160         ; Signed Integer                     ;
+; N_OUT          ; 10          ; Signed Integer                     ;
+; W              ; 8           ; Signed Integer                     ;
+; ACC            ; 20          ; Signed Integer                     ;
+; BK             ; 16          ; Signed Integer                     ;
+; SH             ; 7           ; Signed Integer                     ;
+; T_BITS         ; 6           ; Signed Integer                     ;
+; W1_INIT        ; w1_init.hex ; String                             ;
+; W2_INIT        ; w2_init.hex ; String                             ;
+; AW1            ; 10          ; Signed Integer                     ;
+; AW2            ; 8           ; Signed Integer                     ;
++----------------+-------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sena_learn_core:core|sdp_ram:u_w1 ;
++----------------+-------------+-------------------------------------------------+
+; Parameter Name ; Value       ; Type                                            ;
++----------------+-------------+-------------------------------------------------+
+; DW             ; 1280        ; Signed Integer                                  ;
+; DEPTH          ; 785         ; Signed Integer                                  ;
+; AW             ; 10          ; Signed Integer                                  ;
+; INIT           ; w1_init.hex ; String                                          ;
++----------------+-------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sena_learn_core:core|sdp_ram:u_w2 ;
++----------------+-------------+-------------------------------------------------+
+; Parameter Name ; Value       ; Type                                            ;
++----------------+-------------+-------------------------------------------------+
+; DW             ; 80          ; Signed Integer                                  ;
+; DEPTH          ; 161         ; Signed Integer                                  ;
+; AW             ; 8           ; Signed Integer                                  ;
+; INIT           ; w2_init.hex ; String                                          ;
++----------------+-------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------+
+; Parameter Name                     ; Value                                      ; Type                  ;
++------------------------------------+--------------------------------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped               ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped               ;
+; WIDTH_A                            ; 1280                                       ; Untyped               ;
+; WIDTHAD_A                          ; 10                                         ; Untyped               ;
+; NUMWORDS_A                         ; 785                                        ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped               ;
+; WIDTH_B                            ; 1280                                       ; Untyped               ;
+; WIDTHAD_B                          ; 10                                         ; Untyped               ;
+; NUMWORDS_B                         ; 785                                        ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK0                                     ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; M9K                                        ; Untyped               ;
+; BYTE_SIZE                          ; 8                                          ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped               ;
+; INIT_FILE                          ; db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_ifj1                            ; Untyped               ;
++------------------------------------+--------------------------------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0 ;
++------------------------------------+--------------------------------------------+-----------------------+
+; Parameter Name                     ; Value                                      ; Type                  ;
++------------------------------------+--------------------------------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped               ;
+; OPERATION_MODE                     ; DUAL_PORT                                  ; Untyped               ;
+; WIDTH_A                            ; 80                                         ; Untyped               ;
+; WIDTHAD_A                          ; 8                                          ; Untyped               ;
+; NUMWORDS_A                         ; 161                                        ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped               ;
+; WIDTH_B                            ; 80                                         ; Untyped               ;
+; WIDTHAD_B                          ; 8                                          ; Untyped               ;
+; NUMWORDS_B                         ; 161                                        ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK0                                     ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; M9K                                        ; Untyped               ;
+; BYTE_SIZE                          ; 8                                          ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped               ;
+; INIT_FILE                          ; db/sena_core.ram0_sdp_ram_76954c64.hdl.mif ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_b3j1                            ; Untyped               ;
++------------------------------------+--------------------------------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                   ;
++-------------------------------------------+--------------------------------------------------------+
+; Name                                      ; Value                                                  ;
++-------------------------------------------+--------------------------------------------------------+
+; Number of entity instances                ; 2                                                      ;
+; Entity Instance                           ; sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                              ;
+;     -- WIDTH_A                            ; 1280                                                   ;
+;     -- NUMWORDS_A                         ; 785                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 1280                                                   ;
+;     -- NUMWORDS_B                         ; 785                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; M9K                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
+; Entity Instance                           ; sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                              ;
+;     -- WIDTH_A                            ; 80                                                     ;
+;     -- NUMWORDS_A                         ; 161                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
+;     -- WIDTH_B                            ; 80                                                     ;
+;     -- NUMWORDS_B                         ; 161                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
+;     -- RAM_BLOCK_TYPE                     ; M9K                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
++-------------------------------------------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sena_learn_core:core|sdp_ram:u_w2"                                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; raddr_q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sena_learn_core:core|sdp_ram:u_w1"                                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; raddr_q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "sena_learn_core:core" ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; t_passes[2..0] ; Input ; Info     ; Stuck at GND ;
+; t_passes[5]    ; Input ; Info     ; Stuck at VCC ;
+; t_passes[4]    ; Input ; Info     ; Stuck at GND ;
+; t_passes[3]    ; Input ; Info     ; Stuck at VCC ;
++----------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 19162                       ;
+;     CLR               ; 1491                        ;
+;     ENA               ; 2106                        ;
+;     ENA CLR           ; 11792                       ;
+;     ENA CLR SCLR      ; 3683                        ;
+;     ENA CLR SLD       ; 90                          ;
+; cycloneiii_lcell_comb ; 44142                       ;
+;     arith             ; 19932                       ;
+;         2 data inputs ; 10541                       ;
+;         3 data inputs ; 9391                        ;
+;     normal            ; 24210                       ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 690                         ;
+;         2 data inputs ; 2386                        ;
+;         3 data inputs ; 5690                        ;
+;         4 data inputs ; 15443                       ;
+; cycloneiii_ram_block  ; 1360                        ;
+;                       ;                             ;
+; Max LUT depth         ; 27.10                       ;
+; Average LUT depth     ; 7.14                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:14     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Sat Nov 14 21:51:44 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sena_core -c sena_core
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sena_core_synth_top.v
+    Info (12023): Found entity 1: sena_core_synth_top File: <WORK>/V13/OnChip_quartus_core/sena_core_synth_top.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file sena_learn_core.v
+    Info (12023): Found entity 1: sena_learn_core File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file sdp_ram.v
+    Info (12023): Found entity 1: sdp_ram File: <WORK>/V13/OnChip_quartus_core/sdp_ram.v Line: 12
+Info (12127): Elaborating entity "sena_core_synth_top" for the top level hierarchy
+Info (12128): Elaborating entity "sena_learn_core" for hierarchy "sena_learn_core:core" File: <WORK>/V13/OnChip_quartus_core/sena_core_synth_top.v Line: 39
+Warning (10230): Verilog HDL assignment warning at sena_learn_core.v(156): truncated value with size 32 to match size of target (22) File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 156
+Warning (10230): Verilog HDL assignment warning at sena_learn_core.v(178): truncated value with size 32 to match size of target (8) File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 178
+Warning (10230): Verilog HDL assignment warning at sena_learn_core.v(179): truncated value with size 32 to match size of target (8) File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 179
+Warning (10230): Verilog HDL assignment warning at sena_learn_core.v(388): truncated value with size 32 to match size of target (4) File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 388
+Info (12128): Elaborating entity "sdp_ram" for hierarchy "sena_learn_core:core|sdp_ram:u_w1" File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 114
+Info (12128): Elaborating entity "sdp_ram" for hierarchy "sena_learn_core:core|sdp_ram:u_w2" File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 117
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "sena_learn_core:core|sdp_ram:u_w1|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 1280
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 785
+        Info (286033): Parameter WIDTH_B set to 1280
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 785
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter INIT_FILE set to db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "sena_learn_core:core|sdp_ram:u_w2|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 80
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 161
+        Info (286033): Parameter WIDTH_B set to 80
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 161
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter RAM_BLOCK_TYPE set to M9K
+        Info (286033): Parameter INIT_FILE set to db/sena_core.ram0_sdp_ram_76954c64.hdl.mif
+Info (12130): Elaborated megafunction instantiation "sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "sena_learn_core:core|sdp_ram:u_w1|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "1280"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "785"
+    Info (12134): Parameter "WIDTH_B" = "1280"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "785"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "M9K"
+    Info (12134): Parameter "INIT_FILE" = "db/sena_core.ram0_sdp_ram_c6a4555f.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ifj1.tdf
+    Info (12023): Found entity 1: altsyncram_ifj1 File: <WORK>/V13/OnChip_quartus_core/db/altsyncram_ifj1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "sena_learn_core:core|sdp_ram:u_w2|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "80"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "161"
+    Info (12134): Parameter "WIDTH_B" = "80"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "161"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "M9K"
+    Info (12134): Parameter "INIT_FILE" = "db/sena_core.ram0_sdp_ram_76954c64.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b3j1.tdf
+    Info (12023): Found entity 1: altsyncram_b3j1 File: <WORK>/V13/OnChip_quartus_core/db/altsyncram_b3j1.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: <WORK>/V13/OnChip_quartus_core/sena_learn_core.v Line: 228
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file <WORK>/V13/OnChip_quartus_core/output_files/sena_core.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 53904 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 52522 logic cells
+    Info (21064): Implemented 1360 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 5302 megabytes
+    Info: Processing ended: Sat Nov 14 21:53:17 2026
+    Info: Elapsed time: 00:01:33
+    Info: Total CPU time (on all processors): 00:01:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in <WORK>/V13/OnChip_quartus_core/output_files/sena_core.map.smsg.
+
+

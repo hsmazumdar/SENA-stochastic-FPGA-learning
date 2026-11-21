@@ -1,0 +1,1155 @@
+Analysis & Synthesis report for dwn_core_only
+Sat Nov 14 20:15:30 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Nov 14 20:15:30 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; dwn_core_only                                   ;
+; Top-level Entity Name              ; dwn_core                                        ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 8,665                                           ;
+;     Total combinational functions  ; 8,101                                           ;
+;     Dedicated logic registers      ; 2,128                                           ;
+; Total registers                    ; 2128                                            ;
+; Total pins                         ; 1                                               ;
+; Total virtual pins                 ; 851                                             ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; dwn_core           ; dwn_core_only      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; All                ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 22          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processor 9            ;   0.0%      ;
+;     Processors 10-16       ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+; gen/dwn_core.v                   ; yes             ; User Verilog HDL File  ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 8,665     ;
+;                                             ;           ;
+; Total combinational functions               ; 8101      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 6861      ;
+;     -- 3 input functions                    ; 1042      ;
+;     -- <=2 input functions                  ; 198       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 7616      ;
+;     -- arithmetic mode                      ; 485       ;
+;                                             ;           ;
+; Total registers                             ; 2128      ;
+;     -- Dedicated logic registers            ; 2128      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; Virtual pins                                ; 851       ;
+; I/O pins                                    ; 1         ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 2128      ;
+; Total fan-out                               ; 35075     ;
+; Average fan-out                             ; 3.17      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |dwn_core                  ; 8101 (8101)         ; 2128 (2128)               ; 0           ; 0            ; 0       ; 0         ; 1    ; 851          ; |dwn_core           ; dwn_core    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2128  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 852                         ;
+; cycloneiii_ff         ; 2128                        ;
+;     CLR               ; 5                           ;
+;     SLD               ; 1                           ;
+;     plain             ; 2122                        ;
+; cycloneiii_lcell_comb ; 8101                        ;
+;     arith             ; 485                         ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 465                         ;
+;     normal            ; 7616                        ;
+;         0 data inputs ; 100                         ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 577                         ;
+;         4 data inputs ; 6861                        ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 3.13                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Sat Nov 14 20:14:12 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dwn_baseline -c dwn_core_only
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file gen/dwn_core.v
+    Info (12023): Found entity 1: dwn_core File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 9
+Info (12127): Elaborating entity "dwn_core" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at dwn_core.v(3584): object "am_c516" assigned a value but never read File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 3584
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (15717): Design contains 851 virtual pins; timing numbers associated with paths containing virtual pins are estimates
+    Info (15718): Pin "x[0]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[1]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[2]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[3]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[4]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[5]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[6]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[7]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[8]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[9]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[10]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[11]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[12]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[13]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[14]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[15]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[16]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[17]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[18]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[19]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[20]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[21]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[22]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[23]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[24]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[25]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[26]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[27]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[29]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[30]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[31]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[32]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[33]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[34]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[35]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[36]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[37]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[38]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[39]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[40]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[41]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[42]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[43]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[44]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[45]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[46]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[47]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[48]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[49]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[50]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[51]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[52]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[53]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[54]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[55]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[56]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[57]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[58]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[59]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[60]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[61]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[62]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[63]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[64]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[65]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[66]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[67]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[69]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[70]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[76]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[77]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[78]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[79]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[80]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[81]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[82]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[83]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[84]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[85]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[86]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[87]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[88]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[89]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[90]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[91]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[107]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[108]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[109]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[110]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[111]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[112]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[113]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[114]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[115]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[116]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[117]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[118]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[137]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[138]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[139]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[140]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[141]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[142]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[143]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[144]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[166]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[167]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[168]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[169]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[170]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[171]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[193]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[194]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[196]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[197]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[198]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[199]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[222]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[223]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[224]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[225]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[226]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[250]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[251]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[252]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[253]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[254]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[255]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[279]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[280]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[281]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[282]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[306]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[307]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[308]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[309]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[310]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[311]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[332]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[334]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[335]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[336]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[337]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[338]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[361]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[364]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[366]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[367]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[390]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[391]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[392]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[393]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[394]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[395]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[419]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[420]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[421]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[422]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[423]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[446]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[447]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[448]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[449]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[450]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[474]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[475]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[476]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[477]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[478]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[480]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[502]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[503]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[504]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[505]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[506]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[529]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[530]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[531]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[532]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[533]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[534]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[557]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[558]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[559]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[560]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[561]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[562]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[583]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[586]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[587]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[588]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[589]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[590]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[610]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[612]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[613]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[614]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[615]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[616]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[617]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[618]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[619]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[640]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[641]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[642]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[643]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[644]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[645]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[646]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[647]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[666]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[667]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[668]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[669]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[670]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[671]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[672]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[673]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[674]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[675]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[676]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[677]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[694]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[695]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[696]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[697]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[698]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[699]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[700]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[701]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[702]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[703]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[704]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[720]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[722]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[723]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[724]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[725]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[726]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[727]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[728]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[729]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[730]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[731]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[732]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[733]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[735]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[745]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[747]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[748]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[749]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[750]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[751]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[752]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[753]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[754]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[755]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[756]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[757]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[758]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[759]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[760]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[761]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[762]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[763]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[764]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[765]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[766]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[767]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[768]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[769]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[770]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[771]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[772]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[773]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[774]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[775]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[776]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[777]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[778]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[779]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[780]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[781]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[782]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[783]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15719): Pin "out_valid" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 14
+    Info (15719): Pin "pred[0]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 15
+    Info (15719): Pin "pred[1]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 15
+    Info (15719): Pin "pred[2]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 15
+    Info (15719): Pin "pred[3]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 15
+    Info (15719): Pin "counts[0]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[1]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[2]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[3]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[4]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[5]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[6]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[7]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[8]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[9]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[10]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[11]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[12]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[13]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[14]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[15]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[16]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[17]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[18]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[19]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[20]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[21]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[22]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[23]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[24]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[25]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[26]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[27]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[28]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[29]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[30]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[31]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[32]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[33]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[34]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[35]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[36]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[37]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[38]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[39]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[40]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[41]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[42]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[43]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[44]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[45]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[46]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[47]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[48]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[49]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[50]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[51]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[52]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[53]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[54]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[55]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[56]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[57]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[58]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15719): Pin "counts[59]" is virtual output pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 17
+    Info (15718): Pin "rst_n" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 11
+    Info (15718): Pin "in_valid" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 12
+    Info (15718): Pin "x[404]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[266]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[349]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[427]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[443]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[598]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[629]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[229]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[445]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[714]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[97]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[543]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[487]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[488]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[315]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[325]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[370]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[190]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[402]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[276]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[382]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[355]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[324]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[380]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[320]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[467]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[100]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[403]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[553]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[463]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[468]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[401]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[539]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[458]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[691]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[457]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[517]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[432]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[289]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[350]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[494]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[659]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[296]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[300]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[541]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[624]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[483]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[430]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[154]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[323]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[238]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[262]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[351]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[319]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[209]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[153]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[214]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[239]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[428]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[575]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[486]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[581]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[71]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[102]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[155]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[183]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[101]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[265]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[408]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[212]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[175]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[599]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[657]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[210]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[627]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[631]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[656]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[658]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[577]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[542]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[484]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[516]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[439]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[459]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[387]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[348]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[415]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[490]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[626]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[489]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[411]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[191]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[512]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[105]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[342]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[454]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[379]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[346]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[429]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[499]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[519]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[514]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[356]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[466]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[461]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[564]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[441]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[707]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[405]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[243]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[603]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[660]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[275]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[679]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[664]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[399]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[580]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[378]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[434]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[304]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[655]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[601]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[547]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[437]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[433]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[326]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[469]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[523]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[127]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[540]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[709]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[482]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[244]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[158]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[354]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[188]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[358]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[271]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[295]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[241]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[187]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[690]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[237]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[462]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[192]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[400]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[343]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[685]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[126]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[329]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[328]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[625]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[371]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[406]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[688]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[268]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[272]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[299]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[357]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[273]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[680]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[544]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[455]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[495]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[545]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[628]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[630]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[538]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[291]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[316]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[661]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[263]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[492]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[245]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[267]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[572]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[409]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[548]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[491]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[716]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[292]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[654]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[152]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[236]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[396]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[485]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[708]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[602]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[246]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[240]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[550]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[120]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[96]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[453]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[417]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[184]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[314]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[352]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[412]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[298]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[123]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[277]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[507]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[353]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[568]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[149]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[576]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[205]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[347]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[322]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[712]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[649]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[440]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[373]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[293]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[651]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[98]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[508]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[648]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[536]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[464]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[717]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[125]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[185]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[247]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[376]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[398]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[456]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[122]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[435]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[377]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[318]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[181]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[681]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[261]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[653]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[208]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[381]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[297]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[546]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[288]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[604]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[524]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[563]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[481]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[465]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[551]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[596]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[682]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[374]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[438]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[511]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[341]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[345]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[632]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[176]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[290]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[216]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[264]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[285]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[130]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[416]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[74]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[211]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[106]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[305]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[442]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[362]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[233]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[359]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[595]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[742]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[738]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[621]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[344]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[594]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[360]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[684]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[206]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[232]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[195]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[242]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[103]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[294]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[302]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[321]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[260]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[571]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[623]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[493]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[528]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[207]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[407]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[134]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[686]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[573]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[331]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[687]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[683]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[518]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[386]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[662]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[164]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[368]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[740]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[500]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[460]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[173]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[124]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[652]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[186]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[234]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[526]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[178]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[578]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[713]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[608]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[552]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[554]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[582]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[151]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[159]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[160]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[689]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[637]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[148]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[99]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[317]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[365]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[521]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[570]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[515]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[414]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[663]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[303]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[128]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[509]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[163]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[375]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[622]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[220]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[634]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[611]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[301]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[269]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[162]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[665]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[177]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[146]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[204]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[410]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[522]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[147]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[436]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[426]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[182]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[470]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[513]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[372]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[584]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[283]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[385]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[711]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[121]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[257]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[496]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[312]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[180]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[638]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[95]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[600]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[706]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[597]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[383]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[132]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[330]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[369]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[270]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[235]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[635]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[431]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[215]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[556]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[593]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[104]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[746]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[256]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[535]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[527]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[156]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[566]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[339]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[473]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[424]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[501]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[145]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[525]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[620]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[189]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[609]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[718]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[471]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[327]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[591]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[472]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[510]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[537]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[133]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[585]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[340]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[92]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[150]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[605]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[213]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[425]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[274]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[221]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[705]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[497]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[131]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[741]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[710]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[607]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[157]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[549]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[248]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[129]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[218]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[231]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[333]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[179]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[719]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[633]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[744]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[119]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[384]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[219]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[692]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[259]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[284]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[569]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[165]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[520]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[574]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[413]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[202]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[444]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[230]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[203]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[567]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[555]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[278]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[397]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[174]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[258]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[693]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[737]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[498]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[286]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[287]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[201]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[228]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[227]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[650]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[579]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[721]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[715]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[313]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[636]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[565]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[592]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[451]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[75]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[479]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[452]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[217]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[135]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[200]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[418]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[94]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[734]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[388]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[639]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[389]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[743]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[249]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[363]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[136]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[72]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[93]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[606]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[678]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[161]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[28]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[68]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[172]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[739]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[736]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+    Info (15718): Pin "x[73]" is virtual input pin File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 13
+Info (21057): Implemented 9018 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+    Info (21061): Implemented 9017 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4962 megabytes
+    Info: Processing ended: Sat Nov 14 20:15:30 2026
+    Info: Elapsed time: 00:01:18
+    Info: Total CPU time (on all processors): 00:01:40
+
+

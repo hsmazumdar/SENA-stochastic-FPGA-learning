@@ -1,0 +1,40 @@
+{
+  "dataset": "mnist",
+  "n_train": 10000,
+  "n_test": 2500,
+  "threshold": 0.3,
+  "seed": 2026,
+  "arrays_sha256": {
+    "Xte": "f1c7f5c3f24fdb3b212073c23ccf9c0fb1b95338c2549488d1506979d93c81bc",
+    "Xtr": "fd5cfff51e6b5e603b95564b635fca2e4bc1f744055acb6d4e7c0296ef8b1c6a",
+    "Yte": "8c6fce021789d0fe274a3bcba8ef515157f136844d582a83edd7278a59480bef",
+    "Ytr": "9bf0db4d49a7fc9f08567549613026691e00ea0688a63c73dbaecf2d399bbac4",
+    "yte": "8975af6305655d0922acf5145f833c6ac03b079b385d938c79aa84eb0d550cc3",
+    "ytr": "9bbb0f2fcc580830aff4dc16eae9bb91d7594fb9cdee4e393107052466799fd7"
+  },
+  "npz_file_sha256": "33de69a58f7b9be42e496eb8b4ec54f687760c83fff14da37b138a7375166a6b",
+  "test_label_histogram": [
+    239,
+    264,
+    249,
+    273,
+    235,
+    224,
+    249,
+    249,
+    261,
+    257
+  ],
+  "mean_on_pixels_train": 0.15060420918367348,
+  "sena_npz": "/workspace/v13/sena_ref/mnist_bin_t0.3_tr10000_te2500_s2026.npz",
+  "sena_npz_file_sha256": "12b05be3d54870b51dff2645643cd97546f9f17d4863a518f8f7f0b7a74e5021",
+  "sena_arrays_sha256": {
+    "Xte": "f1c7f5c3f24fdb3b212073c23ccf9c0fb1b95338c2549488d1506979d93c81bc",
+    "Xtr": "fd5cfff51e6b5e603b95564b635fca2e4bc1f744055acb6d4e7c0296ef8b1c6a",
+    "Yte": "8c6fce021789d0fe274a3bcba8ef515157f136844d582a83edd7278a59480bef",
+    "Ytr": "9bf0db4d49a7fc9f08567549613026691e00ea0688a63c73dbaecf2d399bbac4",
+    "yte": "8975af6305655d0922acf5145f833c6ac03b079b385d938c79aa84eb0d550cc3",
+    "ytr": "9bbb0f2fcc580830aff4dc16eae9bb91d7594fb9cdee4e393107052466799fd7"
+  },
+  "identical_to_sena": true
+}

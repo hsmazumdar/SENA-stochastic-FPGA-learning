@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at sena_learn_core.v(223): always construct contains both blocking and non-blocking assignments File: <WORK>/V13/board_v1_build/board_v1/rtl/sena_learn_core.v Line: 223

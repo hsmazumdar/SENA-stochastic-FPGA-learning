@@ -1,0 +1,15 @@
+{
+  "N": 2500,
+  "pred_agree_pct": 100.0,
+  "pred_mismatches": 0,
+  "first_mismatches": [],
+  "passes_agree_pct": 100.0,
+  "cycles_agree_pct": 100.0,
+  "cycles_per_pass_all_807": true,
+  "board_acc_pct": 29.12,
+  "model_acc_pct": 29.12,
+  "board_mean_passes": 39.4228,
+  "model_mean_passes": 39.4228,
+  "board_csv": "<SENA_ROOT>/Revision_V13\\DE2_115_HW_21Nov2026\\agreement\\run_20261121_121846\\board_preds.csv",
+  "model_csv": "<SENA_ROOT>/Revision_V13\\DE2_115_HW_21Nov2026\\agreement\\run_20261121_121846\\model_preds.csv"
+}

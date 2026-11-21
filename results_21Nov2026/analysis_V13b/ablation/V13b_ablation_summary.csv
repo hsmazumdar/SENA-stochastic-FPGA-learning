@@ -1,0 +1,6 @@
+rule,ste_window,update_rate,n_seeds,seeds,val_mean,val_sd,test_T40_mean,test_T40_sd,test_T1_mean,test_T1_sd,w1_update_samples_mean,w1_saturated_pct_mean,wall_s_mean,selected_on_validation
+sena,64,1.0,3,0 1 2,84.0,0.901,84.08,1.837,74.387,1.603,19779.0,0.0,27.067,True
+fa,identity,0.25,3,0 1 2,78.25,2.955,78.293,1.468,67.293,4.017,59263.333,2.79,44.267,True
+signsgd,identity,0.062,3,0 1 2,77.542,0.851,77.84,2.502,55.013,4.961,75791.333,1.827,51.067,True
+drtp,identity,1.0,3,0 1 2,64.708,10.376,65.373,8.975,54.813,7.39,70037.667,34.43,44.267,True
+outonly,identity,1.0,3,0 1 2,33.25,10.817,33.987,8.655,18.253,1.029,0.0,0.0,17.4,True

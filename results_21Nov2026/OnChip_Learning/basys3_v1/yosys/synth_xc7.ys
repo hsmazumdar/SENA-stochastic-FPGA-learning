@@ -1,0 +1,11 @@
+# Rough xc7 LUT/BRAM estimate for basys3_sena_top.  Not a Vivado P&R result.
+# H_LANES / N_HID are set on the yosys command line via -D.
+read_verilog -sv -I../rtl ../rtl/sdp_ram.v
+read_verilog -sv ../rtl/sena_learn_core.v
+read_verilog -sv ../rtl/uart_rx_s.v
+read_verilog -sv ../rtl/uart_tx_s.v
+read_verilog -sv ../rtl/uart_rx_fifo.v
+read_verilog -sv ../rtl/basys3_sena_top.v
+hierarchy -top basys3_sena_top
+synth_xilinx -family xc7 -top basys3_sena_top
+stat -width

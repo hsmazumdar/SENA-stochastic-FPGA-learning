@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Nov 14 21:53:16 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : sena_core
+Top-level Entity Name : sena_core_synth_top
+Family : Cyclone IV E
+Total logic elements : 52,333
+    Total combinational functions : 44,142
+    Dedicated logic registers : 19,162
+Total registers : 19162
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 1,017,680
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

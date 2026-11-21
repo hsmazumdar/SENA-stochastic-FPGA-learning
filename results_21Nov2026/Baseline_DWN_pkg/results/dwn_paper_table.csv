@@ -1,0 +1,3 @@
+model,accuracy_pct,tool/revision,LE_or_LUT_total,core_LCs,registers,mem_bits_total,DSP/mult,fmax_MHz_slow85C,latency_cycles,latency_ns_at_run_clock,core_dynamic_mW,energy_nJ_streaming,energy_tier,model_sha256_hw
+"DWN (sm, our re-implementation, same split)",95.31 +- 0.19,Quartus de2_115_dwn,8489.0,8095.0,1738.0,1267524.0,0.0,71.38,5,200.0,78.73,3.1492,post-fit PowerPlay vectorless estimate (12.5% default toggle),3c6866fd07db3ba49fe9e8e50f39fdab3434e8638f08c6da5b0015a1df618445
+"DWN (sm, our re-implementation, same split)",95.31 +- 0.19,Quartus dwn_core_only,8356.0,,2128.0,0.0,0.0,98.14,5,200.0,,,,3c6866fd07db3ba49fe9e8e50f39fdab3434e8638f08c6da5b0015a1df618445

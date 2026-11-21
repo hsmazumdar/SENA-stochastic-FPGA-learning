@@ -1,0 +1,19 @@
+t=100 ms sent=30328 rx=811 samples=0
+t=200 ms sent=61005 rx=1372 samples=0
+t=300 ms sent=91682 rx=1933 samples=0
+t=400 ms sent=122359 rx=2494 samples=0
+t=500 ms sent=134218 rx=21414 samples=0
+t=600 ms sent=134954 rx=51181 samples=0
+t=700 ms sent=135690 rx=80949 samples=0
+t=800 ms sent=136426 rx=110716 samples=0
+t=900 ms sent=137750 rx=139263 samples=20
+t=1000 ms sent=138486 rx=169031 samples=20
+t=1100 ms sent=139222 rx=198798 samples=20
+t=1200 ms sent=139958 rx=228566 samples=20
+t=1300 ms sent=140690 rx=258337 samples=20
+TB_DONE sent=141362 received=261430 frame_err_rx_side=0 sram_err=0 LEDR=00000 t=1312306770000 ns
+/workspace/v13/onchip/learn_v1/board_v1/sim/tb_top.v:58: $finish called at 1312306770000 (1ps)
+
+real	2m47.693s
+user	2m47.597s
+sys	0m0.048s

@@ -1,0 +1,52 @@
+{
+  "latency_cycles": 5,
+  "count_width": 3,
+  "group_size": 5,
+  "pred_width": 4,
+  "n_in": 784,
+  "n_classes": 10,
+  "reg_input": true,
+  "reg_pop": true,
+  "reg_argmax": true,
+  "lut_nodes_per_layer": [
+    120,
+    50
+  ],
+  "lut_inputs_per_layer": [
+    6,
+    6
+  ],
+  "total_lut_nodes": 170,
+  "distinct_inputs_used_layer1": 364,
+  "model_sha256": "95436c76f5e2b4b3bf2183169485fdf84a858166734bb6d81ab5834353bbab4b",
+  "model_meta": {
+    "arch": "selftest_tiny",
+    "arch_source": "SELF-TEST ONLY (pipeline check, not a result)",
+    "layers": [
+      120,
+      50
+    ],
+    "n": 6,
+    "tau_inv": 0.245,
+    "seed": 0,
+    "epochs": 3,
+    "lr_steps": "1e-2:2,1e-3:1",
+    "batch": 128,
+    "data": "mnist_bin_t0.3_tr10000_te2500_s2026.npz",
+    "data_sha256": "cff7befefab071b81a95cba0a250c5ba464c00066f481dec0bd6d0aac711ce39",
+    "env": {
+      "python": "3.12.15",
+      "torch": "2.15.0+cu132",
+      "cuda": "13.2",
+      "device": "cpu",
+      "efd_backend": "torch",
+      "os": "Linux-6.12.113+-x86_64-with-glibc2.41"
+    },
+    "label": "SELFTEST",
+    "test_acc_torch": 0.7635999917984009,
+    "test_acc_int": 0.7636,
+    "int_vs_torch_agree": "2500/2500"
+  },
+  "n_test_vectors": 2500,
+  "python_int_correct_on_vectors": 1909
+}

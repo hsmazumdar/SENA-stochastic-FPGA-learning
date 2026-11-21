@@ -1,0 +1,97 @@
+{
+  "name": "iso_accuracy_online_proxy",
+  "note": "Pending #6 from q1_online_training.json. Mean BP/SENA energy at iso-acc (target=SENA final mean 0.594)=6.34x; seed1 alone=6.91x matches paper 6.9x.",
+  "result": {
+    "methods": [
+      "real_bp_online",
+      "sena_online"
+    ],
+    "sena_target": 0.594,
+    "matches": [
+      {
+        "method": "real_bp_online",
+        "n_seeds": 3,
+        "accuracy_mean": 0.6485333333333334,
+        "energy_mean": 12127353333.333334,
+        "samples_mean": 1833.3333333333333,
+        "energy_ratio_bp_over_sena": 6.335964751878652,
+        "energy_ratio_sena_cheaper_factor": 6.335964751878652,
+        "hits": [
+          {
+            "samples": 1500,
+            "accuracy": 0.6248,
+            "best_accuracy": 0.6248,
+            "energy": 9922380000.0,
+            "adds": 381630000,
+            "muls": 381630000,
+            "method": "real_bp_online",
+            "seed": 0
+          },
+          {
+            "samples": 2000,
+            "accuracy": 0.6932,
+            "best_accuracy": 0.6932,
+            "energy": 13229840000.0,
+            "adds": 508840000,
+            "muls": 508840000,
+            "method": "real_bp_online",
+            "seed": 1
+          },
+          {
+            "samples": 2000,
+            "accuracy": 0.6276,
+            "best_accuracy": 0.6276,
+            "energy": 13229840000.0,
+            "adds": 508840000,
+            "muls": 508840000,
+            "method": "real_bp_online",
+            "seed": 2
+          }
+        ]
+      }
+    ],
+    "sena_endpoint": {
+      "accuracy_mean": 0.5941333333333333,
+      "energy_mean": 1914050000.0,
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "samples": 10000,
+          "accuracy": 0.5404,
+          "best_accuracy": 0.7076,
+          "energy": 1914050000.0,
+          "adds": 1908150000.0,
+          "muls": 0.0,
+          "method": "sena_online",
+          "seed": 0
+        },
+        {
+          "samples": 10000,
+          "accuracy": 0.662,
+          "best_accuracy": 0.742,
+          "energy": 1914050000.0,
+          "adds": 1908150000.0,
+          "muls": 0.0,
+          "method": "sena_online",
+          "seed": 1
+        },
+        {
+          "samples": 10000,
+          "accuracy": 0.58,
+          "best_accuracy": 0.6588,
+          "energy": 1914050000.0,
+          "adds": 1908150000.0,
+          "muls": 0.0,
+          "method": "sena_online",
+          "seed": 2
+        }
+      ]
+    },
+    "paper_reconcile": {
+      "paper_claimed_ratio": 6.9,
+      "mean_across_seeds": 6.335964751878652,
+      "seed1_ratio": 6.912,
+      "interpretation": "Paper 6.9x matches seed-1 BP-at-iso / SENA-endpoint; 3-seed mean is 6.34x"
+    }
+  }
+}

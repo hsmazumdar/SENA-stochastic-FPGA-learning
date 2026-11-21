@@ -1,0 +1,14 @@
+{
+ "rule": "sena",
+ "seed": 0,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.8308,
+ "test_acc_T1": 0.7396,
+ "n_w1_update_samples": 20040,
+ "w1_saturated_frac": 0.0,
+ "w2_saturated_frac": 0.0012422360248447205,
+ "wall_s": 26.1
+}

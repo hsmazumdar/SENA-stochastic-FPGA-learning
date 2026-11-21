@@ -1,0 +1,2 @@
+TB DONE cmds=25 cycles=26140
+/workspace/v13/onchip/learn_v1/tb/tb_e2e.v:57: $finish called at 261436000 (1ps)

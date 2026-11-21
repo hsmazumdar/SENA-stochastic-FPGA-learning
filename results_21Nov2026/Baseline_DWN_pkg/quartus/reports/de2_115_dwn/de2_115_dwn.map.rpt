@@ -1,0 +1,1051 @@
+Analysis & Synthesis report for de2_115_dwn
+Sat Nov 14 20:12:44 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |de2_115_dwn_top|st
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated
+ 16. Source assignments for altsyncram:erom_rtl_0|altsyncram_fp71:auto_generated
+ 17. Source assignments for altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated|altsyncram_4b81:altsyncram2
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |de2_115_dwn_top
+ 19. Parameter Settings for Inferred Entity Instance: altsyncram:xrom_rtl_0
+ 20. Parameter Settings for Inferred Entity Instance: altsyncram:erom_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: altshift_taps:edl_rtl_0
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. altshift_taps Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "dwn_core:u_core"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Nov 14 20:12:44 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; de2_115_dwn                                     ;
+; Top-level Entity Name              ; de2_115_dwn_top                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 9,006                                           ;
+;     Total combinational functions  ; 8,481                                           ;
+;     Dedicated logic registers      ; 2,237                                           ;
+; Total registers                    ; 2237                                            ;
+; Total pins                         ; 62                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 1,267,524                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; de2_115_dwn_top    ; de2_115_dwn        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; All                ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 22          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                             ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                            ; Library ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; de2_115_dwn_top.v                                    ; yes             ; User Verilog HDL File                                 ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v                                    ;         ;
+; gen/dwn_core.v                                       ; yes             ; User Verilog HDL File                                 ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v                                       ;         ;
+; dwn_params.vh                                        ; yes             ; Auto-Found Unspecified File                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_params.vh                                    ;         ;
+; altsyncram.tdf                                       ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altsyncram.tdf                                         ;         ;
+; stratix_ram_block.inc                                ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                  ;         ;
+; lpm_mux.inc                                          ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_mux.inc                                            ;         ;
+; lpm_decode.inc                                       ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_decode.inc                                         ;         ;
+; aglobal251.inc                                       ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/aglobal251.inc                                         ;         ;
+; a_rdenreg.inc                                        ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/a_rdenreg.inc                                          ;         ;
+; altrom.inc                                           ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altrom.inc                                             ;         ;
+; altram.inc                                           ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altram.inc                                             ;         ;
+; altdpram.inc                                         ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altdpram.inc                                           ;         ;
+; db/altsyncram_ps71.tdf                               ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf                               ;         ;
+; db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif ;         ;
+; db/altsyncram_fp71.tdf                               ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_fp71.tdf                               ;         ;
+; db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif ;         ;
+; altshift_taps.tdf                                    ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/altshift_taps.tdf                                      ;         ;
+; lpm_counter.inc                                      ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_counter.inc                                        ;         ;
+; lpm_compare.inc                                      ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_compare.inc                                        ;         ;
+; lpm_constant.inc                                     ; yes             ; Megafunction                                          ; e:/fpga_tools_115/intelfpga/25.1/quartus/libraries/megafunctions/lpm_constant.inc                                       ;         ;
+; db/shift_taps_v4m.tdf                                ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/shift_taps_v4m.tdf                                ;         ;
+; db/altsyncram_4b81.tdf                               ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_4b81.tdf                               ;         ;
+; db/cntr_6pf.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/cntr_6pf.tdf                                      ;         ;
+; db/cmpr_ogc.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/cmpr_ogc.tdf                                      ;         ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 9,006   ;
+;                                             ;         ;
+; Total combinational functions               ; 8481    ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 7057    ;
+;     -- 3 input functions                    ; 1073    ;
+;     -- <=2 input functions                  ; 351     ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 7885    ;
+;     -- arithmetic mode                      ; 596     ;
+;                                             ;         ;
+; Total registers                             ; 2237    ;
+;     -- Dedicated logic registers            ; 2237    ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 62      ;
+; Total memory bits                           ; 1267524 ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; clk_25  ;
+; Maximum fan-out                             ; 2752    ;
+; Total fan-out                               ; 43482   ;
+; Average fan-out                             ; 3.83    ;
++---------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Entity Name     ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |de2_115_dwn_top                       ; 8481 (358)          ; 2237 (167)                ; 1267524     ; 0            ; 0       ; 0         ; 62   ; 0            ; |de2_115_dwn_top                                                                                   ; de2_115_dwn_top ; work         ;
+;    |altshift_taps:edl_rtl_0|           ; 5 (0)               ; 2 (0)                     ; 24          ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altshift_taps:edl_rtl_0                                                           ; altshift_taps   ; work         ;
+;       |shift_taps_v4m:auto_generated|  ; 5 (0)               ; 2 (0)                     ; 24          ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated                             ; shift_taps_v4m  ; work         ;
+;          |altsyncram_4b81:altsyncram2| ; 0 (0)               ; 0 (0)                     ; 24          ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated|altsyncram_4b81:altsyncram2 ; altsyncram_4b81 ; work         ;
+;          |cntr_6pf:cntr1|              ; 5 (5)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated|cntr_6pf:cntr1              ; cntr_6pf        ; work         ;
+;    |altsyncram:erom_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 20000       ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altsyncram:erom_rtl_0                                                             ; altsyncram      ; work         ;
+;       |altsyncram_fp71:auto_generated| ; 0 (0)               ; 0 (0)                     ; 20000       ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altsyncram:erom_rtl_0|altsyncram_fp71:auto_generated                              ; altsyncram_fp71 ; work         ;
+;    |altsyncram:xrom_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 1247500     ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altsyncram:xrom_rtl_0                                                             ; altsyncram      ; work         ;
+;       |altsyncram_ps71:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1247500     ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated                              ; altsyncram_ps71 ; work         ;
+;    |dwn_core:u_core|                   ; 8090 (8090)         ; 2068 (2068)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|dwn_core:u_core                                                                   ; dwn_core        ; work         ;
+;    |seg7:s0|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|seg7:s0                                                                           ; seg7            ; work         ;
+;    |seg7:s1|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|seg7:s1                                                                           ; seg7            ; work         ;
+;    |seg7:s2|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|seg7:s2                                                                           ; seg7            ; work         ;
+;    |seg7:s3|                           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_dwn_top|seg7:s3                                                                           ; seg7            ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------------------------------------------------+
+; Name                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                                  ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------------------------------------------------+
+; altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated|altsyncram_4b81:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 8            ; 3            ; 8            ; 24      ; None                                                 ;
+; altsyncram:erom_rtl_0|altsyncram_fp71:auto_generated|ALTSYNCRAM                              ; AUTO ; ROM              ; 2500         ; 8            ; --           ; --           ; 20000   ; db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif ;
+; altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ALTSYNCRAM                              ; AUTO ; ROM              ; 2500         ; 784          ; --           ; --           ; 1960000 ; db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |de2_115_dwn_top|st                            ;
++-------------+------------+-------------+-----------+-----------+
+; Name        ; st.ST_DONE ; st.ST_DRAIN ; st.ST_RUN ; st.ST_ARM ;
++-------------+------------+-------------+-----------+-----------+
+; st.ST_ARM   ; 0          ; 0           ; 0         ; 0         ;
+; st.ST_RUN   ; 0          ; 0           ; 1         ; 1         ;
+; st.ST_DRAIN ; 0          ; 1           ; 0         ; 1         ;
+; st.ST_DONE  ; 1          ; 0           ; 0         ; 1         ;
++-------------+------------+-------------+-----------+-----------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; st~7                                  ; Lost fanout        ;
+; st~8                                  ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2237  ;
+; Number of registers using Synchronous Clear  ; 87    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 159   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 115   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; key1_d                                 ; 24      ;
+; key2_d                                 ; 2       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                                                                                                                                                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+
+; Register Name                                                                                                                                                                                                                                                                           ; Megafunction ; Type       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+
+; xq[28,68,71..75,92..106,119..136,145..165,172..192,195,200..221,227..249,256..278,283..305,312..331,333,339..360,362,363,365,368..389,396..418,424..445,451..473,479,481..501,507..528,535..556,563..582,584,585,591..609,611,620..639,648..665,678..693,705..719,721,734,736..744,746] ; xrom_rtl_0   ; RAM        ;
+; eq[0..7]                                                                                                                                                                                                                                                                                ; erom_rtl_0   ; RAM        ;
+; edl[0..4][0..7]                                                                                                                                                                                                                                                                         ; edl_rtl_0    ; SHIFT_TAPS ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_dwn_top|t_last_out[10]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_dwn_top|t_first_out[15] ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |de2_115_dwn_top|n_mism[11]      ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |de2_115_dwn_top|n_correct[7]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_dwn_top|arm_wait[9]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_dwn_top|cyc[7]          ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |de2_115_dwn_top|raddr[2]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de2_115_dwn_top|d0[2]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de2_115_dwn_top|d1[3]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de2_115_dwn_top|d2[2]           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |de2_115_dwn_top|d3[3]           ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; No         ; |de2_115_dwn_top|Mux11           ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |de2_115_dwn_top|st              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Source assignments for altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated ;
++---------------------------------+--------------------+------+---------------+
+; Assignment                      ; Value              ; From ; To            ;
++---------------------------------+--------------------+------+---------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -             ;
++---------------------------------+--------------------+------+---------------+
+
+
++-----------------------------------------------------------------------------+
+; Source assignments for altsyncram:erom_rtl_0|altsyncram_fp71:auto_generated ;
++---------------------------------+--------------------+------+---------------+
+; Assignment                      ; Value              ; From ; To            ;
++---------------------------------+--------------------+------+---------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -             ;
++---------------------------------+--------------------+------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for altshift_taps:edl_rtl_0|shift_taps_v4m:auto_generated|altsyncram_4b81:altsyncram2 ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |de2_115_dwn_top ;
++----------------+------------------+---------------------------------------------+
+; Parameter Name ; Value            ; Type                                        ;
++----------------+------------------+---------------------------------------------+
+; X_FILE         ; gen/test_x.hex   ; String                                      ;
+; E_FILE         ; gen/test_exp.hex ; String                                      ;
++----------------+------------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:xrom_rtl_0                                     ;
++------------------------------------+------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                ; Type           ;
++------------------------------------+------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                  ; Untyped        ;
+; WIDTH_A                            ; 784                                                  ; Untyped        ;
+; WIDTHAD_A                          ; 12                                                   ; Untyped        ;
+; NUMWORDS_A                         ; 2500                                                 ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; WIDTH_B                            ; 1                                                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                 ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                 ; Untyped        ;
+; INIT_FILE                          ; db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                         ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ps71                                      ; Untyped        ;
++------------------------------------+------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altsyncram:erom_rtl_0                                     ;
++------------------------------------+------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                ; Type           ;
++------------------------------------+------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                  ; Untyped        ;
+; WIDTH_A                            ; 8                                                    ; Untyped        ;
+; WIDTHAD_A                          ; 12                                                   ; Untyped        ;
+; NUMWORDS_A                         ; 2500                                                 ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                 ; Untyped        ;
+; WIDTH_B                            ; 1                                                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                 ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                 ; Untyped        ;
+; INIT_FILE                          ; db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                         ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_fp71                                      ; Untyped        ;
++------------------------------------+------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: altshift_taps:edl_rtl_0 ;
++----------------+----------------+----------------------------------------+
+; Parameter Name ; Value          ; Type                                   ;
++----------------+----------------+----------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                ;
+; TAP_DISTANCE   ; 5              ; Untyped                                ;
+; WIDTH          ; 8              ; Untyped                                ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                ;
+; CBXI_PARAMETER ; shift_taps_v4m ; Untyped                                ;
++----------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                  ;
++-------------------------------------------+-----------------------+
+; Name                                      ; Value                 ;
++-------------------------------------------+-----------------------+
+; Number of entity instances                ; 2                     ;
+; Entity Instance                           ; altsyncram:xrom_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                   ;
+;     -- WIDTH_A                            ; 784                   ;
+;     -- NUMWORDS_A                         ; 2500                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED          ;
+;     -- WIDTH_B                            ; 1                     ;
+;     -- NUMWORDS_B                         ; 1                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ;
+; Entity Instance                           ; altsyncram:erom_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                   ;
+;     -- WIDTH_A                            ; 8                     ;
+;     -- NUMWORDS_A                         ; 2500                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED          ;
+;     -- WIDTH_B                            ; 1                     ;
+;     -- NUMWORDS_B                         ; 1                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ;
++-------------------------------------------+-----------------------+
+
+
++------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance  ;
++----------------------------+-------------------------+
+; Name                       ; Value                   ;
++----------------------------+-------------------------+
+; Number of entity instances ; 1                       ;
+; Entity Instance            ; altshift_taps:edl_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                       ;
+;     -- TAP_DISTANCE        ; 5                       ;
+;     -- WIDTH               ; 8                       ;
++----------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dwn_core:u_core"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; counts ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 62                          ;
+; cycloneiii_ff         ; 2237                        ;
+;     CLR               ; 40                          ;
+;     CLR SCLR          ; 15                          ;
+;     ENA               ; 11                          ;
+;     ENA CLR           ; 32                          ;
+;     ENA CLR SCLR      ; 72                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 2066                        ;
+; cycloneiii_lcell_comb ; 8487                        ;
+;     arith             ; 596                         ;
+;         2 data inputs ; 129                         ;
+;         3 data inputs ; 467                         ;
+;     normal            ; 7891                        ;
+;         0 data inputs ; 103                         ;
+;         1 data inputs ; 36                          ;
+;         2 data inputs ; 89                          ;
+;         3 data inputs ; 606                         ;
+;         4 data inputs ; 7057                        ;
+; cycloneiii_ram_block  ; 515                         ;
+;                       ;                             ;
+; Max LUT depth         ; 17.00                       ;
+; Average LUT depth     ; 3.36                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:27     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Sat Nov 14 20:10:38 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dwn_baseline -c de2_115_dwn
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file de2_115_dwn_top.v
+    Info (12023): Found entity 1: de2_115_dwn_top File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 17
+    Info (12023): Found entity 2: seg7 File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 184
+Info (12021): Found 1 design units, including 1 entities, in source file gen/dwn_core.v
+    Info (12023): Found entity 1: dwn_core File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 9
+Info (12127): Elaborating entity "de2_115_dwn_top" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at de2_115_dwn_top.v(104): all case item expressions in this case statement are onehot File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 104
+Warning (10030): Net "xrom.data_a" at de2_115_dwn_top.v(45) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 45
+Warning (10030): Net "xrom.waddr_a" at de2_115_dwn_top.v(45) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 45
+Warning (10030): Net "erom.data_a" at de2_115_dwn_top.v(46) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 46
+Warning (10030): Net "erom.waddr_a" at de2_115_dwn_top.v(46) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 46
+Warning (10030): Net "xrom.we_a" at de2_115_dwn_top.v(45) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 45
+Warning (10030): Net "erom.we_a" at de2_115_dwn_top.v(46) has no driver or initial value, using a default initial value '0' File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 46
+Info (12128): Elaborating entity "dwn_core" for hierarchy "dwn_core:u_core" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 74
+Warning (10036): Verilog HDL or VHDL warning at dwn_core.v(3584): object "am_c516" assigned a value but never read File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/gen/dwn_core.v Line: 3584
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:s0" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 178
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "xrom_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 784
+        Info (286033): Parameter WIDTHAD_A set to 12
+        Info (286033): Parameter NUMWORDS_A set to 2500
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "erom_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 12
+        Info (286033): Parameter NUMWORDS_A set to 2500
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "edl_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 5
+        Info (286033): Parameter WIDTH set to 8
+Info (12130): Elaborated megafunction instantiation "altsyncram:xrom_rtl_0"
+Info (12133): Instantiated megafunction "altsyncram:xrom_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "784"
+    Info (12134): Parameter "WIDTHAD_A" = "12"
+    Info (12134): Parameter "NUMWORDS_A" = "2500"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/de2_115_dwn.ram0_de2_115_dwn_top_3e39c06b.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ps71.tdf
+    Info (12023): Found entity 1: altsyncram_ps71 File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "altsyncram:erom_rtl_0"
+Info (12133): Instantiated megafunction "altsyncram:erom_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "12"
+    Info (12134): Parameter "NUMWORDS_A" = "2500"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/de2_115_dwn.ram1_de2_115_dwn_top_3e39c06b.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fp71.tdf
+    Info (12023): Found entity 1: altsyncram_fp71 File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_fp71.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "altshift_taps:edl_rtl_0"
+Info (12133): Instantiated megafunction "altshift_taps:edl_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "5"
+    Info (12134): Parameter "WIDTH" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_v4m.tdf
+    Info (12023): Found entity 1: shift_taps_v4m File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/shift_taps_v4m.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4b81.tdf
+    Info (12023): Found entity 1: altsyncram_4b81 File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_4b81.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_6pf.tdf
+    Info (12023): Found entity 1: cntr_6pf File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/cntr_6pf.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ogc.tdf
+    Info (12023): Found entity 1: cmpr_ogc File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/cmpr_ogc.tdf Line: 23
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a0" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 35
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a1" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 56
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a2" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 77
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a3" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 98
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a4" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 119
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a5" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 140
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a6" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 161
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a7" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 182
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a8" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 203
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a9" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 224
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a10" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 245
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a11" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 266
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a12" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 287
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a13" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 308
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a14" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 329
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a15" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 350
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a16" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 371
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a17" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 392
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a18" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 413
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a19" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 434
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a20" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 455
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a21" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 476
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a22" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 497
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a23" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 518
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a24" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 539
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a25" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 560
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a26" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 581
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a27" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 602
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a29" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 644
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a30" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 665
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a31" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 686
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a32" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 707
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a33" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 728
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a34" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 749
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a35" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 770
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a36" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 791
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a37" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 812
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a38" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 833
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a39" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 854
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a40" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 875
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a41" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 896
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a42" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 917
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a43" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 938
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a44" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 959
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a45" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 980
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a46" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1001
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a47" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1022
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a48" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1043
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a49" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1064
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a50" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1085
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a51" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1106
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a52" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1127
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a53" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1148
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a54" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1169
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a55" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1190
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a56" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1211
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a57" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1232
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a58" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1253
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a59" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1274
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a60" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1295
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a61" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1316
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a62" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1337
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a63" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1358
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a64" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1379
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a65" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1400
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a66" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1421
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a67" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1442
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a69" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1484
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a70" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1505
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a76" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1631
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a77" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1652
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a78" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1673
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a79" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1694
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a80" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1715
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a81" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1736
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a82" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1757
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a83" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1778
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a84" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1799
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a85" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1820
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a86" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1841
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a87" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1862
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a88" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1883
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a89" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1904
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a90" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1925
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a91" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 1946
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a107" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2282
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a108" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2303
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a109" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2324
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a110" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2345
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a111" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2366
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a112" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2387
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a113" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2408
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a114" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2429
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a115" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2450
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a116" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2471
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a117" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2492
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a118" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2513
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a137" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2912
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a138" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2933
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a139" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2954
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a140" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2975
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a141" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 2996
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a142" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3017
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a143" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3038
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a144" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3059
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a166" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3521
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a167" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3542
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a168" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3563
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a169" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3584
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a170" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3605
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a171" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 3626
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a193" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4088
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a194" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4109
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a196" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4151
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a197" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4172
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a198" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4193
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a199" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4214
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a222" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4697
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a223" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4718
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a224" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4739
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a225" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4760
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a226" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 4781
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a250" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5285
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a251" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5306
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a252" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5327
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a253" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5348
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a254" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5369
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a255" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5390
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a279" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5894
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a280" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5915
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a281" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5936
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a282" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 5957
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a306" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6461
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a307" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6482
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a308" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6503
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a309" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6524
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a310" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6545
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a311" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 6566
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a332" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7007
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a334" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7049
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a335" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7070
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a336" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7091
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a337" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7112
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a338" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7133
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a361" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7616
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a364" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7679
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a366" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7721
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a367" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 7742
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a390" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8225
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a391" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8246
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a392" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8267
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a393" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8288
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a394" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8309
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a395" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8330
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a419" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8834
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a420" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8855
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a421" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8876
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a422" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8897
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a423" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 8918
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a446" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9401
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a447" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9422
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a448" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9443
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a449" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9464
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a450" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9485
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a474" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 9989
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a475" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10010
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a476" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10031
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a477" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10052
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a478" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10073
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a480" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10115
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a502" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10577
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a503" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10598
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a504" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10619
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a505" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10640
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a506" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 10661
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a529" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11144
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a530" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11165
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a531" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11186
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a532" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11207
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a533" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11228
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a534" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11249
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a557" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11732
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a558" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11753
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a559" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11774
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a560" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11795
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a561" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11816
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a562" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 11837
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a583" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12278
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a586" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12341
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a587" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12362
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a588" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12383
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a589" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12404
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a590" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12425
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a610" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12845
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a612" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12887
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a613" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12908
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a614" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12929
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a615" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12950
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a616" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12971
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a617" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 12992
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a618" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13013
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a619" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13034
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a640" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13475
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a641" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13496
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a642" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13517
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a643" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13538
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a644" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13559
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a645" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13580
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a646" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13601
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a647" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 13622
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a666" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14021
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a667" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14042
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a668" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14063
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a669" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14084
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a670" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14105
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a671" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14126
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a672" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14147
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a673" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14168
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a674" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14189
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a675" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14210
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a676" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14231
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a677" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14252
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a694" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14609
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a695" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14630
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a696" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14651
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a697" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14672
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a698" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14693
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a699" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14714
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a700" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14735
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a701" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14756
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a702" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14777
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a703" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14798
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a704" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 14819
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a720" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15155
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a722" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15197
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a723" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15218
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a724" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15239
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a725" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15260
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a726" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15281
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a727" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15302
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a728" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15323
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a729" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15344
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a730" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15365
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a731" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15386
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a732" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15407
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a733" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15428
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a735" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15470
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a745" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15680
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a747" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15722
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a748" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15743
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a749" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15764
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a750" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15785
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a751" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15806
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a752" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15827
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a753" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15848
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a754" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15869
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a755" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15890
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a756" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15911
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a757" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15932
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a758" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15953
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a759" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15974
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a760" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 15995
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a761" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16016
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a762" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16037
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a763" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16058
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a764" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16079
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a765" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16100
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a766" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16121
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a767" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16142
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a768" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16163
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a769" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16184
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a770" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16205
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a771" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16226
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a772" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16247
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a773" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16268
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a774" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16289
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a775" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16310
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a776" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16331
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a777" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16352
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a778" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16373
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a779" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16394
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a780" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16415
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a781" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16436
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a782" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16457
+        Warning (14320): Synthesized away node "altsyncram:xrom_rtl_0|altsyncram_ps71:auto_generated|ram_block1a783" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/db/altsyncram_ps71.tdf Line: 16478
+Info (13000): Registers with preset signals will power-up high File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 85
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "UART_TXD" is stuck at VCC File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 24
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[3]" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 22
+    Warning (15610): No output dependent on input pin "UART_RXD" File: <SENA_ROOT>/Revision_V13/Baseline_DWN_pkg/quartus/de2_115_dwn_top.v Line: 23
+Info (21057): Implemented 9600 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 9023 logic cells
+    Info (21064): Implemented 515 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 309 warnings
+    Info: Peak virtual memory: 5215 megabytes
+    Info: Processing ended: Sat Nov 14 20:12:44 2026
+    Info: Elapsed time: 00:02:06
+    Info: Total CPU time (on all processors): 00:02:06
+
+

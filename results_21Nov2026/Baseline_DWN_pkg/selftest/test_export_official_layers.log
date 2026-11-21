@@ -1,0 +1,2 @@
+official-layer export: preds equal True | scores equal True | (47 outputs -> padded GroupSum, group size 5 )
+SELFTEST export of official torch_dwn layers: PASS

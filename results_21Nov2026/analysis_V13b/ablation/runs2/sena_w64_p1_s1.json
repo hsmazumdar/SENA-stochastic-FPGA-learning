@@ -1,0 +1,17 @@
+{
+ "rule": "sena",
+ "ste_window": 64,
+ "update_rate": 1.0,
+ "seed": 1,
+ "val_acc_probe800_T40": 0.83,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.8296,
+ "test_acc_T1": 0.7304,
+ "n_w1_update_samples": 19794,
+ "w1_saturated_frac": 0.0,
+ "w2_saturated_frac": 0.002484472049689441,
+ "wall_s": 28.1
+}

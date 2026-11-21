@@ -1,0 +1,285 @@
+model,coverage,risk_mean,risk_sd,acc_mean
+SENA full-budget (T=40),0.3,0.003733,0.001978,0.996267
+SENA full-budget (T=40),0.31,0.003613,0.001914,0.996387
+SENA full-budget (T=40),0.32,0.00375,0.001976,0.99625
+SENA full-budget (T=40),0.33,0.004121,0.001626,0.995879
+SENA full-budget (T=40),0.34,0.004,0.001578,0.996
+SENA full-budget (T=40),0.35,0.003886,0.001533,0.996114
+SENA full-budget (T=40),0.36,0.004444,0.001111,0.995556
+SENA full-budget (T=40),0.37,0.004541,0.001184,0.995459
+SENA full-budget (T=40),0.38,0.004842,0.0012,0.995158
+SENA full-budget (T=40),0.39,0.004923,0.001124,0.995077
+SENA full-budget (T=40),0.4,0.0052,0.000837,0.9948
+SENA full-budget (T=40),0.41,0.005073,0.000816,0.994927
+SENA full-budget (T=40),0.42,0.005333,0.001086,0.994667
+SENA full-budget (T=40),0.43,0.005581,0.001471,0.994419
+SENA full-budget (T=40),0.44,0.005455,0.001437,0.994545
+SENA full-budget (T=40),0.45,0.005511,0.001318,0.994489
+SENA full-budget (T=40),0.46,0.005565,0.001319,0.994435
+SENA full-budget (T=40),0.47,0.005787,0.001398,0.994213
+SENA full-budget (T=40),0.48,0.006,0.001603,0.994
+SENA full-budget (T=40),0.49,0.006531,0.00216,0.993469
+SENA full-budget (T=40),0.5,0.00688,0.002567,0.99312
+SENA full-budget (T=40),0.51,0.007216,0.002105,0.992784
+SENA full-budget (T=40),0.52,0.007077,0.002064,0.992923
+SENA full-budget (T=40),0.53,0.007245,0.002174,0.992755
+SENA full-budget (T=40),0.54,0.007556,0.001518,0.992444
+SENA full-budget (T=40),0.55,0.007855,0.002018,0.992145
+SENA full-budget (T=40),0.56,0.008143,0.002119,0.991857
+SENA full-budget (T=40),0.57,0.008702,0.00196,0.991298
+SENA full-budget (T=40),0.58,0.008828,0.001785,0.991172
+SENA full-budget (T=40),0.59,0.009356,0.00147,0.990644
+SENA full-budget (T=40),0.6,0.0096,0.001738,0.9904
+SENA full-budget (T=40),0.61,0.009836,0.001796,0.990164
+SENA full-budget (T=40),0.62,0.010452,0.001606,0.989548
+SENA full-budget (T=40),0.63,0.010794,0.001489,0.989206
+SENA full-budget (T=40),0.64,0.011625,0.001906,0.988375
+SENA full-budget (T=40),0.65,0.012062,0.001826,0.987938
+SENA full-budget (T=40),0.66,0.012606,0.001735,0.987394
+SENA full-budget (T=40),0.67,0.013015,0.001545,0.986985
+SENA full-budget (T=40),0.68,0.013176,0.001354,0.986824
+SENA full-budget (T=40),0.69,0.014377,0.002185,0.985623
+SENA full-budget (T=40),0.7,0.015086,0.002235,0.984914
+SENA full-budget (T=40),0.71,0.015324,0.002501,0.984676
+SENA full-budget (T=40),0.72,0.016,0.002676,0.984
+SENA full-budget (T=40),0.73,0.016877,0.002696,0.983123
+SENA full-budget (T=40),0.74,0.018486,0.002429,0.981514
+SENA full-budget (T=40),0.75,0.019413,0.002312,0.980587
+SENA full-budget (T=40),0.76,0.020316,0.002221,0.979684
+SENA full-budget (T=40),0.77,0.021818,0.002409,0.978182
+SENA full-budget (T=40),0.78,0.022462,0.002333,0.977538
+SENA full-budget (T=40),0.79,0.023291,0.002375,0.976709
+SENA full-budget (T=40),0.8,0.0251,0.00277,0.9749
+SENA full-budget (T=40),0.81,0.026173,0.002727,0.973827
+SENA full-budget (T=40),0.82,0.028585,0.003528,0.971415
+SENA full-budget (T=40),0.83,0.030458,0.004289,0.969542
+SENA full-budget (T=40),0.84,0.032095,0.004898,0.967905
+SENA full-budget (T=40),0.85,0.033788,0.005095,0.966212
+SENA full-budget (T=40),0.86,0.036372,0.004714,0.963628
+SENA full-budget (T=40),0.87,0.037977,0.005533,0.962023
+SENA full-budget (T=40),0.88,0.041364,0.00533,0.958636
+SENA full-budget (T=40),0.89,0.044854,0.005245,0.955146
+SENA full-budget (T=40),0.9,0.047378,0.004582,0.952622
+SENA full-budget (T=40),0.91,0.051253,0.004959,0.948747
+SENA full-budget (T=40),0.92,0.054696,0.00433,0.945304
+SENA full-budget (T=40),0.93,0.057806,0.004199,0.942194
+SENA full-budget (T=40),0.94,0.062128,0.004059,0.937872
+SENA full-budget (T=40),0.95,0.066274,0.00353,0.933726
+SENA full-budget (T=40),0.96,0.071083,0.00411,0.928917
+SENA full-budget (T=40),0.97,0.075629,0.00413,0.924371
+SENA full-budget (T=40),0.98,0.080816,0.00373,0.919184
+SENA full-budget (T=40),0.99,0.086141,0.003607,0.913859
+SENA full-budget (T=40),1.0,0.0924,0.003888,0.9076
+"SENA gated (theta=0.55, Tmax=40)",0.3,0.0464,0.007448,0.9536
+"SENA gated (theta=0.55, Tmax=40)",0.31,0.046452,0.007524,0.953548
+"SENA gated (theta=0.55, Tmax=40)",0.32,0.04675,0.007531,0.95325
+"SENA gated (theta=0.55, Tmax=40)",0.33,0.046788,0.006505,0.953212
+"SENA gated (theta=0.55, Tmax=40)",0.34,0.047059,0.006169,0.952941
+"SENA gated (theta=0.55, Tmax=40)",0.35,0.046857,0.005827,0.953143
+"SENA gated (theta=0.55, Tmax=40)",0.36,0.047111,0.006412,0.952889
+"SENA gated (theta=0.55, Tmax=40)",0.37,0.047351,0.005586,0.952649
+"SENA gated (theta=0.55, Tmax=40)",0.38,0.046526,0.005388,0.953474
+"SENA gated (theta=0.55, Tmax=40)",0.39,0.046154,0.004229,0.953846
+"SENA gated (theta=0.55, Tmax=40)",0.4,0.0464,0.005177,0.9536
+"SENA gated (theta=0.55, Tmax=40)",0.41,0.046439,0.005236,0.953561
+"SENA gated (theta=0.55, Tmax=40)",0.42,0.047048,0.005738,0.952952
+"SENA gated (theta=0.55, Tmax=40)",0.43,0.047442,0.005052,0.952558
+"SENA gated (theta=0.55, Tmax=40)",0.44,0.046909,0.004836,0.953091
+"SENA gated (theta=0.55, Tmax=40)",0.45,0.047467,0.005129,0.952533
+"SENA gated (theta=0.55, Tmax=40)",0.46,0.047304,0.004865,0.952696
+"SENA gated (theta=0.55, Tmax=40)",0.47,0.04783,0.004941,0.95217
+"SENA gated (theta=0.55, Tmax=40)",0.48,0.048,0.005547,0.952
+"SENA gated (theta=0.55, Tmax=40)",0.49,0.048,0.005926,0.952
+"SENA gated (theta=0.55, Tmax=40)",0.5,0.04768,0.005841,0.95232
+"SENA gated (theta=0.55, Tmax=40)",0.51,0.048,0.005694,0.952
+"SENA gated (theta=0.55, Tmax=40)",0.52,0.048769,0.006072,0.951231
+"SENA gated (theta=0.55, Tmax=40)",0.53,0.048604,0.005663,0.951396
+"SENA gated (theta=0.55, Tmax=40)",0.54,0.048889,0.006086,0.951111
+"SENA gated (theta=0.55, Tmax=40)",0.55,0.048291,0.006054,0.951709
+"SENA gated (theta=0.55, Tmax=40)",0.56,0.048143,0.005638,0.951857
+"SENA gated (theta=0.55, Tmax=40)",0.57,0.047719,0.005157,0.952281
+"SENA gated (theta=0.55, Tmax=40)",0.58,0.048138,0.005395,0.951862
+"SENA gated (theta=0.55, Tmax=40)",0.59,0.048814,0.004794,0.951186
+"SENA gated (theta=0.55, Tmax=40)",0.6,0.0488,0.004531,0.9512
+"SENA gated (theta=0.55, Tmax=40)",0.61,0.049443,0.004413,0.950557
+"SENA gated (theta=0.55, Tmax=40)",0.62,0.048903,0.004479,0.951097
+"SENA gated (theta=0.55, Tmax=40)",0.63,0.048381,0.004362,0.951619
+"SENA gated (theta=0.55, Tmax=40)",0.64,0.04925,0.005292,0.95075
+"SENA gated (theta=0.55, Tmax=40)",0.65,0.050092,0.005048,0.949908
+"SENA gated (theta=0.55, Tmax=40)",0.66,0.050061,0.004953,0.949939
+"SENA gated (theta=0.55, Tmax=40)",0.67,0.050269,0.005108,0.949731
+"SENA gated (theta=0.55, Tmax=40)",0.68,0.05,0.00506,0.95
+"SENA gated (theta=0.55, Tmax=40)",0.69,0.050899,0.003766,0.949101
+"SENA gated (theta=0.55, Tmax=40)",0.7,0.050629,0.004053,0.949371
+"SENA gated (theta=0.55, Tmax=40)",0.71,0.051268,0.00456,0.948732
+"SENA gated (theta=0.55, Tmax=40)",0.72,0.050778,0.004524,0.949222
+"SENA gated (theta=0.55, Tmax=40)",0.73,0.050849,0.003863,0.949151
+"SENA gated (theta=0.55, Tmax=40)",0.74,0.050595,0.003516,0.949405
+"SENA gated (theta=0.55, Tmax=40)",0.75,0.050347,0.003489,0.949653
+"SENA gated (theta=0.55, Tmax=40)",0.76,0.051053,0.004194,0.948947
+"SENA gated (theta=0.55, Tmax=40)",0.77,0.052675,0.00548,0.947325
+"SENA gated (theta=0.55, Tmax=40)",0.78,0.053128,0.005507,0.946872
+"SENA gated (theta=0.55, Tmax=40)",0.79,0.053468,0.004994,0.946532
+"SENA gated (theta=0.55, Tmax=40)",0.8,0.0541,0.005042,0.9459
+"SENA gated (theta=0.55, Tmax=40)",0.81,0.054815,0.005641,0.945185
+"SENA gated (theta=0.55, Tmax=40)",0.82,0.055902,0.005632,0.944098
+"SENA gated (theta=0.55, Tmax=40)",0.83,0.057446,0.005488,0.942554
+"SENA gated (theta=0.55, Tmax=40)",0.84,0.058667,0.005155,0.941333
+"SENA gated (theta=0.55, Tmax=40)",0.85,0.060235,0.005478,0.939765
+"SENA gated (theta=0.55, Tmax=40)",0.86,0.062419,0.005067,0.937581
+"SENA gated (theta=0.55, Tmax=40)",0.87,0.064184,0.004763,0.935816
+"SENA gated (theta=0.55, Tmax=40)",0.88,0.066727,0.005401,0.933273
+"SENA gated (theta=0.55, Tmax=40)",0.89,0.067685,0.005247,0.932315
+"SENA gated (theta=0.55, Tmax=40)",0.9,0.068978,0.004623,0.931022
+"SENA gated (theta=0.55, Tmax=40)",0.91,0.070505,0.005179,0.929495
+"SENA gated (theta=0.55, Tmax=40)",0.92,0.072087,0.005425,0.927913
+"SENA gated (theta=0.55, Tmax=40)",0.93,0.074753,0.005418,0.925247
+"SENA gated (theta=0.55, Tmax=40)",0.94,0.076681,0.005012,0.923319
+"SENA gated (theta=0.55, Tmax=40)",0.95,0.078653,0.00573,0.921347
+"SENA gated (theta=0.55, Tmax=40)",0.96,0.08125,0.004956,0.91875
+"SENA gated (theta=0.55, Tmax=40)",0.97,0.084206,0.004118,0.915794
+"SENA gated (theta=0.55, Tmax=40)",0.98,0.086612,0.004294,0.913388
+"SENA gated (theta=0.55, Tmax=40)",0.99,0.09099,0.004241,0.90901
+"SENA gated (theta=0.55, Tmax=40)",1.0,0.096,0.003899,0.904
+SENA single pass (T=1),0.3,0.0464,0.007448,0.9536
+SENA single pass (T=1),0.31,0.046452,0.007524,0.953548
+SENA single pass (T=1),0.32,0.04675,0.007531,0.95325
+SENA single pass (T=1),0.33,0.046788,0.006505,0.953212
+SENA single pass (T=1),0.34,0.047059,0.006169,0.952941
+SENA single pass (T=1),0.35,0.046857,0.005827,0.953143
+SENA single pass (T=1),0.36,0.047111,0.006412,0.952889
+SENA single pass (T=1),0.37,0.047351,0.005586,0.952649
+SENA single pass (T=1),0.38,0.046526,0.005388,0.953474
+SENA single pass (T=1),0.39,0.046154,0.004229,0.953846
+SENA single pass (T=1),0.4,0.0464,0.005177,0.9536
+SENA single pass (T=1),0.41,0.046439,0.005236,0.953561
+SENA single pass (T=1),0.42,0.047048,0.005738,0.952952
+SENA single pass (T=1),0.43,0.047442,0.005052,0.952558
+SENA single pass (T=1),0.44,0.046909,0.004836,0.953091
+SENA single pass (T=1),0.45,0.047467,0.005129,0.952533
+SENA single pass (T=1),0.46,0.047304,0.004865,0.952696
+SENA single pass (T=1),0.47,0.04783,0.004941,0.95217
+SENA single pass (T=1),0.48,0.048,0.005547,0.952
+SENA single pass (T=1),0.49,0.048,0.005926,0.952
+SENA single pass (T=1),0.5,0.04768,0.005841,0.95232
+SENA single pass (T=1),0.51,0.048,0.005694,0.952
+SENA single pass (T=1),0.52,0.048769,0.006072,0.951231
+SENA single pass (T=1),0.53,0.048604,0.005663,0.951396
+SENA single pass (T=1),0.54,0.048889,0.006086,0.951111
+SENA single pass (T=1),0.55,0.048291,0.006054,0.951709
+SENA single pass (T=1),0.56,0.048143,0.005638,0.951857
+SENA single pass (T=1),0.57,0.047719,0.005157,0.952281
+SENA single pass (T=1),0.58,0.048138,0.005395,0.951862
+SENA single pass (T=1),0.59,0.048814,0.004794,0.951186
+SENA single pass (T=1),0.6,0.0488,0.004531,0.9512
+SENA single pass (T=1),0.61,0.049443,0.004413,0.950557
+SENA single pass (T=1),0.62,0.048903,0.004479,0.951097
+SENA single pass (T=1),0.63,0.048381,0.004362,0.951619
+SENA single pass (T=1),0.64,0.048,0.004271,0.952
+SENA single pass (T=1),0.65,0.048985,0.004119,0.951015
+SENA single pass (T=1),0.66,0.048727,0.004034,0.951273
+SENA single pass (T=1),0.67,0.048955,0.004468,0.951045
+SENA single pass (T=1),0.68,0.048824,0.004343,0.951176
+SENA single pass (T=1),0.69,0.048928,0.004272,0.951072
+SENA single pass (T=1),0.7,0.048914,0.004211,0.951086
+SENA single pass (T=1),0.71,0.048676,0.004375,0.951324
+SENA single pass (T=1),0.72,0.048333,0.003967,0.951667
+SENA single pass (T=1),0.73,0.048548,0.003457,0.951452
+SENA single pass (T=1),0.74,0.048216,0.003654,0.951784
+SENA single pass (T=1),0.75,0.048427,0.003998,0.951573
+SENA single pass (T=1),0.76,0.048526,0.004378,0.951474
+SENA single pass (T=1),0.77,0.048623,0.004262,0.951377
+SENA single pass (T=1),0.78,0.049026,0.003882,0.950974
+SENA single pass (T=1),0.79,0.050228,0.003977,0.949772
+SENA single pass (T=1),0.8,0.0508,0.004453,0.9492
+SENA single pass (T=1),0.81,0.051951,0.005172,0.948049
+SENA single pass (T=1),0.82,0.053854,0.005294,0.946146
+SENA single pass (T=1),0.83,0.055036,0.005624,0.944964
+SENA single pass (T=1),0.84,0.056476,0.006429,0.943524
+SENA single pass (T=1),0.85,0.058729,0.005738,0.941271
+SENA single pass (T=1),0.86,0.06,0.005474,0.94
+SENA single pass (T=1),0.87,0.061333,0.005456,0.938667
+SENA single pass (T=1),0.88,0.062273,0.005856,0.937727
+SENA single pass (T=1),0.89,0.063551,0.005473,0.936449
+SENA single pass (T=1),0.9,0.066933,0.006932,0.933067
+SENA single pass (T=1),0.91,0.070945,0.008144,0.929055
+SENA single pass (T=1),0.92,0.075478,0.007878,0.924522
+SENA single pass (T=1),0.93,0.08,0.008346,0.92
+SENA single pass (T=1),0.94,0.084851,0.008822,0.915149
+SENA single pass (T=1),0.95,0.089179,0.008839,0.910821
+SENA single pass (T=1),0.96,0.093333,0.009114,0.906667
+SENA single pass (T=1),0.97,0.09666,0.008952,0.90334
+SENA single pass (T=1),0.98,0.100898,0.008068,0.899102
+SENA single pass (T=1),0.99,0.107071,0.00734,0.892929
+SENA single pass (T=1),1.0,0.11456,0.007433,0.88544
+DWN sm (margin rank; softmax calib.),0.3,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.31,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.32,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.33,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.34,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.35,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.36,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.37,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.38,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.39,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.4,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.41,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.42,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.43,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.44,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.45,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.46,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.47,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.48,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.49,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.5,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.51,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.52,0.0,0.0,1.0
+DWN sm (margin rank; softmax calib.),0.53,0.000302,0.000413,0.999698
+DWN sm (margin rank; softmax calib.),0.54,0.000296,0.000406,0.999704
+DWN sm (margin rank; softmax calib.),0.55,0.000291,0.000398,0.999709
+DWN sm (margin rank; softmax calib.),0.56,0.000286,0.000391,0.999714
+DWN sm (margin rank; softmax calib.),0.57,0.000421,0.000384,0.999579
+DWN sm (margin rank; softmax calib.),0.58,0.000552,0.000308,0.999448
+DWN sm (margin rank; softmax calib.),0.59,0.000542,0.000303,0.999458
+DWN sm (margin rank; softmax calib.),0.6,0.000533,0.000298,0.999467
+DWN sm (margin rank; softmax calib.),0.61,0.000525,0.000293,0.999475
+DWN sm (margin rank; softmax calib.),0.62,0.000516,0.000289,0.999484
+DWN sm (margin rank; softmax calib.),0.63,0.000508,0.000284,0.999492
+DWN sm (margin rank; softmax calib.),0.64,0.000625,0.0,0.999375
+DWN sm (margin rank; softmax calib.),0.65,0.000615,0.0,0.999385
+DWN sm (margin rank; softmax calib.),0.66,0.000848,0.000332,0.999152
+DWN sm (margin rank; softmax calib.),0.67,0.001194,0.000597,0.998806
+DWN sm (margin rank; softmax calib.),0.68,0.001176,0.000588,0.998824
+DWN sm (margin rank; softmax calib.),0.69,0.001275,0.000756,0.998725
+DWN sm (margin rank; softmax calib.),0.7,0.001257,0.000745,0.998743
+DWN sm (margin rank; softmax calib.),0.71,0.001239,0.000735,0.998761
+DWN sm (margin rank; softmax calib.),0.72,0.001222,0.000724,0.998778
+DWN sm (margin rank; softmax calib.),0.73,0.001315,0.000735,0.998685
+DWN sm (margin rank; softmax calib.),0.74,0.001514,0.000705,0.998486
+DWN sm (margin rank; softmax calib.),0.75,0.002133,0.001067,0.997867
+DWN sm (margin rank; softmax calib.),0.76,0.002526,0.001362,0.997474
+DWN sm (margin rank; softmax calib.),0.77,0.003013,0.001394,0.996987
+DWN sm (margin rank; softmax calib.),0.78,0.00359,0.001495,0.99641
+DWN sm (margin rank; softmax calib.),0.79,0.003747,0.001414,0.996253
+DWN sm (margin rank; softmax calib.),0.8,0.0041,0.001294,0.9959
+DWN sm (margin rank; softmax calib.),0.81,0.004346,0.001278,0.995654
+DWN sm (margin rank; softmax calib.),0.82,0.00478,0.000873,0.99522
+DWN sm (margin rank; softmax calib.),0.83,0.00559,0.000549,0.99441
+DWN sm (margin rank; softmax calib.),0.84,0.006,0.000543,0.994
+DWN sm (margin rank; softmax calib.),0.85,0.007153,0.001306,0.992847
+DWN sm (margin rank; softmax calib.),0.86,0.007907,0.001434,0.992093
+DWN sm (margin rank; softmax calib.),0.87,0.00892,0.001154,0.99108
+DWN sm (margin rank; softmax calib.),0.88,0.010182,0.001348,0.989818
+DWN sm (margin rank; softmax calib.),0.89,0.011056,0.001511,0.988944
+DWN sm (margin rank; softmax calib.),0.9,0.012711,0.001494,0.987289
+DWN sm (margin rank; softmax calib.),0.91,0.01433,0.001478,0.98567
+DWN sm (margin rank; softmax calib.),0.92,0.016783,0.001253,0.983217
+DWN sm (margin rank; softmax calib.),0.93,0.019269,0.001758,0.980731
+DWN sm (margin rank; softmax calib.),0.94,0.021957,0.00177,0.978043
+DWN sm (margin rank; softmax calib.),0.95,0.024505,0.001642,0.975495
+DWN sm (margin rank; softmax calib.),0.96,0.027333,0.001682,0.972667
+DWN sm (margin rank; softmax calib.),0.97,0.031093,0.001504,0.968907
+DWN sm (margin rank; softmax calib.),0.98,0.036245,0.001455,0.963755
+DWN sm (margin rank; softmax calib.),0.99,0.041616,0.001178,0.958384
+DWN sm (margin rank; softmax calib.),1.0,0.04688,0.001863,0.95312

@@ -1,0 +1,5 @@
+  cmd 100 / 350  cycles=94119
+  cmd 200 / 350  cycles=185089
+  cmd 300 / 350  cycles=275272
+TB DONE cmds=350 cycles=327372
+/workspace/v13/onchip/learn_v1/tb/tb_e2e.v:57: $finish called at 3273756000 (1ps)

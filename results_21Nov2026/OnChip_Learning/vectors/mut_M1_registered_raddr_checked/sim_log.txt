@@ -1,0 +1,3 @@
+CORE ERROR: W1 tag 1 != RAM row 0 at t=85000
+FATAL: /workspace/v13/onchip/learn_v1/mutants/M1_registered_raddr_checked/sena_learn_core.v:406: 
+       Time: 85000  Scope: tb_e2e.dut

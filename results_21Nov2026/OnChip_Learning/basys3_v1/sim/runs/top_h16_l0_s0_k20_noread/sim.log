@@ -1,0 +1,68 @@
+t=1000 us sent=536 rx=85 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=2000 us sent=1078 rx=166 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=3000 us sent=1620 rx=247 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=4000 us sent=2161 rx=329 samples=0 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=5000 us sent=2701 rx=412 samples=0 st=0 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=6000 us sent=3243 rx=493 samples=0 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=7000 us sent=3785 rx=574 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=8000 us sent=4327 rx=655 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=9000 us sent=4869 rx=736 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=10000 us sent=5411 rx=817 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=11000 us sent=5953 rx=898 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=12000 us sent=6495 rx=979 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=13000 us sent=7037 rx=1060 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=14000 us sent=7579 rx=1141 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=15000 us sent=8121 rx=1222 samples=0 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=16000 us sent=8661 rx=1305 samples=0 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=17000 us sent=9201 rx=1387 samples=0 st=0 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=18000 us sent=9743 rx=1468 samples=0 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=19000 us sent=10285 rx=1549 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=20000 us sent=10827 rx=1630 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=21000 us sent=11369 rx=1711 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=22000 us sent=11911 rx=1792 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=23000 us sent=12453 rx=1873 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=24000 us sent=12995 rx=1954 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=25000 us sent=13537 rx=2035 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=26000 us sent=14079 rx=2116 samples=0 st=14 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=27000 us sent=14621 rx=2197 samples=0 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=28000 us sent=15161 rx=2280 samples=0 st=0 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=29000 us sent=15702 rx=2362 samples=0 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=30000 us sent=16261 rx=2427 samples=2 st=26 tx_busy=0 fifo_empty=0 fifo_ovf=0 core_busy=1
+t=31000 us sent=16886 rx=2427 samples=9 st=23 tx_busy=0 fifo_empty=0 fifo_ovf=0 core_busy=0
+t=32000 us sent=17511 rx=2427 samples=15 st=23 tx_busy=0 fifo_empty=0 fifo_ovf=0 core_busy=0
+t=33000 us sent=18075 rx=2454 samples=20 st=23 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=34000 us sent=18411 rx=2697 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=35000 us sent=18523 rx=3197 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=36000 us sent=18635 rx=3697 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=37000 us sent=18747 rx=4196 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=38000 us sent=18855 rx=4700 samples=20 st=0 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=39000 us sent=18967 rx=5200 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=40000 us sent=19079 rx=5700 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=41000 us sent=19191 rx=6200 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=42000 us sent=19303 rx=6699 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=43000 us sent=19412 rx=7202 samples=20 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=44000 us sent=19523 rx=7703 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=45000 us sent=19635 rx=8203 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=46000 us sent=19747 rx=8703 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=47000 us sent=19859 rx=9202 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=48000 us sent=19969 rx=9704 samples=20 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=49000 us sent=20079 rx=10206 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=50000 us sent=20191 rx=10706 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=51000 us sent=20303 rx=11206 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=52000 us sent=20415 rx=11705 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=53000 us sent=20526 rx=12206 samples=20 st=1 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=54000 us sent=20635 rx=12709 samples=20 st=0 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=55000 us sent=20747 rx=13209 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=56000 us sent=20859 rx=13708 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=57000 us sent=20971 rx=14208 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=58000 us sent=21083 rx=14708 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=59000 us sent=21191 rx=15212 samples=20 st=0 tx_busy=0 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=60000 us sent=21303 rx=15712 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=61000 us sent=21415 rx=16211 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+t=62000 us sent=21535 rx=16703 samples=20 st=3 tx_busy=1 fifo_empty=1 fifo_ovf=0 core_busy=0
+TB_DONE sent=21567 received=16802 frame_err_rx_side=0 overflow=0 led=0080 t=62215605000 ns
+/workspace/v13/onchip/basys3_v1/sim/tb_top.v:60: $finish called at 62215605000 (1ps)
+
+real	0m15.449s
+user	0m15.433s
+sys	0m0.012s

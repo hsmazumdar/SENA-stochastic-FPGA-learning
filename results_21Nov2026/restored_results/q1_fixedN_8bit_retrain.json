@@ -1,0 +1,178 @@
+{
+  "name": "fixedN_8bit_retrain",
+  "note": "True 8-bit training with fixed_N=64 (not requant of 16-bit)",
+  "elapsed_s": 995.2361980999995,
+  "config": {
+    "hidden": 160,
+    "epochs": 40,
+    "samples_per_epoch": 3000,
+    "members": 3,
+    "fixed_N": 64,
+    "weight_bits": 8,
+    "repeats": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "runs": [
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "repeat": 0,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 1.01,
+      "T_max": 40,
+      "accuracy": 0.9116,
+      "mean_passes": 40.0,
+      "relative_energy": 1.0,
+      "energy_saving": 0.0
+    },
+    {
+      "condition": "fixedN_8bit_EE",
+      "repeat": 0,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 0.55,
+      "T_max": 40,
+      "accuracy": 0.9048,
+      "mean_passes": 2.372,
+      "relative_energy": 0.0593,
+      "energy_saving": 0.9407
+    },
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "repeat": 1,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 1.01,
+      "T_max": 40,
+      "accuracy": 0.9128,
+      "mean_passes": 40.0,
+      "relative_energy": 1.0,
+      "energy_saving": 0.0
+    },
+    {
+      "condition": "fixedN_8bit_EE",
+      "repeat": 1,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 0.55,
+      "T_max": 40,
+      "accuracy": 0.9048,
+      "mean_passes": 1.88,
+      "relative_energy": 0.047,
+      "energy_saving": 0.953
+    },
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "repeat": 2,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 1.01,
+      "T_max": 40,
+      "accuracy": 0.9104,
+      "mean_passes": 40.0,
+      "relative_energy": 1.0,
+      "energy_saving": 0.0
+    },
+    {
+      "condition": "fixedN_8bit_EE",
+      "repeat": 2,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 0.55,
+      "T_max": 40,
+      "accuracy": 0.8968,
+      "mean_passes": 1.8712,
+      "relative_energy": 0.046779999999999995,
+      "energy_saving": 0.95322
+    },
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "repeat": 3,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 1.01,
+      "T_max": 40,
+      "accuracy": 0.9152,
+      "mean_passes": 40.0,
+      "relative_energy": 1.0,
+      "energy_saving": 0.0
+    },
+    {
+      "condition": "fixedN_8bit_EE",
+      "repeat": 3,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 0.55,
+      "T_max": 40,
+      "accuracy": 0.9076,
+      "mean_passes": 2.5008,
+      "relative_energy": 0.06252,
+      "energy_saving": 0.93748
+    },
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "repeat": 4,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 1.01,
+      "T_max": 40,
+      "accuracy": 0.8996,
+      "mean_passes": 40.0,
+      "relative_energy": 1.0,
+      "energy_saving": 0.0
+    },
+    {
+      "condition": "fixedN_8bit_EE",
+      "repeat": 4,
+      "M": 3,
+      "weight_bits": 8,
+      "fixed_N": 64,
+      "theta": 0.55,
+      "T_max": 40,
+      "accuracy": 0.8932,
+      "mean_passes": 2.9488,
+      "relative_energy": 0.07372000000000001,
+      "energy_saving": 0.92628
+    }
+  ],
+  "summary": [
+    {
+      "condition": "fixedN_8bit_EE",
+      "n_repeats": 5,
+      "accuracy_mean": 0.90144,
+      "accuracy_std": 0.006122744482664614,
+      "mean_passes_mean": 2.3145599999999997,
+      "mean_passes_std": 0.4543279520346508,
+      "relative_energy_mean": 0.057864000000000006,
+      "relative_energy_std": 0.011358198800866276,
+      "energy_saving_mean": 0.942136,
+      "energy_saving_std": 0.011358198800866255
+    },
+    {
+      "condition": "fixedN_8bit_full_T40",
+      "n_repeats": 5,
+      "accuracy_mean": 0.90992,
+      "accuracy_std": 0.006035892643180473,
+      "mean_passes_mean": 40.0,
+      "mean_passes_std": 0.0,
+      "relative_energy_mean": 1.0,
+      "relative_energy_std": 0.0,
+      "energy_saving_mean": 0.0,
+      "energy_saving_std": 0.0
+    }
+  ]
+}

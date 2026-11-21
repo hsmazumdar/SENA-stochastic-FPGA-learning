@@ -1,0 +1,4 @@
+n=2: fwd 0.00e+00 dX 5.96e-08 dLUT 0.00e+00 -> PASS
+n=4: fwd 0.00e+00 dX 7.45e-08 dLUT 0.00e+00 -> PASS
+n=6: fwd 0.00e+00 dX 1.49e-07 dLUT 0.00e+00 -> PASS
+SELFTEST EFD fallback == CUDA-kernel transcription: PASS

@@ -1,0 +1,36 @@
+# -------------------------------------------------------------------------- #
+# DWN baseline - core-only revision (EP4CE115F29C7) for clean resource / Fmax
+# numbers of dwn_core alone (no test ROMs, no display logic).
+# All data ports are VIRTUAL PINS (784 inputs exceed the package pin count);
+# the clock is placed on CLOCK_50's pin. dwn_core registers its inputs and
+# outputs (default generator settings), so Fmax is register-to-register.
+# The 4.0 ns clock target only drives the fitter; read the achieved Fmax from
+# the "Slow 1200mV 85C Model Fmax Summary" in output_files/dwn_core_only.sta.rpt.
+# -------------------------------------------------------------------------- #
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY dwn_core
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.1
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+
+set_global_assignment -name VERILOG_FILE gen/dwn_core.v
+set_global_assignment -name SDC_FILE dwn_core_only.sdc
+set_global_assignment -name SEARCH_PATH gen
+
+set_global_assignment -name POWER_DEFAULT_TOGGLE_RATE "12.5%"
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5%"
+set_global_assignment -name POWER_USE_INPUT_FILES OFF
+
+set_location_assignment PIN_Y2 -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_instance_assignment -name VIRTUAL_PIN ON -to rst_n
+set_instance_assignment -name VIRTUAL_PIN ON -to in_valid
+set_instance_assignment -name VIRTUAL_PIN ON -to x[*]
+set_instance_assignment -name VIRTUAL_PIN ON -to out_valid
+set_instance_assignment -name VIRTUAL_PIN ON -to pred[*]
+set_instance_assignment -name VIRTUAL_PIN ON -to counts[*]

@@ -1,0 +1,16 @@
+`define N_IN 784
+`define N_HID 4
+`define SH 2
+`define NX 25
+`define NCMD 25
+`define SEED_IN 32'h1d872b41
+`define T_PASSES 4
+`define W1_INIT "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/w1_init.hex"
+`define W2_INIT "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/w2_init.hex"
+`define X_FILE "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/x.hex"
+`define LAB_FILE "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/lab.hex"
+`define CMD_FILE "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/cmd.hex"
+`define OUT_PRED "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/rtl_preds.txt"
+`define OUT_W1 "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/rtl_w1.hex"
+`define OUT_W2 "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/rtl_w2.hex"
+`define OUT_STATE "/workspace/v13/onchip/learn_v1/vectors/smoke_h4/rtl_state.txt"

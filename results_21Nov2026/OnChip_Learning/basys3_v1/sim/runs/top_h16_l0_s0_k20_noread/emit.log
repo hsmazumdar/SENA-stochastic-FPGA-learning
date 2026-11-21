@@ -1,0 +1,7 @@
+07:25:19 ident: version 0x00 N_HID=0 board=basys3
+07:25:19 Basys 3: skipping SRAM load; images will be streamed on each T/E
+07:25:19 seed 0 -> seed_in 0x1d872b41; status nupd0=0 samples0=0 nb_fx=0
+07:25:19 epoch  0: 20 samples core 0 cyc total 0 cyc (0.0 ms @50MHz) nupd board 0 twin 17 nb_fx board 0 twin 329 MISMATCH
+07:25:19 test: board 0/4 = 0.00%  twin 0.00%  pred mismatches 3
+07:25:19 final weights: W1 mismatches 10666/12560, W2 151/170 -> BIT_EXACT=False
+07:25:19 wrote /workspace/v13/onchip/basys3_v1/sim/runs/top_h16_l0_s0_k20_noread/emit

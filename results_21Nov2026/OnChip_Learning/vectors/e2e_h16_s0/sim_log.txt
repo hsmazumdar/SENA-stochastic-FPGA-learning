@@ -1,0 +1,14 @@
+  cmd 100 / 1200  cycles=150783
+  cmd 200 / 1200  cycles=267724
+  cmd 300 / 1200  cycles=383878
+  cmd 400 / 1200  cycles=500032
+  cmd 500 / 1200  cycles=615399
+  cmd 600 / 1200  cycles=719748
+  cmd 700 / 1200  cycles=826458
+  cmd 800 / 1200  cycles=937890
+  cmd 900 / 1200  cycles=1041452
+  cmd 1000 / 1200  cycles=1148949
+  cmd 1100 / 1200  cycles=1253149
+  cmd 1200 / 1200  cycles=1357349
+TB DONE cmds=1200 cycles=1357349
+/workspace/v13/onchip/learn_v1/tb/tb_e2e.v:57: $finish called at 13573526000 (1ps)

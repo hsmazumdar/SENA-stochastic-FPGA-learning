@@ -1,0 +1,2 @@
+arch,n_seeds,seeds,acc_mean_pct,acc_sd_pct,acc_min_pct,acc_max_pct,export_matches_torch_all_seeds,efd_backend,device,mean_train_s,labels
+sm,5,0 1 2 3 4,95.31,0.19,95.16,95.6,True,torch,cpu,700.8,

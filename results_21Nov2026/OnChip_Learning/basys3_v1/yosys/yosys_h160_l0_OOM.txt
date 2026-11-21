@@ -1,0 +1,13 @@
+Yosys 0.52 synth_xilinx -family xc7, generics N_HID=160 SH=7 BAUD_DIV=434 H_LANES=0
+(full parallel, same schedule as board_v1 v1.1).
+
+The run started at about 07:43 IST on 20 Nov 2026 and was killed by the Linux
+OOM killer at 07:57:51 IST (Asia/Calcutta). dmesg:
+
+  Out of memory: Killed process 93114 (yosys) total-vm:13455728kB,
+  anon-rss:12907000kB, file-rss:2604kB
+
+No stat_h160_l0.txt was written. The log yosys_h160_l0.log ends during
+"9.36. Executing OPT pass" (after 9.35 techmap). There is therefore no Yosys
+LUT/FF count for H_LANES=0/160. The design is at least as large as H_LANES=32
+(42,025 LUTs in Yosys), which already exceeds the XC7A35T budget of 20,800 LUTs.

@@ -1,0 +1,2 @@
+label,arch,layers,n,tau_inv,seed,epochs,efd_backend,test_acc_torch,test_acc_int,int_vs_torch_agree,train_s,device,torch,model_sha256
+SELFTEST,selftest_tiny,120x50,6,0.245,0,3,torch,0.7636,0.7636,2500/2500,1.7,cpu,2.15.0+cu132,95436c76f5e2b4b3bf2183169485fdf84a858166734bb6d81ab5834353bbab4b

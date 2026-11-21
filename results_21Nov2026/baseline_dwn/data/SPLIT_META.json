@@ -1,0 +1,9 @@
+{
+  "source": "<SENA_ROOT>/Revision_V13\\restored_results\\mnist_bin_t0.3_tr10000_te2500_s2026.npz",
+  "threshold": 0.3,
+  "dataset_seed": 2026,
+  "n_train": 10000,
+  "n_test": 2500,
+  "n_in": 784,
+  "dtype": "binary uint8 {0,1}"
+}

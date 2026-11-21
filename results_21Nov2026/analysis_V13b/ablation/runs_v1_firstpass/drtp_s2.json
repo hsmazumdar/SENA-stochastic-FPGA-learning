@@ -1,0 +1,14 @@
+{
+ "rule": "drtp",
+ "seed": 2,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.1832,
+ "test_acc_T1": 0.166,
+ "n_w1_update_samples": 81708,
+ "w1_saturated_frac": 0.00027070063694267516,
+ "w2_saturated_frac": 0.0,
+ "wall_s": 45.4
+}

@@ -1,0 +1,4 @@
+epoch,samples,core_cycles,total_cycles,board_w1_updates,twin_w1_updates,board_nb_fx,twin_nb_fx,match,host_wall_s
+0,30,46936,56237,28,28,307,307,True,0.0
+1,30,42214,51515,50,50,244,244,True,0.0
+2,30,43001,52302,73,73,199,199,True,0.0

@@ -1,0 +1,10 @@
+16:48:43 ident: version 0x00 N_HID=0
+16:48:43 loaded/verified 24 images (sparse)
+16:48:43 schedule (20 entries) read-back checksum OK
+16:48:43 initial weights loaded and read back OK
+16:48:43 seed 2 -> seed_in 0x1f872867; status nupd0=0 samples0=0 nb_fx=0
+16:48:43 epoch  0: 10 samples core 0 cyc total 0 cyc (0.0 ms @25MHz) nupd board 0 twin 10 nb_fx board 0 twin 355 MISMATCH
+16:48:43 epoch  1: 10 samples core 0 cyc total 0 cyc (0.0 ms @25MHz) nupd board 0 twin 19 nb_fx board 0 twin 327 MISMATCH
+16:48:43 test: board 0/4 = 0.00%  twin 25.00%  pred mismatches 0
+16:48:43 final weights: W1 mismatches 102944/125600, W2 1402/1610 -> BIT_EXACT=False
+16:48:43 wrote /workspace/v13/onchip/learn_v1/board_v1/sim/runs/top_h160_s2_k20/emit

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Nov 14 20:15:30 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : dwn_core_only
+Top-level Entity Name : dwn_core
+Family : Cyclone IV E
+Total logic elements : 8,665
+    Total combinational functions : 8,101
+    Dedicated logic registers : 2,128
+Total registers : 2128
+Total pins : 1
+Total virtual pins : 851
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

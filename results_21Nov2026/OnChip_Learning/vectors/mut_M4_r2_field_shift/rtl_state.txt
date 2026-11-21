@@ -1,0 +1,3 @@
+nb_fx 185
+n_w1_updates 68
+cycles 157457

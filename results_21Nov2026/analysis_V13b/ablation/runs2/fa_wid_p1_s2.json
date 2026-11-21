@@ -1,0 +1,17 @@
+{
+ "rule": "fa",
+ "ste_window": "identity",
+ "update_rate": 1.0,
+ "seed": 2,
+ "val_acc_probe800_T40": 0.7425,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.7636,
+ "test_acc_T1": 0.684,
+ "n_w1_update_samples": 48648,
+ "w1_saturated_frac": 0.06044585987261147,
+ "w2_saturated_frac": 0.0,
+ "wall_s": 37.0
+}

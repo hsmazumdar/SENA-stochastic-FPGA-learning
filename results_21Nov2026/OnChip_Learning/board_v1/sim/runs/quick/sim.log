@@ -1,0 +1,7 @@
+t=100 ms sent=19237 rx=11681 samples=0
+TB_DONE sent=23661 received=31357 frame_err_rx_side=0 sram_err=0 LEDR=00000 t=179465690000 ns
+/workspace/v13/onchip/learn_v1/board_v1/sim/tb_top.v:58: $finish called at 179465690000 (1ps)
+
+real	0m21.049s
+user	0m21.025s
+sys	0m0.024s

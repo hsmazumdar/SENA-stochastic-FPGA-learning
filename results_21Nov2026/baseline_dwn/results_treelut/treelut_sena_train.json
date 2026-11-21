@@ -1,0 +1,61 @@
+{
+  "name": "treelut_xgb_sena_split",
+  "note": "CPU matched-split software baseline (plan C). Same 10k/2.5k binary MNIST as SENA. Not a same-board FPGA P&R yet \u2014 Verilog emitted for office.",
+  "config": {
+    "split": "mnist_bin_t0.3_tr10000_te2500_s2026",
+    "w_feature": 1,
+    "xgb": {
+      "n_estimators": 30,
+      "max_depth": 5,
+      "eta": 0.8
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "elapsed_s": 28.02333379999618,
+  "runs": [
+    {
+      "seed": 0,
+      "accuracy": 0.9468,
+      "n_estimators": 30,
+      "max_depth": 5,
+      "treelut_acc": 0.9388,
+      "verilog_dir": "<SENA_ROOT>/Revision_V13\\baseline_dwn\\results_treelut\\verilog_seed0"
+    },
+    {
+      "seed": 1,
+      "accuracy": 0.9468,
+      "n_estimators": 30,
+      "max_depth": 5
+    },
+    {
+      "seed": 2,
+      "accuracy": 0.9468,
+      "n_estimators": 30,
+      "max_depth": 5
+    },
+    {
+      "seed": 3,
+      "accuracy": 0.9468,
+      "n_estimators": 30,
+      "max_depth": 5
+    },
+    {
+      "seed": 4,
+      "accuracy": 0.9468,
+      "n_estimators": 30,
+      "max_depth": 5
+    }
+  ],
+  "accuracy_mean": 0.9468,
+  "accuracy_std": 0.0,
+  "sena_reference": {
+    "fixedN_EE": "90.26\u00b10.24% (restored)",
+    "fixedN_fullT": "90.76\u00b10.39% (restored)"
+  }
+}

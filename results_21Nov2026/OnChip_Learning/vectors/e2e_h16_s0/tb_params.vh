@@ -1,0 +1,16 @@
+`define N_IN 784
+`define N_HID 16
+`define SH 4
+`define NX 1200
+`define NCMD 1200
+`define SEED_IN 32'h1d872b41
+`define T_PASSES 8
+`define W1_INIT "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/w1_init.hex"
+`define W2_INIT "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/w2_init.hex"
+`define X_FILE "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/x.hex"
+`define LAB_FILE "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/lab.hex"
+`define CMD_FILE "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/cmd.hex"
+`define OUT_PRED "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/rtl_preds.txt"
+`define OUT_W1 "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/rtl_w1.hex"
+`define OUT_W2 "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/rtl_w2.hex"
+`define OUT_STATE "/workspace/v13/onchip/learn_v1/vectors/e2e_h16_s0/rtl_state.txt"

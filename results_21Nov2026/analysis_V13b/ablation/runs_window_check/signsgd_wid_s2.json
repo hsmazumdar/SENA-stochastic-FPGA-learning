@@ -1,0 +1,15 @@
+{
+ "rule": "signsgd",
+ "ste_window": "identity",
+ "seed": 2,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.276,
+ "test_acc_T1": 0.1992,
+ "n_w1_update_samples": 94892,
+ "w1_saturated_frac": 0.19947452229299362,
+ "w2_saturated_frac": 0.0,
+ "wall_s": 49.7
+}

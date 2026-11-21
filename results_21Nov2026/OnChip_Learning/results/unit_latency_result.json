@@ -1,0 +1,16 @@
+{
+ "latency_pass": true,
+ "lfsr_draw_rtl": [
+  "0xf06c094d",
+  "0xc208cbae",
+  "0x275f7965",
+  "0xa6c14e69"
+ ],
+ "lfsr_draw_twin": [
+  "0xf06c094d",
+  "0xc208cbae",
+  "0x275f7965",
+  "0xa6c14e69"
+ ],
+ "lfsr_match": true
+}

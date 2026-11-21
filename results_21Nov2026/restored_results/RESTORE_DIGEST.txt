@@ -1,0 +1,7 @@
+fixedN full T=40: 90.76 ± 0.39%  (paper claimed 90.79 ± 0.26)
+fixedN EE θ=0.55: 90.26 ± 0.24%  (paper ~90.8 / 90.28)
+selective fixedN_full_T40: base 90.76% -> 90% cov 95.25 ± 0.45% (paper 95.2%@90%)
+selective fixedN_EE_theta0.55: base 90.26% -> 90% cov 93.00 ± 0.45% (paper 95.2%@90%)
+requant8 (NOT retrain) full: 82.74 ± 6.03%; EE: 82.70 ± 5.96%  (paper ~90.9% is 8-bit-TRAINED — still needs retrain for claim match)
+iso-acc online: real_bp_online reaches SENA acc with energy ratio 6.34× vs SENA endpoint
+total elapsed_s=585.7

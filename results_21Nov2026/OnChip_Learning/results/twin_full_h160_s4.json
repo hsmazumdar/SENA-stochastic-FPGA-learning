@@ -1,0 +1,298 @@
+{
+ "label": "TWIN (bit-exact software model of RTL rule v1) - NOT a board measurement",
+ "seed": 4,
+ "n_hid": 160,
+ "sh": 7,
+ "weight_bits": 8,
+ "schedule": "40 epochs x 3000 samples, final weights",
+ "test_acc_T40": 0.8528,
+ "test_acc_T8_readout": 0.8432,
+ "test_acc_T1_readout": 0.788,
+ "n_test": 2500,
+ "n_w1_updates": 17951,
+ "nb_fx_final": 0,
+ "train_wall_s": 22.3,
+ "total_wall_s": 25.3,
+ "epochs": [
+  {
+   "epoch": 1,
+   "nb_fx": 0,
+   "n_w1_updates": 1136,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 2,
+   "nb_fx": 2,
+   "n_w1_updates": 1970,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 3,
+   "nb_fx": 2,
+   "n_w1_updates": 2762,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 4,
+   "nb_fx": 6,
+   "n_w1_updates": 3450,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 5,
+   "nb_fx": 0,
+   "n_w1_updates": 4046,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 6,
+   "nb_fx": 3,
+   "n_w1_updates": 4654,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 7,
+   "nb_fx": 0,
+   "n_w1_updates": 5214,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 8,
+   "nb_fx": 0,
+   "n_w1_updates": 5731,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 9,
+   "nb_fx": 0,
+   "n_w1_updates": 6230,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 10,
+   "nb_fx": 0,
+   "n_w1_updates": 6709,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 11,
+   "nb_fx": 0,
+   "n_w1_updates": 7175,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 12,
+   "nb_fx": 0,
+   "n_w1_updates": 7618,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 13,
+   "nb_fx": 0,
+   "n_w1_updates": 8087,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 14,
+   "nb_fx": 2,
+   "n_w1_updates": 8488,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 15,
+   "nb_fx": 0,
+   "n_w1_updates": 8935,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 16,
+   "nb_fx": 0,
+   "n_w1_updates": 9360,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 17,
+   "nb_fx": 0,
+   "n_w1_updates": 9784,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 18,
+   "nb_fx": 0,
+   "n_w1_updates": 10191,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 19,
+   "nb_fx": 0,
+   "n_w1_updates": 10593,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 20,
+   "nb_fx": 0,
+   "n_w1_updates": 11033,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 21,
+   "nb_fx": 0,
+   "n_w1_updates": 11455,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 22,
+   "nb_fx": 0,
+   "n_w1_updates": 11838,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 23,
+   "nb_fx": 6,
+   "n_w1_updates": 12238,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 24,
+   "nb_fx": 5,
+   "n_w1_updates": 12637,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 25,
+   "nb_fx": 0,
+   "n_w1_updates": 13038,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 26,
+   "nb_fx": 1,
+   "n_w1_updates": 13418,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 27,
+   "nb_fx": 0,
+   "n_w1_updates": 13759,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 28,
+   "nb_fx": 2,
+   "n_w1_updates": 14124,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 29,
+   "nb_fx": 4,
+   "n_w1_updates": 14468,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 30,
+   "nb_fx": 0,
+   "n_w1_updates": 14813,
+   "w1_sat": 0,
+   "w2_sat": 2
+  },
+  {
+   "epoch": 31,
+   "nb_fx": 0,
+   "n_w1_updates": 15137,
+   "w1_sat": 0,
+   "w2_sat": 1
+  },
+  {
+   "epoch": 32,
+   "nb_fx": 0,
+   "n_w1_updates": 15472,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 33,
+   "nb_fx": 2,
+   "n_w1_updates": 15779,
+   "w1_sat": 0,
+   "w2_sat": 2
+  },
+  {
+   "epoch": 34,
+   "nb_fx": 2,
+   "n_w1_updates": 16103,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 35,
+   "nb_fx": 0,
+   "n_w1_updates": 16426,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 36,
+   "nb_fx": 2,
+   "n_w1_updates": 16719,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 37,
+   "nb_fx": 1,
+   "n_w1_updates": 17015,
+   "w1_sat": 0,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 38,
+   "nb_fx": 0,
+   "n_w1_updates": 17327,
+   "w1_sat": 1,
+   "w2_sat": 2
+  },
+  {
+   "epoch": 39,
+   "nb_fx": 0,
+   "n_w1_updates": 17648,
+   "w1_sat": 1,
+   "w2_sat": 0
+  },
+  {
+   "epoch": 40,
+   "nb_fx": 0,
+   "n_w1_updates": 17951,
+   "w1_sat": 1,
+   "w2_sat": 3
+  }
+ ]
+}

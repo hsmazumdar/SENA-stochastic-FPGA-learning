@@ -1,0 +1,10 @@
+16:48:32 ident: version 0x11 N_HID=16
+16:48:32 loaded/verified 11 images (sparse)
+16:48:32 schedule (8 entries) read-back checksum OK
+16:48:32 initial weights loaded and read back OK
+16:48:32 seed 0 -> seed_in 0x1d872b41; status nupd0=0 samples0=0 nb_fx=384
+16:48:32 epoch  0: 4 samples core 5681 cyc total 6922 cyc (0.3 ms @25MHz) nupd board 3 twin 3 nb_fx board 372 twin 372 OK
+16:48:32 epoch  1: 4 samples core 6468 cyc total 7709 cyc (0.3 ms @25MHz) nupd board 7 twin 7 nb_fx board 360 twin 360 OK
+16:48:32 test: board 0/3 = 0.00%  twin 0.00%  pred mismatches 0
+16:48:32 final weights: W1 mismatches 0/12560, W2 0/170 -> BIT_EXACT=True
+16:48:32 wrote /workspace/v13/onchip/learn_v1/board_v1/sim/runs/quick/replay

@@ -1,0 +1,27 @@
+{
+  "latency_cycles": 5,
+  "count_width": 6,
+  "group_size": 50,
+  "pred_width": 4,
+  "n_in": 784,
+  "n_classes": 10,
+  "reg_input": true,
+  "reg_pop": true,
+  "reg_argmax": true,
+  "lut_nodes_per_layer": [
+    1000,
+    500
+  ],
+  "lut_inputs_per_layer": [
+    6,
+    6
+  ],
+  "total_lut_nodes": 1500,
+  "distinct_inputs_used_layer1": 784,
+  "model_sha256": "b0e15eb597c9181ffa9bec48f6fccae7b731ef1612e0cd1a1c81ab3ea3d49e0f",
+  "model_meta": {
+    "label": "SELFTEST random untrained model"
+  },
+  "n_test_vectors": 2500,
+  "python_int_correct_on_vectors": 222
+}

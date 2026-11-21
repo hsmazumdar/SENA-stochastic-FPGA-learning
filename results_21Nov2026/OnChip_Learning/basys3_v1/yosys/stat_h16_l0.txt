@@ -1,0 +1,207 @@
+
+10. Printing statistics.
+
+=== $paramod$0d8f5a2c5fb2d4664a7268b4328ef6631f984e47\uart_rx_fifo ===
+
+   Number of wires:                289
+   Number of wire bits:           1131
+   Number of public wires:          76
+   Number of public wire bits:     556
+   Number of ports:                  9
+   Number of port bits:             23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                872
+     CARRY4                          4
+     FDCE                           15
+     FDRE                          512
+     INV                            17
+     LUT2                           31
+     LUT3                            2
+     LUT4                           36
+     LUT5                            2
+     LUT6                          215
+     MUXF7                          37
+     MUXF8                           1
+
+=== $paramod$8a1472ce35db7652a18da6300883d49d5bd3085a\sdp_ram ===
+
+   Number of wires:                 28
+   Number of wire bits:           1044
+   Number of public wires:           7
+   Number of public wire bits:     288
+   Number of ports:                  7
+   Number of port bits:            288
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     FDRE                           10
+     RAMB36E1                        4
+
+=== $paramod$b912cd659f987154cc1cd0a06b952d4291e813e6\sena_learn_core ===
+
+   Number of wires:               5696
+   Number of wire bits:          26666
+   Number of public wires:         190
+   Number of public wire bits:    4303
+   Number of ports:                 22
+   Number of port bits:           1334
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              13915
+     $paramod$8a1472ce35db7652a18da6300883d49d5bd3085a\sdp_ram      1
+     $paramod$ddca164c0893e6b31523bed5dbd23ff41107ae11\sdp_ram      1
+     CARRY4                        847
+     FDCE                         2499
+     FDPE                           30
+     INV                          3545
+     LUT1                           67
+     LUT2                         2527
+     LUT3                         1212
+     LUT4                          409
+     LUT5                         1089
+     LUT6                         1353
+     MUXF7                         297
+     MUXF8                          38
+
+=== $paramod$ddca164c0893e6b31523bed5dbd23ff41107ae11\sdp_ram ===
+
+   Number of wires:                  8
+   Number of wire bits:            213
+   Number of public wires:           7
+   Number of public wire bits:     177
+   Number of ports:                  7
+   Number of port bits:            177
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     FDRE                            5
+     RAMB18E1                        3
+
+=== $paramod\uart_rx_s\DIV=s32'00000000000000000000000110110010 ===
+
+   Number of wires:                121
+   Number of wire bits:            332
+   Number of public wires:          12
+   Number of public wire bits:      47
+   Number of ports:                  6
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                179
+     CARRY4                          5
+     FDCE                           41
+     FDPE                            3
+     INV                            60
+     LUT2                           13
+     LUT3                            2
+     LUT4                            6
+     LUT5                            7
+     LUT6                           21
+     MUXF7                          20
+     MUXF8                           1
+
+=== $paramod\uart_tx_s\DIV=s32'00000000000000000000000110110010 ===
+
+   Number of wires:                 94
+   Number of wire bits:            297
+   Number of public wires:           9
+   Number of public wire bits:      42
+   Number of ports:                  6
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                139
+     CARRY4                          5
+     FDCE                           21
+     FDPE                            9
+     INV                            46
+     LUT1                            2
+     LUT2                            7
+     LUT3                            1
+     LUT4                            1
+     LUT5                            6
+     LUT6                           19
+     MUXF7                          21
+     MUXF8                           1
+
+=== basys3_sena_top ===
+
+   Number of wires:               2566
+   Number of wire bits:           9177
+   Number of public wires:         100
+   Number of public wire bits:    1842
+   Number of ports:                  8
+   Number of port bits:             32
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4660
+     $paramod$0d8f5a2c5fb2d4664a7268b4328ef6631f984e47\uart_rx_fifo      1
+     $paramod$b912cd659f987154cc1cd0a06b952d4291e813e6\sena_learn_core      1
+     $paramod\uart_rx_s\DIV=s32'00000000000000000000000110110010      1
+     $paramod\uart_tx_s\DIV=s32'00000000000000000000000110110010      1
+     BUFG                            2
+     CARRY4                         75
+     FDCE                         1430
+     FDPE                            2
+     FDRE                            1
+     IBUF                            3
+     INV                            65
+     LUT1                          116
+     LUT2                          202
+     LUT3                          170
+     LUT4                          271
+     LUT5                          633
+     LUT6                         1151
+     MUXF7                         445
+     MUXF8                          60
+     OBUF                           29
+     SRL16E                          1
+
+=== design hierarchy ===
+
+   basys3_sena_top                   1
+     $paramod$0d8f5a2c5fb2d4664a7268b4328ef6631f984e47\uart_rx_fifo      1
+     $paramod$b912cd659f987154cc1cd0a06b952d4291e813e6\sena_learn_core      1
+       $paramod$8a1472ce35db7652a18da6300883d49d5bd3085a\sdp_ram      1
+       $paramod$ddca164c0893e6b31523bed5dbd23ff41107ae11\sdp_ram      1
+     $paramod\uart_rx_s\DIV=s32'00000000000000000000000110110010      1
+     $paramod\uart_tx_s\DIV=s32'00000000000000000000000110110010      1
+
+   Number of wires:               8802
+   Number of wire bits:          38860
+   Number of public wires:         401
+   Number of public wire bits:    7255
+   Number of ports:                 65
+   Number of port bits:           1880
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              19781
+     BUFG                            2
+     CARRY4                        936
+     FDCE                         4006
+     FDPE                           44
+     FDRE                          528
+     IBUF                            3
+     INV                          3733
+     LUT1                          185
+     LUT2                         2780
+     LUT3                         1387
+     LUT4                          723
+     LUT5                         1737
+     LUT6                         2759
+     MUXF7                         820
+     MUXF8                         101
+     OBUF                           29
+     RAMB18E1                        3
+     RAMB36E1                        4
+     SRL16E                          1
+

@@ -1,0 +1,3 @@
+.245, "seed": 0, "epochs": 100, "efd_backend": "imported checkpoint", "test_acc_torch": 0.0764, "test_acc_int": 0.0764, "int_vs_torch_agree": "2500/2500", "train_s": 0, "device": "checkpoint", "torch": "2.7.1+cu126", "model_sha256": "bebb28d17ef249ed8c1f1f73a8270834edf9cf86c40584e5d59a538389b2c4de"} 
+checkpoint import reproduces official model predictions: True
+SELFTEST export_checkpoint: PASS

@@ -1,0 +1,7 @@
+arch,seed_file,acc_at_100pct,acc_at_90pct,acc_at_80pct,acc_at_70pct
+sm,seed0\test_scores.npz,95.4,98.71,99.75,99.94
+sm,seed1\test_scores.npz,95.16,98.89,99.7,99.94
+sm,seed2\test_scores.npz,95.2,98.49,99.5,99.77
+sm,seed3\test_scores.npz,95.2,98.76,99.55,99.89
+sm,seed4\test_scores.npz,95.6,98.8,99.45,99.83
+sm,MEAN+-SD,95.31 +- 0.19,98.73 +- 0.15,99.59 +- 0.13,99.87 +- 0.07

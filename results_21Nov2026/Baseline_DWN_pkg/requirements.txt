@@ -1,0 +1,4 @@
+# Pinned for the SENA V13 DWN baseline (tested on the build box: torch 2.7.1 + numpy 2.2.6, Python 3.11)
+# Install torch FIRST from the PyTorch index that matches your machine (see README step 1), then:
+numpy==2.2.6
+ninja==1.11.1.4      # only needed to compile the official DWN CUDA extension

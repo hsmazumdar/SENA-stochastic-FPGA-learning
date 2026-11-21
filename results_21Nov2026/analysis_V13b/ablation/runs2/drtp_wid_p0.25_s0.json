@@ -1,0 +1,17 @@
+{
+ "rule": "drtp",
+ "ste_window": "identity",
+ "update_rate": 0.25,
+ "seed": 0,
+ "val_acc_probe800_T40": 0.685,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.6568,
+ "test_acc_T1": 0.544,
+ "n_w1_update_samples": 69920,
+ "w1_saturated_frac": 0.26179140127388534,
+ "w2_saturated_frac": 0.0,
+ "wall_s": 52.3
+}

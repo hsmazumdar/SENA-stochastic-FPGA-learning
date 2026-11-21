@@ -1,0 +1,17 @@
+{
+ "name": "mut_M1_registered_raddr_checked",
+ "rtl_dir": "/workspace/v13/onchip/learn_v1/mutants/M1_registered_raddr_checked",
+ "n_hid": 16,
+ "sh": 4,
+ "seed": 0,
+ "init": "normal",
+ "n_train": 100,
+ "n_infer": 20,
+ "T": 8,
+ "seed_in": "0x1d872b41",
+ "sim_completed": false,
+ "twin_wall_s": 0.01,
+ "icarus_wall_s": 0.0,
+ "BIT_EXACT": false,
+ "sim_tail": "CORE ERROR: W1 tag 1 != RAM row 0 at t=85000\nFATAL: /workspace/v13/onchip/learn_v1/mutants/M1_registered_raddr_checked/sena_learn_core.v:406: \n       Time: 85000  Scope: tb_e2e.dut\n"
+}

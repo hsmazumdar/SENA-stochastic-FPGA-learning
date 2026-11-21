@@ -1,0 +1,17 @@
+{
+ "rule": "signsgd",
+ "ste_window": "identity",
+ "update_rate": 0.0625,
+ "seed": 2,
+ "val_acc_probe800_T40": 0.76875,
+ "epochs": 40,
+ "samples_per_epoch": 3000,
+ "n_hid": 160,
+ "weight_bits": 8,
+ "test_acc_T40": 0.788,
+ "test_acc_T1": 0.5512,
+ "n_w1_update_samples": 74109,
+ "w1_saturated_frac": 0.01288216560509554,
+ "w2_saturated_frac": 0.0,
+ "wall_s": 47.2
+}

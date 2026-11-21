@@ -1,0 +1,1 @@
+TOP RESULT done=1 pass(LEDG[8:1])=1 fail(LEDR17)=0 correct=222 mismatches=0 latency=5 total_cycles=2504 HEX0=0100100

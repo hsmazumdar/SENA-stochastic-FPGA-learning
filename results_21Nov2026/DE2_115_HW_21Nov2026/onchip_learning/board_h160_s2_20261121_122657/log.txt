@@ -1,0 +1,48 @@
+12:26:58 ident: version 0x11 N_HID=160
+12:26:58 image region read-back checksum OK (0x6a729620, 800000 words)
+12:27:19 schedule (120000 entries) read-back checksum OK
+12:27:43 initial weights loaded and read back OK
+12:27:43 seed 2 -> seed_in 0x1f872867; status nupd0=39834 samples0=240000 nb_fx=384
+12:27:45 epoch  0: 3000 samples core 4191368 cyc total 5121369 cyc (204.9 ms @25MHz) nupd board 1064 twin 1064 nb_fx board 0 twin 0 OK
+12:27:46 epoch  1: 3000 samples core 3942676 cyc total 4872677 cyc (194.9 ms @25MHz) nupd board 1812 twin 1812 nb_fx board 0 twin 0 OK
+12:27:47 epoch  2: 3000 samples core 3889160 cyc total 4819161 cyc (192.8 ms @25MHz) nupd board 2492 twin 2492 nb_fx board 0 twin 0 OK
+12:27:49 epoch  3: 3000 samples core 3901752 cyc total 4831753 cyc (193.3 ms @25MHz) nupd board 3188 twin 3188 nb_fx board 1 twin 1 OK
+12:27:50 epoch  4: 3000 samples core 3857680 cyc total 4787681 cyc (191.5 ms @25MHz) nupd board 3828 twin 3828 nb_fx board 0 twin 0 OK
+12:27:51 epoch  5: 3000 samples core 3823052 cyc total 4753053 cyc (190.1 ms @25MHz) nupd board 4424 twin 4424 nb_fx board 0 twin 0 OK
+12:27:52 epoch  6: 3000 samples core 3827774 cyc total 4757775 cyc (190.3 ms @25MHz) nupd board 5026 twin 5026 nb_fx board 0 twin 0 OK
+12:27:54 epoch  7: 3000 samples core 3797868 cyc total 4727869 cyc (189.1 ms @25MHz) nupd board 5590 twin 5590 nb_fx board 2 twin 2 OK
+12:27:55 epoch  8: 3000 samples core 3766388 cyc total 4696389 cyc (187.9 ms @25MHz) nupd board 6114 twin 6114 nb_fx board 0 twin 0 OK
+12:27:56 epoch  9: 3000 samples core 3745139 cyc total 4675140 cyc (187.0 ms @25MHz) nupd board 6611 twin 6611 nb_fx board 0 twin 0 OK
+12:27:57 epoch 10: 3000 samples core 3762453 cyc total 4692454 cyc (187.7 ms @25MHz) nupd board 7130 twin 7130 nb_fx board 5 twin 5 OK
+12:27:58 epoch 11: 3000 samples core 3778193 cyc total 4708194 cyc (188.3 ms @25MHz) nupd board 7669 twin 7669 nb_fx board 1 twin 1 OK
+12:28:00 epoch 12: 3000 samples core 3727825 cyc total 4657826 cyc (186.3 ms @25MHz) nupd board 8144 twin 8144 nb_fx board 0 twin 0 OK
+12:28:01 epoch 13: 3000 samples core 3796294 cyc total 4726295 cyc (189.1 ms @25MHz) nupd board 8706 twin 8706 nb_fx board 3 twin 3 OK
+12:28:02 epoch 14: 3000 samples core 3803377 cyc total 4733378 cyc (189.3 ms @25MHz) nupd board 9277 twin 9277 nb_fx board 0 twin 0 OK
+12:28:03 epoch 15: 3000 samples core 3753796 cyc total 4683797 cyc (187.4 ms @25MHz) nupd board 9785 twin 9785 nb_fx board 0 twin 0 OK
+12:28:04 epoch 16: 3000 samples core 3749074 cyc total 4679075 cyc (187.2 ms @25MHz) nupd board 10287 twin 10287 nb_fx board 0 twin 0 OK
+12:28:06 epoch 17: 3000 samples core 3724677 cyc total 4654678 cyc (186.2 ms @25MHz) nupd board 10758 twin 10758 nb_fx board 7 twin 7 OK
+12:28:07 epoch 18: 3000 samples core 3726251 cyc total 4656252 cyc (186.3 ms @25MHz) nupd board 11231 twin 11231 nb_fx board 0 twin 0 OK
+12:28:08 epoch 19: 3000 samples core 3690836 cyc total 4620837 cyc (184.8 ms @25MHz) nupd board 11659 twin 11659 nb_fx board 0 twin 0 OK
+12:28:09 epoch 20: 3000 samples core 3699493 cyc total 4629494 cyc (185.2 ms @25MHz) nupd board 12098 twin 12098 nb_fx board 0 twin 0 OK
+12:28:10 epoch 21: 3000 samples core 3693984 cyc total 4623985 cyc (185.0 ms @25MHz) nupd board 12530 twin 12530 nb_fx board 3 twin 3 OK
+12:28:11 epoch 22: 3000 samples core 3686114 cyc total 4616115 cyc (184.6 ms @25MHz) nupd board 12952 twin 12952 nb_fx board 5 twin 5 OK
+12:28:12 epoch 23: 3000 samples core 3676670 cyc total 4606671 cyc (184.3 ms @25MHz) nupd board 13362 twin 13362 nb_fx board 4 twin 4 OK
+12:28:14 epoch 24: 3000 samples core 3679818 cyc total 4609819 cyc (184.4 ms @25MHz) nupd board 13776 twin 13776 nb_fx board 1 twin 1 OK
+12:28:15 epoch 25: 3000 samples core 3660143 cyc total 4590144 cyc (183.6 ms @25MHz) nupd board 14165 twin 14165 nb_fx board 3 twin 3 OK
+12:28:16 epoch 26: 3000 samples core 3681392 cyc total 4611393 cyc (184.5 ms @25MHz) nupd board 14581 twin 14581 nb_fx board 0 twin 0 OK
+12:28:17 epoch 27: 3000 samples core 3679818 cyc total 4609819 cyc (184.4 ms @25MHz) nupd board 14995 twin 14995 nb_fx board 0 twin 0 OK
+12:28:18 epoch 28: 3000 samples core 3645190 cyc total 4575191 cyc (183.0 ms @25MHz) nupd board 15365 twin 15365 nb_fx board 0 twin 0 OK
+12:28:19 epoch 29: 3000 samples core 3648338 cyc total 4578339 cyc (183.1 ms @25MHz) nupd board 15739 twin 15739 nb_fx board 0 twin 0 OK
+12:28:20 epoch 30: 3000 samples core 3632598 cyc total 4562599 cyc (182.5 ms @25MHz) nupd board 16093 twin 16093 nb_fx board 2 twin 2 OK
+12:28:21 epoch 31: 3000 samples core 3662504 cyc total 4592505 cyc (183.7 ms @25MHz) nupd board 16485 twin 16485 nb_fx board 0 twin 0 OK
+12:28:23 epoch 32: 3000 samples core 3677457 cyc total 4607458 cyc (184.3 ms @25MHz) nupd board 16896 twin 16896 nb_fx board 3 twin 3 OK
+12:28:24 epoch 33: 3000 samples core 3618432 cyc total 4548433 cyc (181.9 ms @25MHz) nupd board 17232 twin 17232 nb_fx board 0 twin 0 OK
+12:28:25 epoch 34: 3000 samples core 3652273 cyc total 4582274 cyc (183.3 ms @25MHz) nupd board 17611 twin 17611 nb_fx board 0 twin 0 OK
+12:28:26 epoch 35: 3000 samples core 3646764 cyc total 4576765 cyc (183.1 ms @25MHz) nupd board 17983 twin 17983 nb_fx board 0 twin 0 OK
+12:28:27 epoch 36: 3000 samples core 3636533 cyc total 4566534 cyc (182.7 ms @25MHz) nupd board 18342 twin 18342 nb_fx board 0 twin 0 OK
+12:28:28 epoch 37: 3000 samples core 3662504 cyc total 4592505 cyc (183.7 ms @25MHz) nupd board 18734 twin 18734 nb_fx board 0 twin 0 OK
+12:28:29 epoch 38: 3000 samples core 3653847 cyc total 4583848 cyc (183.4 ms @25MHz) nupd board 19115 twin 19115 nb_fx board 0 twin 0 OK
+12:28:30 epoch 39: 3000 samples core 3659356 cyc total 4589357 cyc (183.6 ms @25MHz) nupd board 19503 twin 19503 nb_fx board 3 twin 3 OK
+12:28:35 test: board 2155/2500 = 86.20%  twin 86.20%  pred mismatches 0
+12:28:47 final weights: W1 mismatches 0/125600, W2 0/1610 -> BIT_EXACT=True
+12:28:47 wrote <SENA_ROOT>/Revision_V13\DE2_115_HW_21Nov2026\onchip_learning\board_h160_s2_20261121_122657
