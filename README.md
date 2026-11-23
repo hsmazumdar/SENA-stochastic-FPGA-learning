@@ -139,3 +139,7 @@ Raw MNIST and Fashion-MNIST are not redistributed. `torchvision.datasets.MNIST` 
 ## License
 
 MIT, see [`LICENSE`](LICENSE). Manuscript text remains the author's scholarly work.
+
+## Claim-to-evidence map (manuscript V13d, November 2026)
+
+[`CLAIMS_MAP_V13d.md`](CLAIMS_MAP_V13d.md) lists, for every table and figure of manuscript version V13d and its Supplementary Material, the result files and scripts in this repository that back it. It also lists what is deliberately left out (bitstreams, checkpoints, third-party libraries and build databases).

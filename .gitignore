@@ -19,3 +19,11 @@ incremental_db/
 *.ngm
 *.ngr
 *.ncd
+
+# Added 23 Nov 2026: keep large or third-party artefacts out of the repository
+*.sof
+*.pt
+results_21Nov2026/baseline_dwn/data/*.npy
+results_21Nov2026/baseline_dwn/DWN/
+results_21Nov2026/baseline_dwn/TreeLUT/
+results_21Nov2026/baseline_dwn/colab_upload_bundle.zip
