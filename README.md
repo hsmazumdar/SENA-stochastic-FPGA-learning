@@ -1,8 +1,8 @@
-﻿# SENA: A Multiplier-Free Stochastic Architecture for On-Chip Learning and Confidence-Gated Inference
+# SENA: Multiplier-Free On-Chip Learning and Vote-Confidence Selective Prediction with a Stochastic Ensemble on FPGAs
 
 Reproducibility package for the manuscript:
 
-**SENA: A Multiplier-Free Stochastic Architecture for On-Chip Learning and Confidence-Gated Inference**
+**SENA: Multiplier-Free On-Chip Learning and Vote-Confidence Selective Prediction with a Stochastic Ensemble on FPGAs**
 
 Himanshu S. Mazumdar
 R&D Centre, Dharmsinh Desai University, Nadiad, Gujarat, India
@@ -123,7 +123,7 @@ Raw MNIST and Fashion-MNIST are not redistributed. `torchvision.datasets.MNIST` 
 ```bibtex
 @misc{mazumdar_sena_2026,
   author       = {Mazumdar, Himanshu S.},
-  title        = {SENA: A Multiplier-Free Stochastic Architecture for On-Chip Learning and Confidence-Gated Inference},
+  title        = {SENA: Multiplier-Free On-Chip Learning and Vote-Confidence Selective Prediction with a Stochastic Ensemble on FPGAs},
   year         = {2026},
   howpublished = {\url{https://github.com/hsmazumdar/SENA-stochastic-FPGA-learning}},
   note         = {Reproducibility package}
@@ -143,3 +143,29 @@ MIT, see [`LICENSE`](LICENSE). Manuscript text remains the author's scholarly wo
 ## Claim-to-evidence map (manuscript V13d, November 2026)
 
 [`CLAIMS_MAP_V13d.md`](CLAIMS_MAP_V13d.md) lists, for every table and figure of manuscript version V13d and its Supplementary Material, the result files and scripts in this repository that back it. It also lists what is deliberately left out (bitstreams, checkpoints, third-party libraries and build databases).
+
+## Reviewer quick start (no hardware needed)
+
+1. Install Python 3.8 or newer. matplotlib is optional and only needed for the Fig. 2 plot.
+2. Run the reproducer:
+   - Windows: double-click `reproduce_tables.bat`.
+   - Any OS: run `python reproduce_tables.py`.
+3. Open `reproduce_output/run_<timestamp>/`:
+   - `tables.md`: Tables I–VII and the other numbers in Secs. V.C, V.F, V.G and VI, regenerated from the saved logs and reports in this repository.
+   - `check.csv`: every regenerated value next to the number printed in the manuscript, with the source file it came from.
+   - `fig2_risk_coverage.png`: Fig. 2, the risk–coverage curves.
+
+The script exits with code 0 only when every value matches the manuscript at the precision printed there. It retrains nothing and does not touch hardware. To rerun the experiments themselves, see the scripts listed in [`CLAIMS_MAP_V13d.md`](CLAIMS_MAP_V13d.md).
+
+### Rebuilding and programming the boards (optional; needs the boards and vendor tools)
+
+| Board / design | Build | Program / run |
+|---|---|---|
+| DE2-115, on-chip learning core 784-160-10 (Tables II, IV, V) | `results_21Nov2026/OnChip_Learning/board_v1/quartus/BUILD_BOARD.bat` (Quartus Prime Lite 25.1) | `results_21Nov2026/OnChip_Learning/board_v1/quartus/PROGRAM_BOARD.bat`, then the host script in `results_21Nov2026/OnChip_Learning/board_v1/README_Board_Run.md` |
+| DE2-115, learning core only (no board I/O) | `results_21Nov2026/OnChip_Learning/quartus_core/BUILD_CORE.bat` | – |
+| DE2-115, DWN baseline (Table II) | `results_21Nov2026/Baseline_DWN_pkg/quartus/BUILD_DWN.bat` | – |
+| Basys 3 (XC7A35T), 784-16-10 port (not used for any manuscript claim) | `results_21Nov2026/OnChip_Learning/basys3_v1/vivado/BUILD_BASYS3.bat` (Vivado) | `results_21Nov2026/OnChip_Learning/basys3_v1/vivado/PROGRAM_BASYS3.bat` |
+| Papilio Pro, C1 cycle calibration (Table VII) | RTL in `papilio_calibration_C1/rtl_snapshot/` (Xilinx ISE; reports in `papilio_calibration_C1/ise_reports/`) | `python papilio_calibration_C1/host/papilio_calibrate.py --port COMx`; the saved run is `papilio_calibration_C1/papilio_calibration.json` |
+| Papilio Pro, Boolean tile (Supplement S-XIII) | `sena2026/fpga_papilio_logic_learn/ise/build_in_docker.bat` | `sena2026/fpga_papilio_logic_learn/go_program_and_log.bat` |
+
+Bitstreams are not in the repository. Rebuild them with the scripts above, or ask the author for them.

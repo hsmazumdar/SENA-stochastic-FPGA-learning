@@ -27,3 +27,6 @@ results_21Nov2026/baseline_dwn/data/*.npy
 results_21Nov2026/baseline_dwn/DWN/
 results_21Nov2026/baseline_dwn/TreeLUT/
 results_21Nov2026/baseline_dwn/colab_upload_bundle.zip
+
+# Added 24 Nov 2026: local output of reproduce_tables.py
+reproduce_output/
